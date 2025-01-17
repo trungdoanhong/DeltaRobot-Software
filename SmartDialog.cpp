@@ -10,14 +10,49 @@ void SmartDialog::SetType(int typeId)
     dialogType = typeId;
 }
 
-bool SmartDialog::PopUp(QString title, QString msg)
+QMessageBox::StandardButton SmartDialog::PopUp(QString title, QString msg)
 {
     QMessageBox* CloseUIBox = new QMessageBox();
     this->setStyleSheet("QPushButton{ min-width: 60px; min-height: 20px;}");
-    QMessageBox::StandardButton resBtn = CloseUIBox->question(this, title, msg, QMessageBox::No | QMessageBox::Yes, QMessageBox::Yes);
 
-    if (resBtn == QMessageBox::Yes)
-        return true;
+    if (dialogType == CLOSE_DIALOG)
+    {
+        CloseUIBox->setWindowTitle(title);
+        CloseUIBox->setText(msg);
+        CloseUIBox->setStandardButtons(QMessageBox::Yes | QMessageBox::No);
+        CloseUIBox->setDefaultButton(QMessageBox::No);
+
+        int ret = CloseUIBox->exec();
+        if (ret == QMessageBox::Yes)
+        {
+            return QMessageBox::Yes;
+        }
+        else
+        {
+            return QMessageBox::No;
+        }
+    }
+    else if (dialogType == INFO_DIALOG)    
+    {
+        CloseUIBox->setWindowTitle(title);
+        CloseUIBox->setText(msg);
+        CloseUIBox->setStandardButtons(QMessageBox::Ok|QMessageBox::No);
+        CloseUIBox->setDefaultButton(QMessageBox::Ok);
+
+        int ret = CloseUIBox->exec();
+        if (ret == QMessageBox::Ok)
+        {
+            return QMessageBox::Ok;
+        }
+        else
+        {
+            return QMessageBox::Cancel;
+        }
+    }
     else
-        return false;
+    {
+        return QMessageBox::No;
+    }
+
+    
 }

@@ -11,15 +11,16 @@ public:
     explicit SmartDialog(QWidget *parent = nullptr);
 
     void SetType(int typeId);
-    bool PopUp(QString title, QString msg);
+    QMessageBox::StandardButton PopUp(QString title, QString msg);
 
     const int CLOSE_DIALOG = 0;
-
+    const int INFO_DIALOG = 1;
 
 signals:
 
 private:
     int dialogType = CLOSE_DIALOG;
+
 };
 
 #endif // SMARTDIALOG_H

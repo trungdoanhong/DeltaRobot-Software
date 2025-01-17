@@ -445,7 +445,7 @@ class Ui_MainWindow(object):
         self.scrollArea_2.setWidgetResizable(True)
         self.scrollAreaWidgetContents_2 = QWidget()
         self.scrollAreaWidgetContents_2.setObjectName(u"scrollAreaWidgetContents_2")
-        self.scrollAreaWidgetContents_2.setGeometry(QRect(0, 0, 1099, 614))
+        self.scrollAreaWidgetContents_2.setGeometry(QRect(0, 0, 601, 171))
         self.verticalLayout_10 = QVBoxLayout(self.scrollAreaWidgetContents_2)
         self.verticalLayout_10.setSpacing(6)
         self.verticalLayout_10.setContentsMargins(11, 11, 11, 11)
@@ -796,7 +796,7 @@ class Ui_MainWindow(object):
         self.scrollArea.setWidgetResizable(True)
         self.scrollAreaWidgetContents = QWidget()
         self.scrollAreaWidgetContents.setObjectName(u"scrollAreaWidgetContents")
-        self.scrollAreaWidgetContents.setGeometry(QRect(0, 0, 1085, 700))
+        self.scrollAreaWidgetContents.setGeometry(QRect(0, 0, 571, 700))
         self.scrollAreaWidgetContents.setMinimumSize(QSize(0, 700))
         self.verticalLayout_7 = QVBoxLayout(self.scrollAreaWidgetContents)
         self.verticalLayout_7.setSpacing(6)
@@ -1210,7 +1210,7 @@ class Ui_MainWindow(object):
         self.retranslateUi(MainWindow)
 
         self.stackedWidget.setCurrentIndex(0)
-        self.swPageStack.setCurrentIndex(8)
+        self.swPageStack.setCurrentIndex(0)
         self.swAuthority.setCurrentIndex(0)
         self.twProjectManager.setCurrentIndex(0)
 

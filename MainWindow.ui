@@ -608,7 +608,7 @@ border-right: 5px solid rgb(24, 70, 139);</string>
              <number>1</number>
             </property>
             <property name="currentIndex">
-             <number>8</number>
+             <number>0</number>
             </property>
             <widget class="QWidget" name="pVariable">
              <property name="styleSheet">
@@ -719,8 +719,8 @@ border-right: 5px solid rgb(24, 70, 139);</string>
                   <rect>
                    <x>0</x>
                    <y>0</y>
-                   <width>1099</width>
-                   <height>614</height>
+                   <width>601</width>
+                   <height>171</height>
                   </rect>
                  </property>
                  <layout class="QVBoxLayout" name="verticalLayout_10">
@@ -1321,7 +1321,7 @@ QPushButton:pressed
                       <rect>
                        <x>0</x>
                        <y>0</y>
-                       <width>1085</width>
+                       <width>571</width>
                        <height>700</height>
                       </rect>
                      </property>

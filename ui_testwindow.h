@@ -86,6 +86,7 @@ public:
         verticalLayout_5->setObjectName(QString::fromUtf8("verticalLayout_5"));
         cameraLabel = new QLabel(frame_3);
         cameraLabel->setObjectName(QString::fromUtf8("cameraLabel"));
+        cameraLabel->setStyleSheet(QString::fromUtf8("background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgba(0, 170, 255, 255), stop:1 rgba(0, 255, 255, 255));"));
 
         verticalLayout_5->addWidget(cameraLabel);
 

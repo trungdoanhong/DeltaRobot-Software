@@ -35,29 +35,16 @@ QVariant VariableManager::getVar(const QString &key, QVariant defaultValue)
 
     QStringList objKeys = ObjectInfos.keys();
 
-    foreach (QString objKey, objKeys)
+    for (const QString &objKey : objKeys)
     {
         if (fullKey.contains(objKey))
         {
-            // key = "#project0.Objects.0"
             QStringList paras = fullKey.split(".");
-            QString last = paras[paras.size() - 1];
-            // Kiểm tra nếu last là một số nguyên
+            QString last = paras.last();
             bool isInt = false;
             int index = last.toInt(&isInt);
 
-            if (index >= ObjectInfos[objKey]->size())
-                continue;
-
-            if (isInt)
-            {
-                return QPointF(ObjectInfos[objKey]->at(index).center.x(), ObjectInfos[objKey]->at(index).center.y());
-            }
-
-            QString indexS = paras[paras.size() - 2];
-            index = indexS.toInt(&isInt);
-
-            if (isInt)
+            if (isInt && index < ObjectInfos[objKey]->size())
             {
                 if (last == "X")
                 {
@@ -76,24 +63,22 @@ QVariant VariableManager::getVar(const QString &key, QVariant defaultValue)
     }
 
     std::lock_guard<std::mutex> lock(dataMutex);
-    if(dataMap.find(fullKey) != dataMap.end())
-    {
-        return dataMap[fullKey];
-    }
-    return defaultValue;
+    return dataMap.value(fullKey, defaultValue);
 }
 
 void VariableManager::removeVar(const QString &key)
 {
     const QString fullKey = getFullKey(key);
     std::lock_guard<std::mutex> lock(dataMutex);
-    
-    for (auto it = dataMap.begin(); it != dataMap.end();)
+
+    auto it = dataMap.begin();
+    while (it != dataMap.end())
     {
         if (it.key().startsWith(fullKey))
         {
             emit varRemoved(it.key());
             it = dataMap.erase(it);
+            return;
         }
         else
         {
@@ -126,23 +111,20 @@ bool VariableManager::containsFullKey(const QString &key)
 void VariableManager::saveToQSettings()
 {
     std::lock_guard<std::mutex> lock(dataMutex);
-
     settings.clear();
-
-    foreach (const QString &key, dataMap.keys())
+    for (auto it = dataMap.constBegin(); it != dataMap.constEnd(); ++it)
     {
-        settings.setValue(key, dataMap[key]);
+        settings.setValue(it.key(), it.value());
     }
 }
 
 void VariableManager::loadFromQSettings()
 {
-    connect(&instance(), SIGNAL(varUpdated(QString, QVariant)), this, SLOT(UpdateVarToModel(QString, QVariant)));
-    connect(&instance(), SIGNAL(varAdded(QString, QVariant)), this, SLOT(UpdateVarToModel(QString, QVariant)));
+    connect(&instance(), &VariableManager::varUpdated, this, &VariableManager::UpdateVarToModel);
+    connect(&instance(), &VariableManager::varAdded, this, &VariableManager::UpdateVarToModel);
 
     std::lock_guard<std::mutex> lock(dataMutex);
-    QStringList keys = settings.allKeys();
-    for(const QString& key : keys)
+    for (const QString &key : settings.allKeys())
     {
         dataMap[key] = settings.value(key);
         emit varAdded(key, settings.value(key));
@@ -167,15 +149,12 @@ void VariableManager::UpdateVarToModel(QString key, QVariant value)
 const QString VariableManager::getFullKey(const QString key)
 {
     QString fullKey = key;
-    // Kiểm tra xe key đã có prefix chưa
-    
-    if (Prefix != "")
+
+    if (!Prefix.isEmpty() && !key.startsWith(Prefix))
     {
-        if (!key.startsWith(Prefix))
-            fullKey = Prefix + "." + key;
+        fullKey = Prefix + "." + key;
     }
 
     fullKey.replace("#", "");
-
     return fullKey;
 }

@@ -646,7 +646,7 @@ void RobotWindow::InitObjectDetectingModule()
             resizeImageNode->IsPass = true;
         }
     });
-        
+
     connect(ImageProcessingInstance->GetNode("DisplayImageNode"), SIGNAL(HadOutput(QPixmap)), ui->gvImageViewer, SLOT(SetImage(QPixmap)));
 
     connect(ParameterPanel, SIGNAL(ColorFilterValueChanged(QList<int>)), ImageProcessingInstance->GetNode("ColorFilterNode"), SLOT(Input(QList<int>)));
@@ -748,7 +748,7 @@ void RobotWindow::InitUIController()
     connect(&UpdateUITimer, &QTimer::timeout, this, &RobotWindow::UpdateRobotPositionToUI);
     UpdateUITimer.start(100);
 
-    connect(ui->pbHome, &QPushButton::clicked, this, [=](){emit Send(DeviceManager::ROBOT, "G28");});    
+    connect(ui->pbHome, &QPushButton::clicked, this, [=](){emit Send(DeviceManager::ROBOT, "G28");});
 
     connect(ui->tbCopyRobotPosition, &QPushButton::clicked, [=]()
     {
@@ -756,7 +756,7 @@ void RobotWindow::InitUIController()
         QString text = QString("%1, %2, %3, %4, %5, %6").arg(ui->leX->text()).arg(ui->leY->text()).arg(ui->leZ->text()).arg(ui->leW->text()).arg(ui->leU->text()).arg(ui->leV->text());
         QClipboard *clipboard = QApplication::clipboard();
         clipboard->setText(text);
-        
+
     });
 
     connect(ui->leX, &QLineEdit::returnPressed, this, [=](){RobotParameters[RbID].X = ui->leX->text().toFloat();
@@ -795,6 +795,19 @@ void RobotWindow::InitUIController()
     connect(ui->leStartSpeed, &QLineEdit::returnPressed, this, &RobotWindow::UpdateStartSpeed);
     connect(ui->leEndSpeed, &QLineEdit::returnPressed, this, &RobotWindow::UpdateEndSpeed);
     connect(ui->leJerk, &QLineEdit::returnPressed, this, &RobotWindow::UpdateJerk);
+
+    connect(ui->pbContinuousLeft, &QPushButton::pressed, [=](){Jogging("left", true);});
+    connect(ui->pbContinuousLeft, &QPushButton::released, [=](){Jogging("left", false);});
+    connect(ui->pbContinuousRight, &QPushButton::pressed, [=](){Jogging("right", true);});
+    connect(ui->pbContinuousRight, &QPushButton::released, [=](){Jogging("right", false);});
+    connect(ui->pbContinuousForward, &QPushButton::pressed, [=](){Jogging("forward", true);});
+    connect(ui->pbContinuousForward, &QPushButton::released, [=](){Jogging("forward", false);});
+    connect(ui->pbContinuousBackward, &QPushButton::pressed, [=](){Jogging("backward", true);});
+    connect(ui->pbContinuousBackward, &QPushButton::released, [=](){Jogging("backward", false);});
+    connect(ui->pbContinuousUp, &QPushButton::pressed, [=](){Jogging("up", true);});
+    connect(ui->pbContinuousUp, &QPushButton::released, [=](){Jogging("up", false);});
+    connect(ui->pbContinuousDown, &QPushButton::pressed, [=](){Jogging("down", true);});
+    connect(ui->pbContinuousDown, &QPushButton::released, [=](){Jogging("down", false);});
 }
 
 void RobotWindow::InitCalibration()
@@ -818,21 +831,21 @@ void RobotWindow::InitCalibration()
         });
 
     connect(ui->tbPastePoint1, &QPushButton::clicked, [=]()
-    { 
+    {
         pastePointValues(ui->leRealityPoint1X, ui->leRealityPoint1Y, NULL);
 
         UpdateRealPositionOfCalibPoints();
     });
 
     connect(ui->tbPastePoint2, &QPushButton::clicked, [=]()
-    { 
+    {
         pastePointValues(ui->leRealityPoint2X, ui->leRealityPoint2Y, NULL);
 
         UpdateRealPositionOfCalibPoints();
     });
 
     connect(ui->tbPasteOffsetPoint, &QPushButton::clicked, [=]()
-    { 
+    {
         pastePointValues(ui->leCalibOffset_X, ui->leCalibOffset_Y, NULL);
 
         UpdateRealPositionOfCalibPoints();
@@ -855,10 +868,10 @@ void RobotWindow::InitEvents()
     // ------------ Jogging -----------
 
     //---------- End effector -----------
-	connect(ui->hsGripperAngle, SIGNAL(valueChanged(int)), this, SLOT(AdjustGripperAngle(int)));
-	connect(ui->pbGrip, SIGNAL(clicked(bool)), this, SLOT(Grip()));
-	connect(ui->pbPump, SIGNAL(clicked(bool)), this, SLOT(SetPump(bool)));
-	connect(ui->pbLaser, SIGNAL(clicked(bool)), this, SLOT(SetLaser(bool)));
+    connect(ui->hsGripperAngle, SIGNAL(valueChanged(int)), this, SLOT(AdjustGripperAngle(int)));
+    connect(ui->pbGrip, SIGNAL(clicked(bool)), this, SLOT(Grip()));
+    connect(ui->pbPump, SIGNAL(clicked(bool)), this, SLOT(SetPump(bool)));
+    connect(ui->pbLaser, SIGNAL(clicked(bool)), this, SLOT(SetLaser(bool)));
 
     //----- Delta X S IO -----
     connect(ui->cbD0, SIGNAL(clicked(bool)), this, SLOT(SetOnOffOutput(bool)));
@@ -897,12 +910,12 @@ void RobotWindow::InitEvents()
     #endif
 #endif
     //------------- Terminal ---------------
-	connect(ui->leTerminal, SIGNAL(returnPressed()), this, SLOT(TerminalTransmit()));
+    connect(ui->leTerminal, SIGNAL(returnPressed()), this, SLOT(TerminalTransmit()));
 
     //------------- Connection --------------
 
     //------------- Gcode Editor -------------
-	connect(ui->pbFormat, SIGNAL(clicked(bool)), this, SLOT(StandardFormatEditor()));
+    connect(ui->pbFormat, SIGNAL(clicked(bool)), this, SLOT(StandardFormatEditor()));
 
     connect(ui->cbEditGcodeLock, SIGNAL(stateChanged(int)), ui->pteGcodeArea, SLOT(setLockState(int)));
     connect(ui->cbGScriptEditorZoom, QOverload<int>::of(&QComboBox::currentIndexChanged), this, &RobotWindow::changeFontSize);
@@ -1084,16 +1097,16 @@ void RobotWindow::InitEvents()
     //---------- Menu -----------
 
     //----------- Drawing -----------
-	connect(ui->pbOpenPicture, SIGNAL(clicked(bool)), DeltaDrawingExporter, SLOT(OpenImage()));
-	connect(ui->pbPainting, SIGNAL(clicked(bool)), DeltaDrawingExporter, SLOT(ConvertToDrawingArea()));
+    connect(ui->pbOpenPicture, SIGNAL(clicked(bool)), DeltaDrawingExporter, SLOT(OpenImage()));
+    connect(ui->pbPainting, SIGNAL(clicked(bool)), DeltaDrawingExporter, SLOT(ConvertToDrawingArea()));
 
-	connect(ui->pbDrawLine, SIGNAL(clicked(bool)), ui->lbDrawingArea, SLOT(SelectLineTool()));
-	connect(ui->pbDrawRectangle, SIGNAL(clicked(bool)), ui->lbDrawingArea, SLOT(SelectRectangleTool()));
-	connect(ui->pbDrawCircle, SIGNAL(clicked(bool)), ui->lbDrawingArea, SLOT(SelectCircleTool()));
-	connect(ui->pbDrawArc, SIGNAL(clicked(bool)), ui->lbDrawingArea, SLOT(SelectArcTool()));
-	connect(ui->pbZoomIn, SIGNAL(clicked(bool)), ui->lbDrawingArea, SLOT(SelectZoomInTool()));
-	connect(ui->pbZoomOut, SIGNAL(clicked(bool)), ui->lbDrawingArea, SLOT(SelectZoomOutTool()));
-	connect(ui->pbCursor, SIGNAL(clicked(bool)), ui->lbDrawingArea, SLOT(SelectCursor()));
+    connect(ui->pbDrawLine, SIGNAL(clicked(bool)), ui->lbDrawingArea, SLOT(SelectLineTool()));
+    connect(ui->pbDrawRectangle, SIGNAL(clicked(bool)), ui->lbDrawingArea, SLOT(SelectRectangleTool()));
+    connect(ui->pbDrawCircle, SIGNAL(clicked(bool)), ui->lbDrawingArea, SLOT(SelectCircleTool()));
+    connect(ui->pbDrawArc, SIGNAL(clicked(bool)), ui->lbDrawingArea, SLOT(SelectArcTool()));
+    connect(ui->pbZoomIn, SIGNAL(clicked(bool)), ui->lbDrawingArea, SLOT(SelectZoomInTool()));
+    connect(ui->pbZoomOut, SIGNAL(clicked(bool)), ui->lbDrawingArea, SLOT(SelectZoomOutTool()));
+    connect(ui->pbCursor, SIGNAL(clicked(bool)), ui->lbDrawingArea, SLOT(SelectCursor()));
 
     connect(ui->pbExportDrawingGcodes, SIGNAL(clicked(bool)), DeltaDrawingExporter, SLOT(ExportGcodes()));
     connect(ui->pbGetPlaneAPoint, &QPushButton::clicked, [=]()
@@ -1134,7 +1147,7 @@ void RobotWindow::EnablePositionUpdatingEvents()
     ui->leZ->blockSignals(false);
     ui->leW->blockSignals(false);
     ui->leU->blockSignals(false);
-    ui->leV->blockSignals(false);  
+    ui->leV->blockSignals(false);
 
     ui->leVelocity->blockSignals(false);
     ui->leAccel->blockSignals(false);
@@ -1145,25 +1158,25 @@ void RobotWindow::EnablePositionUpdatingEvents()
 
 void RobotWindow::ExportBlocklyToGcode()
 {
-	/*QWebEnginePage* clone = new QWebEnginePage();
-	
-	ui->wevBlockly->page()->runJavaScript("document.getElementsByTagName(\"body\")[0].innerHTML = document.getElementById(\"content_javascript\").innerText");
+    /*QWebEnginePage* clone = new QWebEnginePage();
 
-	ui->wevBlockly->page()->toPlainText([this](const QString &result)
-	{
-		ui->pteGcodeArea->setText(result);
-	});*/
+    ui->wevBlockly->page()->runJavaScript("document.getElementsByTagName(\"body\")[0].innerHTML = document.getElementById(\"content_javascript\").innerText");
+
+    ui->wevBlockly->page()->toPlainText([this](const QString &result)
+    {
+        ui->pteGcodeArea->setText(result);
+    });*/
 }
 
 void RobotWindow::ExecuteRequestsFromExternal(QString request)
 {
-	request = request.replace("\n", "");
-	request = request.replace("\r", "");
+    request = request.replace("\n", "");
+    request = request.replace("\r", "");
 
-	if (request == "Execute All")
-	{
+    if (request == "Execute All")
+    {
         return;
-	}
+    }
 
     QStringList paras = request.split(" ");
 
@@ -1401,24 +1414,56 @@ void RobotWindow::RefreshExplorer()
 
 void RobotWindow::DeleteGcodeFile()
 {
-    int ret = QMessageBox::warning(this, tr("Delete file"), tr("Are you sure you want to delete this file?"), QMessageBox::Yes | QMessageBox::No);
-    if (ret == QMessageBox::Yes)
+    QModelIndex currentIndex = ui->tvGcodeExplorer->currentIndex();
+    if (!currentIndex.isValid())
+        return;
+
+    // Lấy parent index để biết item này nằm trong "folder" nào
+    QModelIndex parentIndex = currentIndex.parent();
+    int currentRow = currentIndex.row();
+
+    SmartDialog dialog;
+    dialog.SetType(1);
+    int ret = dialog.PopUp("Delete file", "Are you sure you want to delete this file?");
+
+    if (ret == QMessageBox::Ok)
     {
-        QString filePath = explorerModel.filePath(ui->tvGcodeExplorer->currentIndex());
+        QString filePath = explorerModel.filePath(currentIndex);
         QFile file(filePath);
         if (file.remove())
         {
+            // Sau khi xóa thành công, QFileSystemModel sẽ tự động cập nhật
+            // Bây giờ ta tính toán để chọn item kế hoặc lùi
+            int rowCount = explorerModel.rowCount(parentIndex);
+            // Lấy số item trong cùng parent (sau khi xóa, rowCount sẽ giảm)
 
-        } else
-        {
+            // Ví dụ ưu tiên chọn item ngay hàng tiếp theo
+            // Nếu currentRow vẫn còn < rowCount, ta dùng nó:
+            int newRow = currentRow;
+            if (newRow >= rowCount) {
+                // Nếu đã xóa item cuối, ta lùi chọn item ngay trước nó
+                newRow = rowCount - 1;
+            }
 
+            if (newRow >= 0) {
+                QModelIndex newIndex = explorerModel.index(newRow, 0, parentIndex);
+                if (newIndex.isValid()) {
+                    ui->tvGcodeExplorer->setCurrentIndex(newIndex);
+                    LoadGcodeFromFileToEditor(newIndex);
+                }
+            }
         }
-    } else
-    {
-
+        else
+        {
+            // Xóa thất bại
+        }
     }
-
+    else
+    {
+        // Người dùng bấm No
+    }
 }
+
 
 void RobotWindow::ChangeSelectedEditorThread(int id)
 {
@@ -1462,7 +1507,7 @@ void RobotWindow::closeEvent(QCloseEvent * event)
         event->ignore();
     }
     else
-    {        
+    {
         qApp->exit();
         event->accept();
     }
@@ -1482,6 +1527,8 @@ void RobotWindow::LoadPlugin()
 
 void RobotWindow::InitScriptThread()
 {
+    AddScriptThread();
+    AddScriptThread();
     AddScriptThread();
 }
 
@@ -1581,7 +1628,12 @@ void RobotWindow::AddTrackingThread()
         tracking->ListName = QString("#Objects") + QString::number(tracking->ID + 1);
     }
 
-    VariableManager::instance().ObjectInfos.insert(tracking->ListName.mid(1), &tracking->TrackedObjects);
+//    VariableManager::instance().ObjectInfos.insert(tracking->ListName.mid(1), &tracking->TrackedObjects);
+    VariableManager::instance().ObjectInfos.insert(
+        tracking->ListName.mid(1),
+        std::shared_ptr<QVector<ObjectInfo>>(&tracking->TrackedObjects, [](QVector<ObjectInfo>*) {})
+    );
+
 }
 
 void RobotWindow::LoadTrackingThread()
@@ -1614,7 +1666,7 @@ void RobotWindow::LoadGeneralSettings()
     for (int i = 0; i < devices.count(); i++)
     {
         QString device = devices.at(i);
-        
+
         for (int id = 0; id < 20; id++)
         {
             QString prefix = ProjectName + "." + device + QString::number(id);
@@ -2084,6 +2136,16 @@ void RobotWindow::ActiveWidgetByName(QString type, QString name, QString action)
         {
             button->click();
         }
+        if (button && action == "press")
+        {
+            button->pressed();
+//            qDebug() << "press" << name;
+        }
+        if (button && action == "release")
+        {
+            button->released();
+//            qDebug() << "release" << name;
+        }
     }
     else if (type == "QRadioButton")
     {
@@ -2229,6 +2291,7 @@ void RobotWindow::GetDeviceResponse(QString idName, QString response)
     int timeDiff = previousEncoderUITime.msecsTo(QTime::currentTime());
     if (timeDiff < 500)
         return;
+
     previousEncoderUITime = QTime::currentTime();
 
     if (idName.contains("device"))
@@ -2255,8 +2318,6 @@ void RobotWindow::GetDeviceResponse(QString idName, QString response)
 
     if (idName.contains("encoder"))
     {
-
-
         idName = idName.mid(7);
         if (response.contains("P"))
         {
@@ -2393,7 +2454,7 @@ void RobotWindow::SelectImageProviderOption(int option)
 
 void RobotWindow::RunSmartEditor()
 {
-	
+
 }
 
 void RobotWindow::StandardFormatEditor()
@@ -2632,24 +2693,27 @@ void RobotWindow::SaveProgram()
 
     if (name == "")
     {
-        QInputDialog *inputDialog = new QInputDialog(this);
-        inputDialog->setWindowTitle("Do you want to save program in Gcode Editor?");
+//        QInputDialog *inputDialog = new QInputDialog(this);
+//        inputDialog->setWindowTitle("Do you want to save program in Gcode Editor?");
 
-        inputDialog->setInputMode(QInputDialog::TextInput);
-        inputDialog->setLabelText("Gcode file name:");
-        QLineEdit *lineEdit = inputDialog->findChild<QLineEdit *>();
-        if (lineEdit) {
-            lineEdit->setFixedWidth(500); // Đặt kiểu dáng cho QLineEdit
-        }
+//        inputDialog->setInputMode(QInputDialog::TextInput);
+//        inputDialog->setLabelText("Gcode file name:");
+//        QLineEdit *lineEdit = inputDialog->findChild<QLineEdit *>();
+//        if (lineEdit) {
+//            lineEdit->setFixedWidth(500); // Đặt kiểu dáng cho QLineEdit
+//        }
 
-        if (inputDialog->exec() == QDialog::Accepted) {
-            name = inputDialog->textValue();
-        }
+//        if (inputDialog->exec() == QDialog::Accepted) {
+//            name = inputDialog->textValue();
+//        }
 
     }
-    SaveGcodeFile(name, ui->pteGcodeArea->toPlainText());
+    else
+    {
+        SaveGcodeFile(name, ui->pteGcodeArea->toPlainText());
 
-    IsGcodeEditorTextChanged = false;
+        IsGcodeEditorTextChanged = false;
+    }
 }
 
 void RobotWindow::ExecuteProgram()
@@ -2704,23 +2768,23 @@ void RobotWindow::ClickExecuteButton(bool val)
 
 void RobotWindow::ImportGcodeFilesFromComputer()
 {
-	QStringList fileNames = QFileDialog::getOpenFileNames(this, tr("Open G-code Files"), "",	tr("G-code file (*.dtgc);;All Files (*)"));
+    QStringList fileNames = QFileDialog::getOpenFileNames(this, tr("Open G-code Files"), "",	tr("G-code file (*.dtgc);;All Files (*)"));
 
     foreach (QString fileName, fileNames)
-	{
-		QFileInfo fileInfo(fileName);
-		QString newFullName = QDir::currentPath() + "/" + fileInfo.fileName();
+    {
+        QFileInfo fileInfo(fileName);
+        QString newFullName = QDir::currentPath() + "/" + fileInfo.fileName();
 
         if (QFile::exists(newFullName) && fileName != newFullName)
-		{
-			QFile::remove(newFullName);
-		}
+        {
+            QFile::remove(newFullName);
+        }
 
 
-		if (QFile::copy(fileName, newFullName) == false)
-		{
+        if (QFile::copy(fileName, newFullName) == false)
+        {
             SoftwareLog(QString("Can't import ") + fileName);
-		}
+        }
     }
 
 }
@@ -2736,9 +2800,9 @@ void RobotWindow::ExecuteCurrentLine(int linNumber, QString lineText)
     GcodeScript* currentScript = GcodeScripts.at(threadId);
 
     if (ui->cbEditGcodeLock->isChecked() == false)
-	{
-		return;
-	}
+    {
+        return;
+    }
 
     QMetaObject::invokeMethod(currentScript, "ExecuteGcode", Qt::QueuedConnection, Q_ARG(QString, lineText), Q_ARG(int, GcodeScript::BEGIN), Q_ARG(QString, ui->pteScriptFunction->toPlainText()));
 
@@ -2848,36 +2912,73 @@ void RobotWindow::AdjustGripperAngle(int angle)
     emit Send(DeviceManager::ROBOT, QString("M360 E1"));
     emit Send(DeviceManager::ROBOT, QString("M03 S") + QString::number(angle * 5));
 
-	ui->lbGripperValue->setText(QString::number(angle * 5));
+    ui->lbGripperValue->setText(QString::number(angle * 5));
 }
 
 void RobotWindow::Grip()
 {
     emit Send(DeviceManager::ROBOT, QString("M360 E1"));
-	if (ui->pbGrip->text() == "Grip")
-	{
-		ui->pbGrip->setText("Release");
+    if (ui->pbGrip->text() == "Grip")
+    {
+        ui->pbGrip->setText("Release");
         emit Send(DeviceManager::ROBOT, QString("M03 S") + ui->leGripperMax->text());
 
-		ui->hsGripperAngle->blockSignals(true);
-		ui->hsGripperAngle->setValue(ui->leGripperMax->text().toInt() / 5);
-		ui->hsGripperAngle->blockSignals(false);
-		
-		ui->lbGripperValue->setText(ui->leGripperMax->text());
-	}
-	else
-	{
-		ui->pbGrip->setText("Grip");
+        ui->hsGripperAngle->blockSignals(true);
+        ui->hsGripperAngle->setValue(ui->leGripperMax->text().toInt() / 5);
+        ui->hsGripperAngle->blockSignals(false);
+
+        ui->lbGripperValue->setText(ui->leGripperMax->text());
+    }
+    else
+    {
+        ui->pbGrip->setText("Grip");
         emit Send(DeviceManager::ROBOT, QString("M03 S") + ui->leGripperMin->text());
 
-		ui->hsGripperAngle->blockSignals(true);
-		int vl = ui->leGripperMin->text().toInt() / 5;
-		ui->hsGripperAngle->setValue(vl);
-		ui->hsGripperAngle->blockSignals(false);
+        ui->hsGripperAngle->blockSignals(true);
+        int vl = ui->leGripperMin->text().toInt() / 5;
+        ui->hsGripperAngle->setValue(vl);
+        ui->hsGripperAngle->blockSignals(false);
 
-		ui->lbGripperValue->setText(ui->leGripperMin->text());
-		
+        ui->lbGripperValue->setText(ui->leGripperMin->text());
+
     }
+}
+
+void RobotWindow::Jogging(QString direction, bool isMove)
+{
+    float step = RobotParameters[RbID].Step;
+    if (isMove == false)
+    {
+        step = 0;
+    }
+
+    if (direction.contains("left"))
+    {
+        //format: jogging (step, 0, 0)
+        emit Send(DeviceManager::ROBOT, QString("jogging (%1, 0, 0)").arg(-step));
+    }
+    else if (direction.contains("right"))
+    {
+        emit Send(DeviceManager::ROBOT, QString("jogging (%1, 0, 0)").arg(step));
+    }
+    else if (direction.contains("forward"))
+    {
+        emit Send(DeviceManager::ROBOT, QString("jogging (0, %1, 0)").arg(step));
+    }
+    else if (direction.contains("backward"))
+    {
+        emit Send(DeviceManager::ROBOT, QString("jogging (0, %1, 0)").arg(-step));
+    }
+    else if (direction.contains("up"))
+    {
+        emit Send(DeviceManager::ROBOT, QString("jogging (0, 0, %1)").arg(step));
+    }
+    else if (direction.contains("down"))
+    {
+        emit Send(DeviceManager::ROBOT, QString("jogging (0, 0, %1)").arg(-step));
+    }
+
+
 }
 
 void RobotWindow::MoveRobot(QString gcode)
@@ -2998,27 +3099,27 @@ void RobotWindow::UpdateRobotPositionToUI()
 void RobotWindow::SetPump(bool value)
 {
     emit Send(DeviceManager::ROBOT, QString("M360 E0"));
-	if (value == true)
-	{
+    if (value == true)
+    {
         emit Send(DeviceManager::ROBOT, QString("M03"));
-	}
-	else
-	{
+    }
+    else
+    {
         emit Send(DeviceManager::ROBOT, QString("M05"));
-	}
+    }
 }
 
 void RobotWindow::SetLaser(bool value)
 {
     emit Send(DeviceManager::ROBOT, QString("M360 E3"));
-	if (value == true)
-	{
+    if (value == true)
+    {
         emit Send(DeviceManager::ROBOT, QString("M03"));
-	}
-	else
-	{
+    }
+    else
+    {
         emit Send(DeviceManager::ROBOT, QString("M05"));
-	}
+    }
 }
 
 void RobotWindow::Home()
@@ -3799,7 +3900,7 @@ void RobotWindow::GetMappingPointFromImage(QPointF point)
 
     //Làm tròn realPoint đến 2 chữ số thập phân
     realPoint.setX(((float)((int)(realPoint.x() * 100))) / 100);
-    realPoint.setY(((float)((int)(realPoint.y() * 100))) / 100);    
+    realPoint.setY(((float)((int)(realPoint.y() * 100))) / 100);
 
     UpdateVariable("#Test_Point.X", realPoint.x());
     UpdateVariable("#Test_Point.Y", realPoint.y());
@@ -4688,7 +4789,7 @@ void RobotWindow::ConnectExternalMCU()
 void RobotWindow::TransmitTextToExternalMCU()
 {
     emit Send(DeviceManager::DEVICE, ui->leTransmitToMCU->text());
-	ui->leTransmitToMCU->setText("");
+    ui->leTransmitToMCU->setText("");
 }
 
 void RobotWindow::DisplayTextFromExternalMCU(QString text)
@@ -4742,7 +4843,7 @@ void RobotWindow::TerminalTransmit()
         emit Send(DeviceManager::ENCODER, msg);
     }
 
-	ui->leTerminal->setText("");
+    ui->leTerminal->setText("");
 }
 
 void RobotWindow::RunExternalScript()
@@ -4760,70 +4861,70 @@ void RobotWindow::OpenExternalScriptFolder()
 
 QString RobotWindow::boldKey(QString key, QString htmlText)
 {
-	int keyOrder = htmlText.indexOf(key);
+    int keyOrder = htmlText.indexOf(key);
 
-	if (keyOrder > -1)
-	{
-		htmlText = htmlText.replace(key, QString("<span style = \" font-weight:600;\">") + key + "</span>");
-	}
+    if (keyOrder > -1)
+    {
+        htmlText = htmlText.replace(key, QString("<span style = \" font-weight:600;\">") + key + "</span>");
+    }
 
-	return htmlText;
+    return htmlText;
 }
 
 QString RobotWindow::boldPlusKey(QString key, QString plus, QString htmlText)
 {
-	int keyOrder = htmlText.indexOf(key);
+    int keyOrder = htmlText.indexOf(key);
 
-	if (keyOrder > -1)
-	{
-		htmlText = htmlText.replace(key, QString("<span style = \" font-weight:600;") + plus + "\">" + key + "</span>");
-	}
+    if (keyOrder > -1)
+    {
+        htmlText = htmlText.replace(key, QString("<span style = \" font-weight:600;") + plus + "\">" + key + "</span>");
+    }
 
-	return htmlText;
+    return htmlText;
 }
 
 QString RobotWindow::italyKey(QString key, QString htmlText)
 {
-	int keyOrder = htmlText.indexOf(key);
+    int keyOrder = htmlText.indexOf(key);
 
-	if (keyOrder > -1)
-	{
-		htmlText = htmlText.replace(key, QString("<span style=\" font - style:italic; \">") + key + "</span>");
-	}
+    if (keyOrder > -1)
+    {
+        htmlText = htmlText.replace(key, QString("<span style=\" font - style:italic; \">") + key + "</span>");
+    }
 
-	return htmlText;
+    return htmlText;
 }
 
 QString RobotWindow::replaceHtmlSection(QString start, int offset, int maxlen, QString finish, QString beforeSection, QString afterSection, QString htmlText)
 {
-	int beginKey = -1;
-	int endKey = 0;
+    int beginKey = -1;
+    int endKey = 0;
 
-	beginKey = htmlText.indexOf(start);
+    beginKey = htmlText.indexOf(start);
 
-	while (beginKey > -1)
-	{
-		if (finish != "&&&")
-		{
-			endKey = htmlText.indexOf(finish, beginKey);
-		}
-		else
-		{
-			endKey = beginKey + 1;
-			while (htmlText.at(endKey).isLetterOrNumber())
-			{
-				endKey++;
-			}
-		}
+    while (beginKey > -1)
+    {
+        if (finish != "&&&")
+        {
+            endKey = htmlText.indexOf(finish, beginKey);
+        }
+        else
+        {
+            endKey = beginKey + 1;
+            while (htmlText.at(endKey).isLetterOrNumber())
+            {
+                endKey++;
+            }
+        }
 
-		QString cmtSentence = htmlText.mid(beginKey + offset, endKey - beginKey - offset);
-		QString cmtSentenceAfter = beforeSection + cmtSentence + afterSection;
-		if (cmtSentence.length() < maxlen)
-			htmlText = htmlText.replace(beginKey + offset, endKey - beginKey - offset, cmtSentenceAfter);
-		int panOrder = htmlText.indexOf("</p>", beginKey + cmtSentenceAfter.length());
-		beginKey = htmlText.indexOf(start, panOrder);
-	}
-	return htmlText;
+        QString cmtSentence = htmlText.mid(beginKey + offset, endKey - beginKey - offset);
+        QString cmtSentenceAfter = beforeSection + cmtSentence + afterSection;
+        if (cmtSentence.length() < maxlen)
+            htmlText = htmlText.replace(beginKey + offset, endKey - beginKey - offset, cmtSentenceAfter);
+        int panOrder = htmlText.indexOf("</p>", beginKey + cmtSentenceAfter.length());
+        beginKey = htmlText.indexOf(start, panOrder);
+    }
+    return htmlText;
 }
 
 bool RobotWindow::openConnectionDialog(QSerialPort * comPort, QTcpSocket* socket, QPushButton* connectButton, QLabel* comNameInfo)
@@ -4831,93 +4932,93 @@ bool RobotWindow::openConnectionDialog(QSerialPort * comPort, QTcpSocket* socket
     if (comPort == NULL)
         return false;
 
-	if (connectButton->text() == "Disconnect")
-	{
-		if (comPort->isOpen())
-		{
-			comPort->close();
-		}
-		if (socket->isOpen())
-		{
-			socket->close();
-		}
+    if (connectButton->text() == "Disconnect")
+    {
+        if (comPort->isOpen())
+        {
+            comPort->close();
+        }
+        if (socket->isOpen())
+        {
+            socket->close();
+        }
 
-		connectButton->setText("Connect");
+        connectButton->setText("Connect");
         comNameInfo->setText("");
-		return false;
-	}
+        return false;
+    }
 
-	QStringList connectionItems;
-	connectionItems.append("COM");
-	connectionItems.append("WIFI");
-	bool ok;
+    QStringList connectionItems;
+    connectionItems.append("COM");
+    connectionItems.append("WIFI");
+    bool ok;
 
-	QString connectionType = QInputDialog::getItem(this, tr("Connection"), tr("Type:"), connectionItems, 0, false, &ok);
+    QString connectionType = QInputDialog::getItem(this, tr("Connection"), tr("Type:"), connectionItems, 0, false, &ok);
 
-	if (ok)
-	{
-		if (connectionType == "WIFI")
-		{
-			bool ok2;
-			QString address = QInputDialog::getText(this, tr("ADDRESS"), tr("IP:PORT"), QLineEdit::Normal, "192.168.1.12:80", &ok2);
+    if (ok)
+    {
+        if (connectionType == "WIFI")
+        {
+            bool ok2;
+            QString address = QInputDialog::getText(this, tr("ADDRESS"), tr("IP:PORT"), QLineEdit::Normal, "192.168.1.12:80", &ok2);
 
-			if (address.indexOf(':') > -1)
-			{
-				QString ip = address.split(':').at(0);
-				QString Port = address.split(':').at(1);
-				socket->connectToHost(QHostAddress(ip), Port.toInt());
+            if (address.indexOf(':') > -1)
+            {
+                QString ip = address.split(':').at(0);
+                QString Port = address.split(':').at(1);
+                socket->connectToHost(QHostAddress(ip), Port.toInt());
 
-				if (socket->open((QIODevice::ReadWrite)) == true)
-				{
-					connectButton->setText("Disconnect");
-					return true;
-				}
-			}
-			
-		}
-		else if (connectionType == "COM")
-		{
-			QStringList items;
+                if (socket->open((QIODevice::ReadWrite)) == true)
+                {
+                    connectButton->setText("Disconnect");
+                    return true;
+                }
+            }
 
-			Q_FOREACH(QSerialPortInfo portInfo, QSerialPortInfo::availablePorts())
-			{
+        }
+        else if (connectionType == "COM")
+        {
+            QStringList items;
+
+            Q_FOREACH(QSerialPortInfo portInfo, QSerialPortInfo::availablePorts())
+            {
                 QSerialPort serial(portInfo);
                 if(serial.open(QIODevice::ReadWrite))
                 {
                     items << portInfo.portName() + " - " + portInfo.description();
                     serial.close();
                 }
-			}
+            }
 
-			bool ok;
-			QString item = QInputDialog::getItem(this, tr("COM Connection"), tr("COM Ports:"), items, 0, false, &ok);
+            bool ok;
+            QString item = QInputDialog::getItem(this, tr("COM Connection"), tr("COM Ports:"), items, 0, false, &ok);
             QString comName = item.mid(0, item.indexOf(" - "));
 
-			if (ok && !item.isEmpty())
-			{
-				bool ok2;
-				QString baudrate = QInputDialog::getText(this, tr("Select Baudrate"), tr("Baudrate:"), QLineEdit::Normal, "115200", &ok2);
-				if (ok2 && !baudrate.isEmpty())
-				{
+            if (ok && !item.isEmpty())
+            {
+                bool ok2;
+                QString baudrate = QInputDialog::getText(this, tr("Select Baudrate"), tr("Baudrate:"), QLineEdit::Normal, "115200", &ok2);
+                if (ok2 && !baudrate.isEmpty())
+                {
                     comPort->setPortName(comName);
-					comPort->setBaudRate(baudrate.toInt());
+                    comPort->setBaudRate(baudrate.toInt());
 
-					if (comPort->open((QIODevice::ReadWrite)) == true)
-					{
-						//QMessageBox::information(this, "Noti", "Connected");
+                    if (comPort->open((QIODevice::ReadWrite)) == true)
+                    {
+                        //QMessageBox::information(this, "Noti", "Connected");
 
-						connectButton->setText("Disconnect");
+                        connectButton->setText("Disconnect");
 
                         comNameInfo->setText(comName);
 
-						return true;
-					}
-				}
-			}
-		}
-	}
+                        return true;
+                    }
+                }
+            }
+        }
+    }
 
-	return false;
+    return false;
 }
 
 void RobotWindow::UpdateTermite(QString device, QString mess, int direction)
@@ -4967,32 +5068,32 @@ void RobotWindow::UpdateCameraConnectedState(bool isOpen)
 
 void RobotWindow::interpolateCircle()
 {
-	float r = 120;
-	int resolution = 120;
-	float raMinAngle;
-	int xO = 0;
-	int yO = 0;
-	int x;
-	int y;
-	float raAngle;
-	QString gcode;
+    float r = 120;
+    int resolution = 120;
+    float raMinAngle;
+    int xO = 0;
+    int yO = 0;
+    int x;
+    int y;
+    float raAngle;
+    QString gcode;
 
-	raMinAngle = qDegreesToRadians(360.0f / resolution);
+    raMinAngle = qDegreesToRadians(360.0f / resolution);
 
-	for (int i = 0; i < resolution; i++)
-	{
-		raAngle = raMinAngle * i;
-		x = xO + r * qCos(raAngle);
-		y = yO + r * qSin(raAngle);
-		gcode += QString("G01 X") + QString::number(x) + " Y" + QString::number(y) + "\n";
-	}
+    for (int i = 0; i < resolution; i++)
+    {
+        raAngle = raMinAngle * i;
+        x = xO + r * qCos(raAngle);
+        y = yO + r * qSin(raAngle);
+        gcode += QString("G01 X") + QString::number(x) + " Y" + QString::number(y) + "\n";
+    }
 
-	ui->pteGcodeArea->setPlainText(gcode);
+    ui->pteGcodeArea->setPlainText(gcode);
 }
 
 void RobotWindow::makeEffectExample()
 {
-	QCursor cursorTarget = QCursor(QPixmap("icon/Zoom In_16px.png"));
+    QCursor cursorTarget = QCursor(QPixmap("icon/Zoom In_16px.png"));
     ui->lbDrawingArea->setCursor(cursorTarget);
 }
 
@@ -5073,7 +5174,7 @@ void RobotWindow::onImageItemClicked(QListWidgetItem *item)
 {
     QString imagePath = item->data(Qt::UserRole).toString();
 
-    // Hiển thị ảnh từ imagePath trên cửa sổ ImageLabel, 
+    // Hiển thị ảnh từ imagePath trên cửa sổ ImageLabel,
     // khi người dùng chọn một ảnh khác thì ảnh được load vào cửa sổ đó
     // Khi người dùng tắt thì xóa cửa sổ đó
 
@@ -5224,7 +5325,7 @@ void RobotWindow::runPythonFile(QString filePath)
 }
 
 void RobotWindow::OpenLoadingPopup()
-{    
+{
     lbLoadingPopup->show();
     mvLoadingPopup->start();
 }

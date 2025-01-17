@@ -320,6 +320,7 @@ public slots:
     void UpdateJerk();
 	void AdjustGripperAngle(int angle);
 	void Grip();
+    void Jogging(QString direction, bool isMove);
 
     void MoveRobot(QString gcode);
     void MoveRobot(QString axis, float step);

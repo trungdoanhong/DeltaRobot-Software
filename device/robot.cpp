@@ -6,6 +6,8 @@ Robot::Robot(QString COM, int baudrate, bool is_open, QObject *parent) : Device(
     connect(this, SIGNAL(receivedMsg(QString, QString)), this, SLOT(ProcessResponse(QString, QString)));
     this->scurve_tool = Scurve_Interpolator();
 
+    StepVector = QVector3D(0, 0, 0);
+
     X = 0;
     Y = 0;
     Z = 0;
@@ -35,8 +37,16 @@ Robot::~Robot()
 
 QString Robot::SendGcode(QString gcode, bool is_wait, int time_out)
 {
+    if (checkJoggingCmd(gcode))
+    {
+        IsGcodeDone = true;
+        emit receivedMsg(idName, "Ok");
+        return "";
+    }
+
     if (checkSetSyncPathCmd(gcode))
     {
+        IsGcodeDone = true;
         emit receivedMsg(idName, "Ok");
         return "";
     }
@@ -81,6 +91,8 @@ void Robot::ProcessResponse(QString id, QString response) {
 
     jsonObject["response"] = response;
 //    emit Log(idName, response, 0);
+
+    ProcessNextMove();
 
     if (now_gcode.count("G28") > 0 || now_gcode.count("M85"))
     {
@@ -259,6 +271,28 @@ bool Robot::checkSetSyncPathCmd(QString cmd)
 
     // Print the results
 //    qDebug() << "Speed: " << path_vel << ", Angle: " << qRadiansToDegrees(path_angle) << " degrees.";
+    return true;
+}
+
+bool Robot::checkJoggingCmd(QString cmd)
+{
+    QRegularExpression re("^\\s*jogging\\s*\\(\\s*([+-]?\\d+(?:\\.\\d+)?)\\s*,\\s*([+-]?\\d+(?:\\.\\d+)?)\\s*,\\s*([+-]?\\d+(?:\\.\\d+)?)\\s*\\)\\s*$");
+
+    QRegularExpressionMatch match = re.match(cmd);
+    if (!match.hasMatch()) {
+        // Không đúng format
+        return false;
+    }
+
+    // Nếu match, chuyển sang số thực
+    float x = match.captured(1).toDouble();
+    float y = match.captured(2).toDouble();
+    float z = match.captured(3).toDouble();
+
+    StepVector.setX(x);
+    StepVector.setY(y);
+    StepVector.setZ(z);
+
     return true;
 }
 
@@ -570,71 +604,63 @@ void Robot::Sleep(int time_ms=1000, bool sync=false)
     }
 }
 
-void Robot::Move(float x = 0, float y = 0, float z = 0, float w = 0, float u = 0, float v = 0, float f = 0, float a = 0, float s = 0, float e = 0, float j = 0, bool sync = false, float time_offset = 0)
+void Robot::Move(float x, float y, float z, float w, float u, float v, float f, float a, float s, float e, float j, bool sync, float time_offset)
 {
     QString gcode = "G01";
+
+    // Lưu lại vị trí cũ (nếu cần)
     old_X = X;
     old_Y = Y;
     old_Z = Z;
 
-    if (x != NULL)
-    {
+    // 1) Kiểm tra từng tham số. Nếu != NaN => người dùng có truyền.
+    if (!std::isnan(x)) {
         X = x;
         gcode += " X" + QString::number(X);
     }
-    if (y != NULL)
-    {
+    if (!std::isnan(y)) {
         Y = y;
         gcode += " Y" + QString::number(Y);
     }
-    if (z != NULL)
-    {
+    if (!std::isnan(z)) {
         Z = z;
         gcode += " Z" + QString::number(Z);
     }
-    if (w != NULL)
-    {
+    if (!std::isnan(w)) {
         W = w;
         gcode += " W" + QString::number(W);
     }
-    if (u != NULL)
-    {
+    if (!std::isnan(u)) {
         U = u;
         gcode += " U" + QString::number(U);
     }
-    if (v != NULL)
-    {
+    if (!std::isnan(v)) {
         V = v;
         gcode += " V" + QString::number(V);
     }
-    if (f != NULL)
-    {
+    if (!std::isnan(f)) {
         F = f;
-        scurve_tool.setMaxVel(F);
+        // Giả sử scurve_tool.setMaxVel(F);
         gcode += " F" + QString::number(F);
     }
-    if (a != NULL)
-    {
+    if (!std::isnan(a)) {
         A = a;
-        scurve_tool.setMaxAcc(A);
+        // Giả sử scurve_tool.setMaxAcc(A);
         gcode += " A" + QString::number(A);
     }
-    if (s != NULL)
-    {
+    if (!std::isnan(s)) {
         S = s;
-        scurve_tool.setVelStart(S);
+        // Giả sử scurve_tool.setVelStart(S);
         gcode += " S" + QString::number(S);
     }
-    if (E != NULL)
-    {
-        E = E;
-        scurve_tool.setVelEnd(E);
+    if (!std::isnan(e)) {
+        E = e;
+        // Giả sử scurve_tool.setVelEnd(E);
         gcode += " E" + QString::number(E);
     }
-    if (J != NULL)
-    {
-        J = J;
-        scurve_tool.setMaxJerk(J);
+    if (!std::isnan(j)) {
+        J = j;
+        // Giả sử scurve_tool.setMaxJerk(J);
         gcode += " J" + QString::number(J);
     }
 
@@ -689,4 +715,13 @@ void Robot::MovePoint(QVector3D point)
 void Robot::SetRobotModel(QString robot)
 {
     robotModel = robot;
+}
+
+void Robot::ProcessNextMove()
+{
+    if (IsGcodeDone == false || StepVector == QVector3D(0,0,0))
+        return;
+
+    QVector3D desPoint = StepVector + QVector3D(X, Y, Z);
+    MovePoint(desPoint);
 }

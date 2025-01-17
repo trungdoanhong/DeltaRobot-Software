@@ -24,6 +24,7 @@ public:
     void SetOutput(int pin, bool state);
     void MovePoint(QVector3D point);
     void SetRobotModel(QString robot);
+    void ProcessNextMove();
 
     float X,Y,Z,W,U,V,F,S,E,A,J;
 
@@ -35,11 +36,27 @@ public slots:
     void ProcessResponse(QString id, QString response = "");
     void Sleep(int time_ms, bool sync);
     void GoHome();
-    void Move(float x, float y, float z, float w, float u, float v, float f, float a, float s, float e, float j, bool sync, float time_offset);
+    void Move(
+            float x = std::numeric_limits<float>::quiet_NaN(),
+            float y = std::numeric_limits<float>::quiet_NaN(),
+            float z = std::numeric_limits<float>::quiet_NaN(),
+            float w = std::numeric_limits<float>::quiet_NaN(),
+            float u = std::numeric_limits<float>::quiet_NaN(),
+            float v = std::numeric_limits<float>::quiet_NaN(),
+            float f = std::numeric_limits<float>::quiet_NaN(),
+            float a = std::numeric_limits<float>::quiet_NaN(),
+            float s = std::numeric_limits<float>::quiet_NaN(),
+            float e = std::numeric_limits<float>::quiet_NaN(),
+            float j = std::numeric_limits<float>::quiet_NaN(),
+            bool  sync = false,
+            float time_offset = 0.0f
+        );
     void MoveStep(QString direction, float step);
     QString GetInfo();
 
 private:
+
+    QVector3D StepVector;
     QString done_msg;
     QString last_gcode;
     QString now_gcode;
@@ -60,6 +77,7 @@ private:
     bool getPara(QString gcode);
     void calMoveTime();
     bool checkSetSyncPathCmd(QString cmd);
+    bool checkJoggingCmd(QString cmd);
     QString syncGcode(QString cmd);
     double calculateMovingTime(double distance);
     QVector3D calculateSyncPosition(QVector3D robotPos, QVector3D objectPos, QVector3D beltVelocity, double tolerance = 1e-3);

@@ -3,7 +3,6 @@
 
 #include <QSettings>
 #include <QVariant>
-//#include <unordered_map>
 #include <QHash>
 #include <mutex>
 #include <string>
@@ -11,6 +10,7 @@
 #include <QVector3D>
 #include <UnityTool.h>
 #include <ObjectInfo.h>
+#include <memory> // For smart pointers
 
 class VariableManager : public QObject
 {
@@ -41,7 +41,8 @@ public:
 
     QString Prefix = "";
 
-    QHash<QString, QVector<ObjectInfo>*> ObjectInfos;
+//    QHash<QString, QVector<ObjectInfo>*> ObjectInfos;
+    QHash<QString, std::shared_ptr<QVector<ObjectInfo>>> ObjectInfos;
 
 public slots:
     void UpdateVarToModel(QString key, QVariant value);
@@ -53,11 +54,7 @@ signals:
 private:
     const QString getFullKey(const QString key);
 
-    VariableManager() : settings("./settings.ini", QSettings::IniFormat)
-    {
-
-    }
-//    std::map<QString, QVariant> dataMap;
+    VariableManager() : settings("./settings.ini", QSettings::IniFormat){}
     QHash<QString, QVariant> dataMap;
     std::mutex dataMutex;
     QSettings settings;

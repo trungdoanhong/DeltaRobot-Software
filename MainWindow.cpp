@@ -19,7 +19,6 @@ void MainWindow::InitVariables()
     ui->tvVariables->setModel(&VariableTreeModel);
     VariableManager::instance().addItemModel(&VariableTreeModel);
 
-
     VariableManager::instance().loadFromQSettings();
 
     connect(ui->tvVariables, &QTreeView::clicked, this, &MainWindow::onTreeViewItemClicked);
@@ -681,20 +680,28 @@ void MainWindow::on_pbUpdateVarDisplay_clicked()
 void MainWindow::on_pbDeleteSelectedVar_clicked()
 {
     QModelIndexList selectedIndexes = ui->tvVariables->selectionModel()->selectedIndexes();
-    if(!selectedIndexes.isEmpty())
+    if (!selectedIndexes.isEmpty())
     {
-        // Assuming you are using QStandardItemModel
         QStandardItemModel* model = qobject_cast<QStandardItemModel*>(ui->tvVariables->model());
-        if(model)
+        if (model)
         {
             // Get the index of the selected item
             QModelIndex index = selectedIndexes.first();
-            // Get the item of the model
-            QStandardItem* item = model->itemFromIndex(index);
-            // Remove the item
-            model->removeRow(item->row(), index.parent());
+            int rowToDelete = index.row();
+            QModelIndex parent = index.parent();
 
+            // Remove the item
+            model->removeRow(rowToDelete, parent);
+
+            // Remove variable from VariableManager
             VariableManager::instance().removeVar(ui->leUpdateKey->text());
+
+            // Automatically select the next item (below the deleted one) if available
+            if (rowToDelete < model->rowCount(parent))
+            {
+                QModelIndex nextIndex = model->index(rowToDelete, 0, parent); // Select the item below
+                onTreeViewItemClicked(nextIndex);
+            }
         }
     }
 }

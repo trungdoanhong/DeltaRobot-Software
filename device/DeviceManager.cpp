@@ -59,7 +59,7 @@ void DeviceManager::AddRobot(QString address="auto")
     robot->moveToThread(robotThread);
 
     connect(robotThread, SIGNAL(started()), robot, SLOT(Run()));
-    connect(robot, &Robot::receivedMsg, [=](QString id, QString response){ emit DeviceResponded(id, response); });
+    connect(robot, &Robot::receivedMsg, this, &DeviceManager::DeviceResponded);
     connect(robot, &Robot::infoReady, this, &DeviceManager::GotDeviceInfo);
     connect(robot, &Robot::Log, this, &DeviceManager::Log);
 

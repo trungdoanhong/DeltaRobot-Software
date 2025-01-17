@@ -59,6 +59,9 @@
               <layout class="QVBoxLayout" name="verticalLayout_5">
                <item>
                 <widget class="QLabel" name="cameraLabel">
+                 <property name="styleSheet">
+                  <string notr="true">background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgba(0, 170, 255, 255), stop:1 rgba(0, 255, 255, 255));</string>
+                 </property>
                  <property name="text">
                   <string>TextLabel</string>
                  </property>
