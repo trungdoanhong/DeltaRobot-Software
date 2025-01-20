@@ -15,6 +15,7 @@ MainWindow::MainWindow(QWidget *parent) :
 void MainWindow::InitVariables()
 {
     //-------- Variable -----------
+    ui->tvVariables->header()->setSectionResizeMode(QHeaderView::Stretch); // Giãn đều các cột
 
     ui->tvVariables->setModel(&VariableTreeModel);
     VariableManager::instance().addItemModel(&VariableTreeModel);
@@ -316,8 +317,8 @@ void MainWindow::OpenProjectFromFile()
 
 void MainWindow::SaveProjectToFile()
 {
-    if (SoftwareManager::GetInstance()->RunningScriptThreadNumber > 0)
-        return;
+//    if (SoftwareManager::GetInstance()->RunningScriptThreadNumber > 0)
+//        return;
 
     VariableManager::instance().saveToQSettings();
 

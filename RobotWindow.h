@@ -122,11 +122,11 @@ public:
     void LoadTrackingThread();
 
     void LoadSettings();
-    void LoadGeneralSettings();
+    void LoadDeviceStatus();
     void LoadJoggingSettings(QSettings* setting);
     void Load2DSettings(QSettings* setting);
     void Load3DSettings(QSettings* setting);
-    void LoadExternalDeviceSettings();
+    void LoadDeviceSettings();
     void LoadTerminalSettings(QSettings* setting);
     void LoadGcodeEditorSettings(QSettings* setting);
     void LoadObjectDetectorSetting();

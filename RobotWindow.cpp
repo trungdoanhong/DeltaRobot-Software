@@ -1647,11 +1647,11 @@ void RobotWindow::LoadTrackingThread()
 
 void RobotWindow::LoadSettings()
 {
-    LoadGeneralSettings();
+    LoadDeviceStatus();
 //    LoadJoggingSettings(setting);
 //    Load2DSettings(setting);
 //    Load3DSettings(setting);
-    LoadExternalDeviceSettings();
+    LoadDeviceSettings();
 //    LoadTerminalSettings(setting);
 //    LoadGcodeEditorSettings(setting);
     LoadObjectDetectorSetting();
@@ -1659,7 +1659,7 @@ void RobotWindow::LoadSettings()
 //    LoadPluginSetting(setting);
 }
 
-void RobotWindow::LoadGeneralSettings()
+void RobotWindow::LoadDeviceStatus()
 {
     QStringList devices = QStringList() << "robot" << "conveyor" << "encoder" << "slider" << "device";
 
@@ -1704,10 +1704,15 @@ void RobotWindow::Load3DSettings(QSettings *setting)
 
 }
 
-void RobotWindow::LoadExternalDeviceSettings()
+void RobotWindow::LoadDeviceSettings()
 {
+    //---- Robot ----
+    QString prefix = ProjectName + "." + ui->cbSelectedRobot->currentText() + ".";
+    ui->cbRobotModel->setCurrentIndex(VariableManager::instance().getVar(prefix + "ModelID").toInt());
+    ui->cbRobotDOF->setCurrentIndex(VariableManager::instance().getVar(prefix + "DOF").toInt());
+
     //---- Conveyor -----
-    QString prefix = ProjectName + "." + ui->cbSelectedConveyor->currentText() + ".";
+    prefix = ProjectName + "." + ui->cbSelectedConveyor->currentText() + ".";
 
     ui->cbConveyorType->setCurrentIndex(VariableManager::instance().getVar(prefix + "ConveyorType").toInt());
     ui->cbConveyorMode->setCurrentIndex(VariableManager::instance().getVar(prefix + "ConveyorMode").toInt());
@@ -1792,76 +1797,25 @@ void RobotWindow::LoadObjectDetectorSetting()
     bool IsCameraOpen = VariableManager::instance().getVar(prefix + "IsOpen", false).toBool();
     int cameraID = VariableManager::instance().getVar(prefix + "CameraID", 0).toInt();
 
-//    if (IsCameraOpen == true)
-//    {
-//        if (imageSource == "Industrial Camera")
-//        {
-//            DeltaXPlugin* camera = industrialCameraPlugin;
-//            QTimer::singleShot(2000, [camera, cameraID]() {
-//                emit camera->RequestConnect(cameraID);
-//            });
-//        }
-//        else if (imageSource == "Webcam")
-//        {
-//            QMetaObject::invokeMethod(CameraInstance, "OpenCamera", Qt::QueuedConnection, Q_ARG(int, cameraID));
-//        }
-//    }
-
-
-
-//    Object& obj = ImageProcessingInstance->GetNode("GetObjectsNode")->GetInputObject();
-
-//    obj.Width.Image = setting->value("ObjectWidth", obj.Width.Image).toFloat();
-//    obj.Length.Image = setting->value("ObjectLength", obj.Length.Image).toFloat();
-
-//    obj.Width.Real = setting->value("RealObjectWidth", ui->leWRec->text()).toFloat();
-//    obj.Length.Real = setting->value("RealObjectLength", ui->leLRec->text()).toFloat();
-
-
-//    obj.RangeWidth.Max.Image = setting->value("ImageMaxObjectWidth", ui->leMaxWRec->text()).toFloat();
-//    obj.RangeWidth.Min.Image = setting->value("ImageMinObjectWidth", ui->leMinWRec->text()).toFloat();
-//    obj.RangeLength.Max.Image = setting->value("ImageMaxObjectLength", ui->leMaxLRec->text()).toFloat();
-//    obj.RangeLength.Min.Image = setting->value("ImageMinObjectLength", ui->leMinLRec->text()).toFloat();
-
-//    ui->leWRec->setText(QString::number(obj.Width.Real));
-//    ui->leLRec->setText(QString::number(obj.Length.Real));
-
-
-//    obj.RangeWidth.Max.Real = setting->value("MaxObjectWidth", ui->leMaxWRec->text()).toFloat();
-//    obj.RangeWidth.Min.Real = setting->value("MinObjectWidth", ui->leMinWRec->text()).toFloat();
-//    obj.RangeLength.Max.Real = setting->value("MaxObjectLength", ui->leMaxLRec->text()).toFloat();
-//    obj.RangeLength.Min.Real = setting->value("MinObjectLength", ui->leMinLRec->text()).toFloat();
-
-//    ui->leMinWRec->setText(QString::number(obj.RangeWidth.Min.Real));
-//    ui->leMaxWRec->setText(QString::number(obj.RangeWidth.Max.Real));
-//    ui->leMinLRec->setText(QString::number(obj.RangeLength.Min.Real));
-//    ui->leMaxLRec->setText(QString::number(obj.RangeLength.Max.Real));
-
-//    emit GotOjectFilterInfo(obj);
-
-//    ui->leObjectOverlay->setText(setting->value("TrackingError", ui->leObjectOverlay->text()).toString());
-
-
-//    QPointF calibPoint1 = setting->value("RealCalibPoint1", QPointF(ui->leRealityPoint1X->text().toFloat(), ui->leRealityPoint1Y->text().toFloat())).toPointF();
-//    QPointF calibPoint2 = setting->value("RealCalibPoint2", QPointF(ui->leRealityPoint2X->text().toFloat(), ui->leRealityPoint2Y->text().toFloat())).toPointF();
-//    ui->leRealityPoint1X->setText(QString::number(calibPoint1.x()));
-//    ui->leRealityPoint1Y->setText(QString::number(calibPoint1.y()));
-//    ui->leRealityPoint2X->setText(QString::number(calibPoint2.x()));
-//    ui->leRealityPoint2Y->setText(QString::number(calibPoint2.y()));
+    if (IsCameraOpen == true)
+    {
+        if (imageSource == "Industrial Camera")
+        {
+            DeltaXPlugin* camera = industrialCameraPlugin;
+            QTimer::singleShot(2000, [camera, cameraID]() {
+                emit camera->RequestConnect(cameraID);
+            });
+        }
+        else if (imageSource == "Webcam")
+        {
+            QMetaObject::invokeMethod(CameraInstance, "OpenCamera", Qt::QueuedConnection, Q_ARG(int, cameraID));
+        }
+    }
 
     ui->cbDetectingAlgorithm->setCurrentText(VariableManager::instance().getVar(prefix + "DetectAlgorithm", ui->cbDetectingAlgorithm->currentText()).toString());
 
-//    ui->lePythonUrl->setText(setting->value("ExternalScriptUrl", ui->lePythonUrl->text()).toString());
     ui->cbImageSource->setCurrentText(VariableManager::instance().getVar(prefix + "ImageSource", ui->cbImageSource->currentText()).toString());
 
-//    ui->leEdgeThreshold->setText(setting->value("EdgeThreshold", ui->leEdgeThreshold->text()).toString());
-//    ui->leCenterThreshold->setText(setting->value("CenterThreshold", ui->leCenterThreshold->text()).toString());
-//    ui->leMinRadius->setText(setting->value("MinRadius", ui->leMinRadius->text()).toString());
-//    ui->leMaxRadius->setText(setting->value("MaxRadius", ui->leMaxRadius->text()).toString());
-
-//    ParameterPanel->RequestValue();
-
-//    setting->endGroup();
 }
 
 void RobotWindow::LoadDrawingSetting(QSettings *setting)
@@ -2664,6 +2618,9 @@ void RobotWindow::ChangeRobotDOF(int id)
         emit Send(DeviceManager::ROBOT, QString("M61 D1"));
         emit Send(DeviceManager::ROBOT, QString("M62 D1"));
     }
+
+    QString prefix = ProjectName + "." + ui->cbSelectedRobot->currentText() + ".";
+    VariableManager::instance().updateVar(prefix + "DOF", ui->cbRobotDOF->currentIndex());
 }
 
 void RobotWindow::ChangeRobotModel(int id)
@@ -2682,6 +2639,9 @@ void RobotWindow::ChangeRobotModel(int id)
         ui->gbOutput->setVisible(true);
         ui->gbInput->setVisible(true);
     }
+
+    QString prefix = ProjectName + "." + ui->cbSelectedRobot->currentText() + ".";
+    VariableManager::instance().updateVar(prefix + "ModelID", ui->cbRobotModel->currentIndex());
 }
 
 

@@ -607,6 +607,8 @@ public:
 
         tvVariables = new QTreeView(pVariable);
         tvVariables->setObjectName(QString::fromUtf8("tvVariables"));
+        tvVariables->setAlternatingRowColors(true);
+        tvVariables->header()->setCascadingSectionResizes(false);
 
         verticalLayout_4->addWidget(tvVariables);
 

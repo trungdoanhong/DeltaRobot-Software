@@ -690,7 +690,14 @@ border-right: 5px solid rgb(24, 70, 139);</string>
                </widget>
               </item>
               <item>
-               <widget class="QTreeView" name="tvVariables"/>
+               <widget class="QTreeView" name="tvVariables">
+                <property name="alternatingRowColors">
+                 <bool>true</bool>
+                </property>
+                <attribute name="headerCascadingSectionResizes">
+                 <bool>false</bool>
+                </attribute>
+               </widget>
               </item>
              </layout>
             </widget>

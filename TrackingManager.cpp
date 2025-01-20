@@ -151,7 +151,7 @@ void Tracking::UpdateTrackedObjectOffsets(QVector3D offset)
             continue;
 
         // This is a new object
-        TrackedObjects.append(ObjectInfo(nextID, detected.type, detected.center, detected.width, detected.height, detected.angle));
+        TrackedObjects.append(ObjectInfo(nextID, detected.type, detected.center, detected.width, detected.length, detected.angle));
 
         //TODO: tim cach cap nhat vao bien nhung van dam bao toc do
 //        VariableManager::instance().updateVar((ListName + ".%1.X").arg(nextID), detected.center.x());
@@ -302,7 +302,7 @@ double Tracking::similarity(ObjectInfo &obj1, ObjectInfo &obj2, double displacem
     // Calculate "error" based on distance from predicted position to obj2 position
     double positionError = (predictedCenter - obj2.center).length();
 
-    double sizeDifference = std::abs(obj1.width * obj1.height - obj2.width * obj2.height);
+    double sizeDifference = std::abs(obj1.width * obj1.length - obj2.width * obj2.length);
 //    double angleDifference = std::abs(obj1.angle - obj2.angle);
 
     // Compute a similarity score
@@ -316,13 +316,13 @@ double Tracking::calculateIoU(ObjectInfo &object1, ObjectInfo &object2)
     // 1. Calculate overlap area
     double x_overlap = std::max(0.0, std::min(object1.center.x() + object1.width / 2, object2.center.x() + object2.width / 2) -
                                       std::max(object1.center.x() - object1.width / 2, object2.center.x() - object2.width / 2));
-    double y_overlap = std::max(0.0, std::min(object1.center.y() + object1.height / 2, object2.center.y() + object2.height / 2) -
-                                      std::max(object1.center.y() - object1.height / 2, object2.center.y() - object2.height / 2));
+    double y_overlap = std::max(0.0, std::min(object1.center.y() + object1.length / 2, object2.center.y() + object2.length / 2) -
+                                      std::max(object1.center.y() - object1.length / 2, object2.center.y() - object2.length / 2));
     double overlapArea = x_overlap * y_overlap;
 
     // 2. Calculate union area
-    double box1Area = object1.width * object1.height;
-    double box2Area = object2.width * object2.height;
+    double box1Area = object1.width * object1.length;
+    double box2Area = object2.width * object2.length;
     double unionArea = box1Area + box2Area - overlapArea;
 
     // 3. Calculate IoU
