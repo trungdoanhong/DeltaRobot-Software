@@ -6,10 +6,13 @@
 
 QT       += core gui serialport opengl network quickwidgets printsupport multimedia svg concurrent widgets
 
+# Source directory
+SRC_DIR = $$PWD/src/1.0
+
 windows {
-    INCLUDEPATH += $$PWD\3rd-party\opencv\build\include
-    LIBS += $$PWD\3rd-party\opencv\build\x64\vc15\lib\opencv_world400.lib
-    LIBS += $$PWD\3rd-party\opencv\build\x64\vc15\lib\opencv_world400d.lib
+    INCLUDEPATH += $$PWD/3rd-party/opencv/build/include
+    LIBS += $$PWD/3rd-party/opencv/build/x64/vc15/lib/opencv_world400.lib
+    LIBS += $$PWD/3rd-party/opencv/build/x64/vc15/lib/opencv_world400d.lib
 
 #    include ($$PWD\3rd-party\QJoysticks\QJoysticks.pri)
 }
@@ -41,109 +44,109 @@ CONFIG += c++14
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
-    main.cpp \
-    AccountWindow.cpp \
-    Authority.cpp \
-    ComDevice.cpp \
-    DrawingExporter.cpp \
-    DrawingWidget.cpp \
-    FilterWindow.cpp \
-    GcodeHighlighter.cpp \
-    GcodeReference.cpp \
-    GcodeScript.cpp \
-    ImageProcessing.cpp \
-    ImageViewer.cpp \
-    Layer.cpp \
-    MainWindow.cpp \
-    Object.cpp \
-    ObjectInfo.cpp \
-    ObjectVariableTable.cpp \
-    Parameter.cpp \
-    PointTool.cpp \
-    ProjectManager.cpp \
-    RobotWindow.cpp \
-    SmartDialog.cpp \
-    SocketConnectionManager.cpp \
-    SoftwareManager.cpp \
-    TabDashboard.cpp \
-    TaskNode.cpp \
-    TestCode.cpp \
-    TextLayer.cpp \
-    TrackingManager.cpp \
-    VariableManager.cpp \
-    VersionManager.cpp \
-    codeeditor.cpp \
-    DeltaVisualizer.cpp \
-    UnityTool.cpp \
-    device/DeviceManager.cpp \
-    device/camera.cpp \
-    device/conveyor.cpp \
-    device/device.cpp \
-    device/encoder.cpp \
-    device/robot.cpp \
-    device/slider.cpp \
-    geisttextedit.cpp \
-    global.cpp \
-    highlighter.cpp \
-    testwindow.cpp
+    $$SRC_DIR/main.cpp \
+    $$SRC_DIR/AccountWindow.cpp \
+    $$SRC_DIR/Authority.cpp \
+    $$SRC_DIR/ComDevice.cpp \
+    $$SRC_DIR/DrawingExporter.cpp \
+    $$SRC_DIR/DrawingWidget.cpp \
+    $$SRC_DIR/FilterWindow.cpp \
+    $$SRC_DIR/GcodeHighlighter.cpp \
+    $$SRC_DIR/GcodeReference.cpp \
+    $$SRC_DIR/GcodeScript.cpp \
+    $$SRC_DIR/ImageProcessing.cpp \
+    $$SRC_DIR/ImageViewer.cpp \
+    $$SRC_DIR/Layer.cpp \
+    $$SRC_DIR/MainWindow.cpp \
+    $$SRC_DIR/Object.cpp \
+    $$SRC_DIR/ObjectInfo.cpp \
+    $$SRC_DIR/ObjectVariableTable.cpp \
+    $$SRC_DIR/Parameter.cpp \
+    $$SRC_DIR/PointTool.cpp \
+    $$SRC_DIR/ProjectManager.cpp \
+    $$SRC_DIR/RobotWindow.cpp \
+    $$SRC_DIR/SmartDialog.cpp \
+    $$SRC_DIR/SocketConnectionManager.cpp \
+    $$SRC_DIR/SoftwareManager.cpp \
+    $$SRC_DIR/TabDashboard.cpp \
+    $$SRC_DIR/TaskNode.cpp \
+    $$SRC_DIR/TestCode.cpp \
+    $$SRC_DIR/TextLayer.cpp \
+    $$SRC_DIR/TrackingManager.cpp \
+    $$SRC_DIR/VariableManager.cpp \
+    $$SRC_DIR/VersionManager.cpp \
+    $$SRC_DIR/codeeditor.cpp \
+    $$SRC_DIR/DeltaVisualizer.cpp \
+    $$SRC_DIR/UnityTool.cpp \
+    $$SRC_DIR/device/DeviceManager.cpp \
+    $$SRC_DIR/device/camera.cpp \
+    $$SRC_DIR/device/conveyor.cpp \
+    $$SRC_DIR/device/device.cpp \
+    $$SRC_DIR/device/encoder.cpp \
+    $$SRC_DIR/device/robot.cpp \
+    $$SRC_DIR/device/slider.cpp \
+    $$SRC_DIR/geisttextedit.cpp \
+    $$SRC_DIR/global.cpp \
+    $$SRC_DIR/highlighter.cpp \
+    $$SRC_DIR/testwindow.cpp
 
 HEADERS += \
-    AccountWindow.h \
-    Authority.h \
-    ComDevice.h \
-    DeltaVisualizer.h \
-    DrawingExporter.h \
-    DrawingWidget.h \
-    FilterWindow.h \
-    GcodeHighlighter.h \
-    GcodeReference.h \
-    GcodeScript.h \
-    ImageUnity.h \
-    ImageViewer.h \
-    Layer.h \
-    MainWindow.h \
-    Object.h \
-    ImageProcessing.h \
-    ObjectInfo.h \
-    ObjectInfoModel.h \
-    ObjectVariableTable.h \
-    Parameter.h \
-    PointTool.h \
-    ProjectManager.h \
-    RobotWindow.h \
-    ScurveInterpolator.h \
-    SmartDialog.h \
-    SocketConnectionManager.h \
-    SoftwareManager.h \
-    TabDashboard.h \
-    TaskNode.h \
-    TextLayer.h \
-    TrackingManager.h \
-    VariableManager.h \
-    VersionManager.h \
-    codeeditor.h \
-    device/DeviceManager.h \
-    device/camera.h \
-    device/conveyor.h \
-    device/device.h \
-    device/encoder.h \
-    device/robot.h \
-    device/slider.h \
-    geisttextedit.h \
-    global.h \
-    highlighter.h \
-    GcodeReference.h \
-    sdk/DeltaXPlugin.h \
-    testcode.h \
-    testwindow.h
+    $$SRC_DIR/AccountWindow.h \
+    $$SRC_DIR/Authority.h \
+    $$SRC_DIR/ComDevice.h \
+    $$SRC_DIR/DeltaVisualizer.h \
+    $$SRC_DIR/DrawingExporter.h \
+    $$SRC_DIR/DrawingWidget.h \
+    $$SRC_DIR/FilterWindow.h \
+    $$SRC_DIR/GcodeHighlighter.h \
+    $$SRC_DIR/GcodeReference.h \
+    $$SRC_DIR/GcodeScript.h \
+    $$SRC_DIR/ImageUnity.h \
+    $$SRC_DIR/ImageViewer.h \
+    $$SRC_DIR/Layer.h \
+    $$SRC_DIR/MainWindow.h \
+    $$SRC_DIR/Object.h \
+    $$SRC_DIR/ImageProcessing.h \
+    $$SRC_DIR/ObjectInfo.h \
+    $$SRC_DIR/ObjectInfoModel.h \
+    $$SRC_DIR/ObjectVariableTable.h \
+    $$SRC_DIR/Parameter.h \
+    $$SRC_DIR/PointTool.h \
+    $$SRC_DIR/ProjectManager.h \
+    $$SRC_DIR/RobotWindow.h \
+    $$SRC_DIR/ScurveInterpolator.h \
+    $$SRC_DIR/SmartDialog.h \
+    $$SRC_DIR/SocketConnectionManager.h \
+    $$SRC_DIR/SoftwareManager.h \
+    $$SRC_DIR/TabDashboard.h \
+    $$SRC_DIR/TaskNode.h \
+    $$SRC_DIR/TextLayer.h \
+    $$SRC_DIR/TrackingManager.h \
+    $$SRC_DIR/VariableManager.h \
+    $$SRC_DIR/VersionManager.h \
+    $$SRC_DIR/codeeditor.h \
+    $$SRC_DIR/device/DeviceManager.h \
+    $$SRC_DIR/device/camera.h \
+    $$SRC_DIR/device/conveyor.h \
+    $$SRC_DIR/device/device.h \
+    $$SRC_DIR/device/encoder.h \
+    $$SRC_DIR/device/robot.h \
+    $$SRC_DIR/device/slider.h \
+    $$SRC_DIR/geisttextedit.h \
+    $$SRC_DIR/global.h \
+    $$SRC_DIR/highlighter.h \
+    $$SRC_DIR/GcodeReference.h \
+    $$SRC_DIR/sdk/DeltaXPlugin.h \
+    $$SRC_DIR/testcode.h \
+    $$SRC_DIR/testwindow.h
 
 FORMS += \
-    AccountWindow.ui \
-    FilterWindow.ui \
-    MainWindow.ui \
-    RobotWindow.ui \
-    GcodeReference.ui \
-    testwindow.ui
+    $$SRC_DIR/AccountWindow.ui \
+    $$SRC_DIR/FilterWindow.ui \
+    $$SRC_DIR/MainWindow.ui \
+    $$SRC_DIR/RobotWindow.ui \
+    $$SRC_DIR/GcodeReference.ui \
+    $$SRC_DIR/testwindow.ui
 
 RESOURCES += \
     resource.qrc
@@ -167,9 +170,9 @@ unix:!macx {
 }
 
 # Include paths
-INCLUDEPATH += $$PWD
-INCLUDEPATH += $$PWD/device
-INCLUDEPATH += $$PWD/sdk
+INCLUDEPATH += $$SRC_DIR
+INCLUDEPATH += $$SRC_DIR/device
+INCLUDEPATH += $$SRC_DIR/sdk
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
