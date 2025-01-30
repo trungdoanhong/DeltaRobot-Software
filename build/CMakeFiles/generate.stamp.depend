@@ -1,0 +1,99 @@
+# CMake generation dependency list for this directory.
+C:/Program Files/CMake/share/cmake-3.25/Modules/CMakeCXXInformation.cmake
+C:/Program Files/CMake/share/cmake-3.25/Modules/CMakeCommonLanguageInclude.cmake
+C:/Program Files/CMake/share/cmake-3.25/Modules/CMakeGenericSystem.cmake
+C:/Program Files/CMake/share/cmake-3.25/Modules/CMakeInitializeConfigs.cmake
+C:/Program Files/CMake/share/cmake-3.25/Modules/CMakeLanguageInformation.cmake
+C:/Program Files/CMake/share/cmake-3.25/Modules/CMakeParseArguments.cmake
+C:/Program Files/CMake/share/cmake-3.25/Modules/CMakeRCInformation.cmake
+C:/Program Files/CMake/share/cmake-3.25/Modules/CMakeSystemSpecificInformation.cmake
+C:/Program Files/CMake/share/cmake-3.25/Modules/CMakeSystemSpecificInitialize.cmake
+C:/Program Files/CMake/share/cmake-3.25/Modules/Compiler/CMakeCommonCompilerMacros.cmake
+C:/Program Files/CMake/share/cmake-3.25/Modules/Compiler/MSVC-CXX.cmake
+C:/Program Files/CMake/share/cmake-3.25/Modules/Compiler/MSVC.cmake
+C:/Program Files/CMake/share/cmake-3.25/Modules/Platform/Windows-MSVC-CXX.cmake
+C:/Program Files/CMake/share/cmake-3.25/Modules/Platform/Windows-MSVC.cmake
+C:/Program Files/CMake/share/cmake-3.25/Modules/Platform/Windows.cmake
+C:/Program Files/CMake/share/cmake-3.25/Modules/Platform/WindowsPaths.cmake
+C:/Qt/5.15.2/msvc2015_64/lib/cmake/Qt5/Qt5Config.cmake
+C:/Qt/5.15.2/msvc2015_64/lib/cmake/Qt5/Qt5ConfigVersion.cmake
+C:/Qt/5.15.2/msvc2015_64/lib/cmake/Qt5/Qt5ModuleLocation.cmake
+C:/Qt/5.15.2/msvc2015_64/lib/cmake/Qt5Concurrent/Qt5ConcurrentConfig.cmake
+C:/Qt/5.15.2/msvc2015_64/lib/cmake/Qt5Concurrent/Qt5ConcurrentConfigVersion.cmake
+C:/Qt/5.15.2/msvc2015_64/lib/cmake/Qt5Core/Qt5CoreConfig.cmake
+C:/Qt/5.15.2/msvc2015_64/lib/cmake/Qt5Core/Qt5CoreConfigExtras.cmake
+C:/Qt/5.15.2/msvc2015_64/lib/cmake/Qt5Core/Qt5CoreConfigExtrasMkspecDir.cmake
+C:/Qt/5.15.2/msvc2015_64/lib/cmake/Qt5Core/Qt5CoreConfigVersion.cmake
+C:/Qt/5.15.2/msvc2015_64/lib/cmake/Qt5Core/Qt5CoreMacros.cmake
+C:/Qt/5.15.2/msvc2015_64/lib/cmake/Qt5Gui/Qt5GuiConfig.cmake
+C:/Qt/5.15.2/msvc2015_64/lib/cmake/Qt5Gui/Qt5GuiConfigExtras.cmake
+C:/Qt/5.15.2/msvc2015_64/lib/cmake/Qt5Gui/Qt5GuiConfigVersion.cmake
+C:/Qt/5.15.2/msvc2015_64/lib/cmake/Qt5Gui/Qt5Gui_QGifPlugin.cmake
+C:/Qt/5.15.2/msvc2015_64/lib/cmake/Qt5Gui/Qt5Gui_QICNSPlugin.cmake
+C:/Qt/5.15.2/msvc2015_64/lib/cmake/Qt5Gui/Qt5Gui_QICOPlugin.cmake
+C:/Qt/5.15.2/msvc2015_64/lib/cmake/Qt5Gui/Qt5Gui_QJpegPlugin.cmake
+C:/Qt/5.15.2/msvc2015_64/lib/cmake/Qt5Gui/Qt5Gui_QMinimalIntegrationPlugin.cmake
+C:/Qt/5.15.2/msvc2015_64/lib/cmake/Qt5Gui/Qt5Gui_QOffscreenIntegrationPlugin.cmake
+C:/Qt/5.15.2/msvc2015_64/lib/cmake/Qt5Gui/Qt5Gui_QSvgIconPlugin.cmake
+C:/Qt/5.15.2/msvc2015_64/lib/cmake/Qt5Gui/Qt5Gui_QSvgPlugin.cmake
+C:/Qt/5.15.2/msvc2015_64/lib/cmake/Qt5Gui/Qt5Gui_QTgaPlugin.cmake
+C:/Qt/5.15.2/msvc2015_64/lib/cmake/Qt5Gui/Qt5Gui_QTiffPlugin.cmake
+C:/Qt/5.15.2/msvc2015_64/lib/cmake/Qt5Gui/Qt5Gui_QTuioTouchPlugin.cmake
+C:/Qt/5.15.2/msvc2015_64/lib/cmake/Qt5Gui/Qt5Gui_QWbmpPlugin.cmake
+C:/Qt/5.15.2/msvc2015_64/lib/cmake/Qt5Gui/Qt5Gui_QWebGLIntegrationPlugin.cmake
+C:/Qt/5.15.2/msvc2015_64/lib/cmake/Qt5Gui/Qt5Gui_QWebpPlugin.cmake
+C:/Qt/5.15.2/msvc2015_64/lib/cmake/Qt5Gui/Qt5Gui_QWindowsDirect2DIntegrationPlugin.cmake
+C:/Qt/5.15.2/msvc2015_64/lib/cmake/Qt5Gui/Qt5Gui_QWindowsIntegrationPlugin.cmake
+C:/Qt/5.15.2/msvc2015_64/lib/cmake/Qt5Gui/Qt5Gui_QXdgDesktopPortalThemePlugin.cmake
+C:/Qt/5.15.2/msvc2015_64/lib/cmake/Qt5Multimedia/Qt5MultimediaConfig.cmake
+C:/Qt/5.15.2/msvc2015_64/lib/cmake/Qt5Multimedia/Qt5MultimediaConfigVersion.cmake
+C:/Qt/5.15.2/msvc2015_64/lib/cmake/Qt5Multimedia/Qt5Multimedia_AudioCaptureServicePlugin.cmake
+C:/Qt/5.15.2/msvc2015_64/lib/cmake/Qt5Multimedia/Qt5Multimedia_DSServicePlugin.cmake
+C:/Qt/5.15.2/msvc2015_64/lib/cmake/Qt5Multimedia/Qt5Multimedia_QM3uPlaylistPlugin.cmake
+C:/Qt/5.15.2/msvc2015_64/lib/cmake/Qt5Multimedia/Qt5Multimedia_QWasapiPlugin.cmake
+C:/Qt/5.15.2/msvc2015_64/lib/cmake/Qt5Multimedia/Qt5Multimedia_QWindowsAudioPlugin.cmake
+C:/Qt/5.15.2/msvc2015_64/lib/cmake/Qt5Multimedia/Qt5Multimedia_WMFServicePlugin.cmake
+C:/Qt/5.15.2/msvc2015_64/lib/cmake/Qt5Network/Qt5NetworkConfig.cmake
+C:/Qt/5.15.2/msvc2015_64/lib/cmake/Qt5Network/Qt5NetworkConfigVersion.cmake
+C:/Qt/5.15.2/msvc2015_64/lib/cmake/Qt5Network/Qt5Network_QGenericEnginePlugin.cmake
+C:/Qt/5.15.2/msvc2015_64/lib/cmake/Qt5OpenGL/Qt5OpenGLConfig.cmake
+C:/Qt/5.15.2/msvc2015_64/lib/cmake/Qt5OpenGL/Qt5OpenGLConfigVersion.cmake
+C:/Qt/5.15.2/msvc2015_64/lib/cmake/Qt5PrintSupport/Qt5PrintSupportConfig.cmake
+C:/Qt/5.15.2/msvc2015_64/lib/cmake/Qt5PrintSupport/Qt5PrintSupportConfigVersion.cmake
+C:/Qt/5.15.2/msvc2015_64/lib/cmake/Qt5PrintSupport/Qt5PrintSupport_QWindowsPrinterSupportPlugin.cmake
+C:/Qt/5.15.2/msvc2015_64/lib/cmake/Qt5Qml/Qt5QmlConfig.cmake
+C:/Qt/5.15.2/msvc2015_64/lib/cmake/Qt5Qml/Qt5QmlConfigExtras.cmake
+C:/Qt/5.15.2/msvc2015_64/lib/cmake/Qt5Qml/Qt5QmlConfigVersion.cmake
+C:/Qt/5.15.2/msvc2015_64/lib/cmake/Qt5Qml/Qt5Qml_QDebugMessageServiceFactory.cmake
+C:/Qt/5.15.2/msvc2015_64/lib/cmake/Qt5Qml/Qt5Qml_QLocalClientConnectionFactory.cmake
+C:/Qt/5.15.2/msvc2015_64/lib/cmake/Qt5Qml/Qt5Qml_QQmlDebugServerFactory.cmake
+C:/Qt/5.15.2/msvc2015_64/lib/cmake/Qt5Qml/Qt5Qml_QQmlDebuggerServiceFactory.cmake
+C:/Qt/5.15.2/msvc2015_64/lib/cmake/Qt5Qml/Qt5Qml_QQmlInspectorServiceFactory.cmake
+C:/Qt/5.15.2/msvc2015_64/lib/cmake/Qt5Qml/Qt5Qml_QQmlNativeDebugConnectorFactory.cmake
+C:/Qt/5.15.2/msvc2015_64/lib/cmake/Qt5Qml/Qt5Qml_QQmlNativeDebugServiceFactory.cmake
+C:/Qt/5.15.2/msvc2015_64/lib/cmake/Qt5Qml/Qt5Qml_QQmlPreviewServiceFactory.cmake
+C:/Qt/5.15.2/msvc2015_64/lib/cmake/Qt5Qml/Qt5Qml_QQmlProfilerServiceFactory.cmake
+C:/Qt/5.15.2/msvc2015_64/lib/cmake/Qt5Qml/Qt5Qml_QQuickProfilerAdapterFactory.cmake
+C:/Qt/5.15.2/msvc2015_64/lib/cmake/Qt5Qml/Qt5Qml_QTcpServerConnectionFactory.cmake
+C:/Qt/5.15.2/msvc2015_64/lib/cmake/Qt5QmlModels/Qt5QmlModelsConfig.cmake
+C:/Qt/5.15.2/msvc2015_64/lib/cmake/Qt5QmlModels/Qt5QmlModelsConfigVersion.cmake
+C:/Qt/5.15.2/msvc2015_64/lib/cmake/Qt5Quick/Qt5QuickConfig.cmake
+C:/Qt/5.15.2/msvc2015_64/lib/cmake/Qt5Quick/Qt5QuickConfigVersion.cmake
+C:/Qt/5.15.2/msvc2015_64/lib/cmake/Qt5Quick/Qt5Quick_QSGD3D12Adaptation.cmake
+C:/Qt/5.15.2/msvc2015_64/lib/cmake/Qt5QuickWidgets/Qt5QuickWidgetsConfig.cmake
+C:/Qt/5.15.2/msvc2015_64/lib/cmake/Qt5QuickWidgets/Qt5QuickWidgetsConfigVersion.cmake
+C:/Qt/5.15.2/msvc2015_64/lib/cmake/Qt5SerialPort/Qt5SerialPortConfig.cmake
+C:/Qt/5.15.2/msvc2015_64/lib/cmake/Qt5SerialPort/Qt5SerialPortConfigVersion.cmake
+C:/Qt/5.15.2/msvc2015_64/lib/cmake/Qt5Svg/Qt5SvgConfig.cmake
+C:/Qt/5.15.2/msvc2015_64/lib/cmake/Qt5Svg/Qt5SvgConfigVersion.cmake
+C:/Qt/5.15.2/msvc2015_64/lib/cmake/Qt5Widgets/Qt5WidgetsConfig.cmake
+C:/Qt/5.15.2/msvc2015_64/lib/cmake/Qt5Widgets/Qt5WidgetsConfigExtras.cmake
+C:/Qt/5.15.2/msvc2015_64/lib/cmake/Qt5Widgets/Qt5WidgetsConfigVersion.cmake
+C:/Qt/5.15.2/msvc2015_64/lib/cmake/Qt5Widgets/Qt5WidgetsMacros.cmake
+C:/Qt/5.15.2/msvc2015_64/lib/cmake/Qt5Widgets/Qt5Widgets_QWindowsVistaStylePlugin.cmake
+E:/Professional/Developer Role/Project Type/Work/Delta X Software/Delta X Software 2024/DeltaXSoftware/CMakeLists.txt
+E:/Professional/Developer Role/Project Type/Work/Delta X Software/Delta X Software 2024/DeltaXSoftware/DeltaRobotSoftware_resource.rc
+E:/Professional/Developer Role/Project Type/Work/Delta X Software/Delta X Software 2024/DeltaXSoftware/build/CMakeFiles/3.25.1/CMakeCXXCompiler.cmake
+E:/Professional/Developer Role/Project Type/Work/Delta X Software/Delta X Software 2024/DeltaXSoftware/build/CMakeFiles/3.25.1/CMakeRCCompiler.cmake
+E:/Professional/Developer Role/Project Type/Work/Delta X Software/Delta X Software 2024/DeltaXSoftware/build/CMakeFiles/3.25.1/CMakeSystem.cmake
+E:/Professional/Developer Role/Project Type/Work/Delta X Software/Delta X Software 2024/DeltaXSoftware/resource.qrc

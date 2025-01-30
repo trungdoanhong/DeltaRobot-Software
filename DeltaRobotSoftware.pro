@@ -4,7 +4,7 @@
 #
 #-------------------------------------------------
 
-QT       += core gui serialport opengl network quickwidgets printsupport multimedia svg concurrent
+QT       += core gui serialport opengl network quickwidgets printsupport multimedia svg concurrent widgets
 
 windows {
     INCLUDEPATH += $$PWD\3rd-party\opencv\build\include
@@ -34,8 +34,14 @@ greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 TARGET = DeltaRobotSoftware
 TEMPLATE = app
 
+CONFIG += c++14
 
-SOURCES += main.cpp\
+# You can make your code fail to compile if it uses deprecated APIs.
+# In order to do so, uncomment the following line.
+#DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
+
+SOURCES += \
+    main.cpp \
     AccountWindow.cpp \
     Authority.cpp \
     ComDevice.cpp \
@@ -81,7 +87,7 @@ SOURCES += main.cpp\
     highlighter.cpp \
     testwindow.cpp
 
-HEADERS  += \
+HEADERS += \
     AccountWindow.h \
     Authority.h \
     ComDevice.h \
@@ -131,7 +137,7 @@ HEADERS  += \
     testcode.h \
     testwindow.h
 
-FORMS    += \
+FORMS += \
     AccountWindow.ui \
     FilterWindow.ui \
     MainWindow.ui \
@@ -142,7 +148,38 @@ FORMS    += \
 RESOURCES += \
     resource.qrc
 
-RC_ICONS = delta_x_logo_96x96.ico
+win32 {
+    # OpenCV configuration for Windows
+    OPENCV_DIR = $$PWD/3rd-party/opencv/build
+    INCLUDEPATH += $$OPENCV_DIR/include
+    
+    CONFIG(debug, debug|release) {
+        LIBS += $$OPENCV_DIR/x64/vc15/lib/opencv_world400d.lib
+    } else {
+        LIBS += $$OPENCV_DIR/x64/vc15/lib/opencv_world400.lib
+    }
+}
+
+unix:!macx {
+    # OpenCV configuration for Linux
+    CONFIG += link_pkgconfig
+    PKGCONFIG += opencv4
+}
+
+# Include paths
+INCLUDEPATH += $$PWD
+INCLUDEPATH += $$PWD/device
+INCLUDEPATH += $$PWD/sdk
+
+# Default rules for deployment.
+qnx: target.path = /tmp/$${TARGET}/bin
+else: unix:!android: target.path = /opt/$${TARGET}/bin
+!isEmpty(target.path): INSTALLS += target
+
+# Windows specific
+win32 {
+    RC_ICONS = delta_x_logo_96x96.ico
+}
 
 DISTFILES +=
 

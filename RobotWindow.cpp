@@ -1797,20 +1797,20 @@ void RobotWindow::LoadObjectDetectorSetting()
     bool IsCameraOpen = VariableManager::instance().getVar(prefix + "IsOpen", false).toBool();
     int cameraID = VariableManager::instance().getVar(prefix + "CameraID", 0).toInt();
 
-    if (IsCameraOpen == true)
-    {
-        if (imageSource == "Industrial Camera")
-        {
-            DeltaXPlugin* camera = industrialCameraPlugin;
-            QTimer::singleShot(2000, [camera, cameraID]() {
-                emit camera->RequestConnect(cameraID);
-            });
-        }
-        else if (imageSource == "Webcam")
-        {
-            QMetaObject::invokeMethod(CameraInstance, "OpenCamera", Qt::QueuedConnection, Q_ARG(int, cameraID));
-        }
-    }
+//    if (IsCameraOpen == true)
+//    {
+//        if (imageSource == "Industrial Camera")
+//        {
+//            DeltaXPlugin* camera = industrialCameraPlugin;
+//            QTimer::singleShot(2000, [camera, cameraID]() {
+//                emit camera->RequestConnect(cameraID);
+//            });
+//        }
+//        else if (imageSource == "Webcam")
+//        {
+//            QMetaObject::invokeMethod(CameraInstance, "OpenCamera", Qt::QueuedConnection, Q_ARG(int, cameraID));
+//        }
+//    }
 
     ui->cbDetectingAlgorithm->setCurrentText(VariableManager::instance().getVar(prefix + "DetectAlgorithm", ui->cbDetectingAlgorithm->currentText()).toString());
 

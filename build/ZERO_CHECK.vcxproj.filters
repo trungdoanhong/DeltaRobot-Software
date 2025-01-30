@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="16.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="E:\Professional\Developer Role\Project Type\Work\Delta X Software\Delta X Software 2024\DeltaXSoftware\build\CMakeFiles\9485b617f0ed41c42a55ea0a5d53cc2b\generate.stamp.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{A74241F6-00CA-3BE0-B999-068C57460F49}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

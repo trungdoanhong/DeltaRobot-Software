@@ -1,0 +1,740 @@
+{
+	"BUILD_DIR" : "E:/Professional/Developer Role/Project Type/Work/Delta X Software/Delta X Software 2024/DeltaXSoftware/build/DeltaRobotSoftware_autogen",
+	"CMAKE_BINARY_DIR" : "E:/Professional/Developer Role/Project Type/Work/Delta X Software/Delta X Software 2024/DeltaXSoftware/build",
+	"CMAKE_CURRENT_BINARY_DIR" : "E:/Professional/Developer Role/Project Type/Work/Delta X Software/Delta X Software 2024/DeltaXSoftware/build",
+	"CMAKE_CURRENT_SOURCE_DIR" : "E:/Professional/Developer Role/Project Type/Work/Delta X Software/Delta X Software 2024/DeltaXSoftware",
+	"CMAKE_EXECUTABLE" : "C:/Program Files/CMake/bin/cmake.exe",
+	"CMAKE_LIST_FILES" : 
+	[
+		"E:/Professional/Developer Role/Project Type/Work/Delta X Software/Delta X Software 2024/DeltaXSoftware/CMakeLists.txt",
+		"E:/Professional/Developer Role/Project Type/Work/Delta X Software/Delta X Software 2024/DeltaXSoftware/build/CMakeFiles/3.25.1/CMakeSystem.cmake",
+		"C:/Program Files/CMake/share/cmake-3.25/Modules/CMakeSystemSpecificInitialize.cmake",
+		"E:/Professional/Developer Role/Project Type/Work/Delta X Software/Delta X Software 2024/DeltaXSoftware/build/CMakeFiles/3.25.1/CMakeCXXCompiler.cmake",
+		"C:/Program Files/CMake/share/cmake-3.25/Modules/CMakeSystemSpecificInformation.cmake",
+		"C:/Program Files/CMake/share/cmake-3.25/Modules/CMakeGenericSystem.cmake",
+		"C:/Program Files/CMake/share/cmake-3.25/Modules/CMakeInitializeConfigs.cmake",
+		"C:/Program Files/CMake/share/cmake-3.25/Modules/Platform/Windows.cmake",
+		"C:/Program Files/CMake/share/cmake-3.25/Modules/Platform/WindowsPaths.cmake",
+		"C:/Program Files/CMake/share/cmake-3.25/Modules/CMakeCXXInformation.cmake",
+		"C:/Program Files/CMake/share/cmake-3.25/Modules/CMakeLanguageInformation.cmake",
+		"C:/Program Files/CMake/share/cmake-3.25/Modules/Compiler/MSVC-CXX.cmake",
+		"C:/Program Files/CMake/share/cmake-3.25/Modules/Compiler/MSVC.cmake",
+		"C:/Program Files/CMake/share/cmake-3.25/Modules/Compiler/CMakeCommonCompilerMacros.cmake",
+		"C:/Program Files/CMake/share/cmake-3.25/Modules/Platform/Windows-MSVC-CXX.cmake",
+		"C:/Program Files/CMake/share/cmake-3.25/Modules/Platform/Windows-MSVC.cmake",
+		"E:/Professional/Developer Role/Project Type/Work/Delta X Software/Delta X Software 2024/DeltaXSoftware/build/CMakeFiles/3.25.1/CMakeRCCompiler.cmake",
+		"C:/Program Files/CMake/share/cmake-3.25/Modules/CMakeRCInformation.cmake",
+		"C:/Program Files/CMake/share/cmake-3.25/Modules/CMakeCommonLanguageInclude.cmake",
+		"C:/Qt/5.15.2/msvc2015_64/lib/cmake/Qt5/Qt5ConfigVersion.cmake",
+		"C:/Qt/5.15.2/msvc2015_64/lib/cmake/Qt5/Qt5Config.cmake",
+		"C:/Qt/5.15.2/msvc2015_64/lib/cmake/Qt5/Qt5ModuleLocation.cmake",
+		"C:/Qt/5.15.2/msvc2015_64/lib/cmake/Qt5Core/Qt5CoreConfigVersion.cmake",
+		"C:/Qt/5.15.2/msvc2015_64/lib/cmake/Qt5Core/Qt5CoreConfig.cmake",
+		"C:/Qt/5.15.2/msvc2015_64/lib/cmake/Qt5Core/Qt5CoreConfigExtras.cmake",
+		"C:/Qt/5.15.2/msvc2015_64/lib/cmake/Qt5Core/Qt5CoreConfigExtrasMkspecDir.cmake",
+		"C:/Qt/5.15.2/msvc2015_64/lib/cmake/Qt5Core/Qt5CoreMacros.cmake",
+		"C:/Program Files/CMake/share/cmake-3.25/Modules/CMakeParseArguments.cmake",
+		"C:/Qt/5.15.2/msvc2015_64/lib/cmake/Qt5Gui/Qt5GuiConfigVersion.cmake",
+		"C:/Qt/5.15.2/msvc2015_64/lib/cmake/Qt5Gui/Qt5GuiConfig.cmake",
+		"C:/Qt/5.15.2/msvc2015_64/lib/cmake/Qt5Gui/Qt5Gui_QGifPlugin.cmake",
+		"C:/Qt/5.15.2/msvc2015_64/lib/cmake/Qt5Gui/Qt5Gui_QICNSPlugin.cmake",
+		"C:/Qt/5.15.2/msvc2015_64/lib/cmake/Qt5Gui/Qt5Gui_QICOPlugin.cmake",
+		"C:/Qt/5.15.2/msvc2015_64/lib/cmake/Qt5Gui/Qt5Gui_QJpegPlugin.cmake",
+		"C:/Qt/5.15.2/msvc2015_64/lib/cmake/Qt5Gui/Qt5Gui_QMinimalIntegrationPlugin.cmake",
+		"C:/Qt/5.15.2/msvc2015_64/lib/cmake/Qt5Gui/Qt5Gui_QOffscreenIntegrationPlugin.cmake",
+		"C:/Qt/5.15.2/msvc2015_64/lib/cmake/Qt5Gui/Qt5Gui_QSvgIconPlugin.cmake",
+		"C:/Qt/5.15.2/msvc2015_64/lib/cmake/Qt5Gui/Qt5Gui_QSvgPlugin.cmake",
+		"C:/Qt/5.15.2/msvc2015_64/lib/cmake/Qt5Gui/Qt5Gui_QTgaPlugin.cmake",
+		"C:/Qt/5.15.2/msvc2015_64/lib/cmake/Qt5Gui/Qt5Gui_QTiffPlugin.cmake",
+		"C:/Qt/5.15.2/msvc2015_64/lib/cmake/Qt5Gui/Qt5Gui_QTuioTouchPlugin.cmake",
+		"C:/Qt/5.15.2/msvc2015_64/lib/cmake/Qt5Gui/Qt5Gui_QWbmpPlugin.cmake",
+		"C:/Qt/5.15.2/msvc2015_64/lib/cmake/Qt5Gui/Qt5Gui_QWebGLIntegrationPlugin.cmake",
+		"C:/Qt/5.15.2/msvc2015_64/lib/cmake/Qt5Gui/Qt5Gui_QWebpPlugin.cmake",
+		"C:/Qt/5.15.2/msvc2015_64/lib/cmake/Qt5Gui/Qt5Gui_QWindowsDirect2DIntegrationPlugin.cmake",
+		"C:/Qt/5.15.2/msvc2015_64/lib/cmake/Qt5Gui/Qt5Gui_QWindowsIntegrationPlugin.cmake",
+		"C:/Qt/5.15.2/msvc2015_64/lib/cmake/Qt5Gui/Qt5Gui_QXdgDesktopPortalThemePlugin.cmake",
+		"C:/Qt/5.15.2/msvc2015_64/lib/cmake/Qt5Gui/Qt5GuiConfigExtras.cmake",
+		"C:/Qt/5.15.2/msvc2015_64/lib/cmake/Qt5SerialPort/Qt5SerialPortConfigVersion.cmake",
+		"C:/Qt/5.15.2/msvc2015_64/lib/cmake/Qt5SerialPort/Qt5SerialPortConfig.cmake",
+		"C:/Qt/5.15.2/msvc2015_64/lib/cmake/Qt5OpenGL/Qt5OpenGLConfigVersion.cmake",
+		"C:/Qt/5.15.2/msvc2015_64/lib/cmake/Qt5OpenGL/Qt5OpenGLConfig.cmake",
+		"C:/Qt/5.15.2/msvc2015_64/lib/cmake/Qt5Widgets/Qt5WidgetsConfigVersion.cmake",
+		"C:/Qt/5.15.2/msvc2015_64/lib/cmake/Qt5Widgets/Qt5WidgetsConfig.cmake",
+		"C:/Qt/5.15.2/msvc2015_64/lib/cmake/Qt5Widgets/Qt5Widgets_QWindowsVistaStylePlugin.cmake",
+		"C:/Qt/5.15.2/msvc2015_64/lib/cmake/Qt5Widgets/Qt5WidgetsConfigExtras.cmake",
+		"C:/Qt/5.15.2/msvc2015_64/lib/cmake/Qt5Widgets/Qt5WidgetsMacros.cmake",
+		"C:/Program Files/CMake/share/cmake-3.25/Modules/CMakeParseArguments.cmake",
+		"C:/Qt/5.15.2/msvc2015_64/lib/cmake/Qt5Network/Qt5NetworkConfigVersion.cmake",
+		"C:/Qt/5.15.2/msvc2015_64/lib/cmake/Qt5Network/Qt5NetworkConfig.cmake",
+		"C:/Qt/5.15.2/msvc2015_64/lib/cmake/Qt5Network/Qt5Network_QGenericEnginePlugin.cmake",
+		"C:/Qt/5.15.2/msvc2015_64/lib/cmake/Qt5QuickWidgets/Qt5QuickWidgetsConfigVersion.cmake",
+		"C:/Qt/5.15.2/msvc2015_64/lib/cmake/Qt5QuickWidgets/Qt5QuickWidgetsConfig.cmake",
+		"C:/Qt/5.15.2/msvc2015_64/lib/cmake/Qt5Quick/Qt5QuickConfigVersion.cmake",
+		"C:/Qt/5.15.2/msvc2015_64/lib/cmake/Qt5Quick/Qt5QuickConfig.cmake",
+		"C:/Qt/5.15.2/msvc2015_64/lib/cmake/Qt5QmlModels/Qt5QmlModelsConfigVersion.cmake",
+		"C:/Qt/5.15.2/msvc2015_64/lib/cmake/Qt5QmlModels/Qt5QmlModelsConfig.cmake",
+		"C:/Qt/5.15.2/msvc2015_64/lib/cmake/Qt5Qml/Qt5QmlConfigVersion.cmake",
+		"C:/Qt/5.15.2/msvc2015_64/lib/cmake/Qt5Qml/Qt5QmlConfig.cmake",
+		"C:/Qt/5.15.2/msvc2015_64/lib/cmake/Qt5Qml/Qt5Qml_QDebugMessageServiceFactory.cmake",
+		"C:/Qt/5.15.2/msvc2015_64/lib/cmake/Qt5Qml/Qt5Qml_QLocalClientConnectionFactory.cmake",
+		"C:/Qt/5.15.2/msvc2015_64/lib/cmake/Qt5Qml/Qt5Qml_QQmlDebugServerFactory.cmake",
+		"C:/Qt/5.15.2/msvc2015_64/lib/cmake/Qt5Qml/Qt5Qml_QQmlDebuggerServiceFactory.cmake",
+		"C:/Qt/5.15.2/msvc2015_64/lib/cmake/Qt5Qml/Qt5Qml_QQmlInspectorServiceFactory.cmake",
+		"C:/Qt/5.15.2/msvc2015_64/lib/cmake/Qt5Qml/Qt5Qml_QQmlNativeDebugConnectorFactory.cmake",
+		"C:/Qt/5.15.2/msvc2015_64/lib/cmake/Qt5Qml/Qt5Qml_QQmlNativeDebugServiceFactory.cmake",
+		"C:/Qt/5.15.2/msvc2015_64/lib/cmake/Qt5Qml/Qt5Qml_QQmlPreviewServiceFactory.cmake",
+		"C:/Qt/5.15.2/msvc2015_64/lib/cmake/Qt5Qml/Qt5Qml_QQmlProfilerServiceFactory.cmake",
+		"C:/Qt/5.15.2/msvc2015_64/lib/cmake/Qt5Qml/Qt5Qml_QQuickProfilerAdapterFactory.cmake",
+		"C:/Qt/5.15.2/msvc2015_64/lib/cmake/Qt5Qml/Qt5Qml_QTcpServerConnectionFactory.cmake",
+		"C:/Qt/5.15.2/msvc2015_64/lib/cmake/Qt5Qml/Qt5QmlConfigExtras.cmake",
+		"C:/Qt/5.15.2/msvc2015_64/lib/cmake/Qt5Quick/Qt5Quick_QSGD3D12Adaptation.cmake",
+		"C:/Qt/5.15.2/msvc2015_64/lib/cmake/Qt5PrintSupport/Qt5PrintSupportConfigVersion.cmake",
+		"C:/Qt/5.15.2/msvc2015_64/lib/cmake/Qt5PrintSupport/Qt5PrintSupportConfig.cmake",
+		"C:/Qt/5.15.2/msvc2015_64/lib/cmake/Qt5PrintSupport/Qt5PrintSupport_QWindowsPrinterSupportPlugin.cmake",
+		"C:/Qt/5.15.2/msvc2015_64/lib/cmake/Qt5Multimedia/Qt5MultimediaConfigVersion.cmake",
+		"C:/Qt/5.15.2/msvc2015_64/lib/cmake/Qt5Multimedia/Qt5MultimediaConfig.cmake",
+		"C:/Qt/5.15.2/msvc2015_64/lib/cmake/Qt5Multimedia/Qt5Multimedia_AudioCaptureServicePlugin.cmake",
+		"C:/Qt/5.15.2/msvc2015_64/lib/cmake/Qt5Multimedia/Qt5Multimedia_DSServicePlugin.cmake",
+		"C:/Qt/5.15.2/msvc2015_64/lib/cmake/Qt5Multimedia/Qt5Multimedia_QM3uPlaylistPlugin.cmake",
+		"C:/Qt/5.15.2/msvc2015_64/lib/cmake/Qt5Multimedia/Qt5Multimedia_QWasapiPlugin.cmake",
+		"C:/Qt/5.15.2/msvc2015_64/lib/cmake/Qt5Multimedia/Qt5Multimedia_QWindowsAudioPlugin.cmake",
+		"C:/Qt/5.15.2/msvc2015_64/lib/cmake/Qt5Multimedia/Qt5Multimedia_WMFServicePlugin.cmake",
+		"C:/Qt/5.15.2/msvc2015_64/lib/cmake/Qt5Svg/Qt5SvgConfigVersion.cmake",
+		"C:/Qt/5.15.2/msvc2015_64/lib/cmake/Qt5Svg/Qt5SvgConfig.cmake",
+		"C:/Qt/5.15.2/msvc2015_64/lib/cmake/Qt5Concurrent/Qt5ConcurrentConfigVersion.cmake",
+		"C:/Qt/5.15.2/msvc2015_64/lib/cmake/Qt5Concurrent/Qt5ConcurrentConfig.cmake",
+		"C:/Qt/5.15.2/msvc2015_64/lib/cmake/Qt5Widgets/Qt5WidgetsConfigVersion.cmake",
+		"C:/Qt/5.15.2/msvc2015_64/lib/cmake/Qt5Widgets/Qt5WidgetsConfig.cmake",
+		"E:/Professional/Developer Role/Project Type/Work/Delta X Software/Delta X Software 2024/DeltaXSoftware/DeltaRobotSoftware_resource.rc",
+		"E:/Professional/Developer Role/Project Type/Work/Delta X Software/Delta X Software 2024/DeltaXSoftware/resource.qrc"
+	],
+	"CMAKE_SOURCE_DIR" : "E:/Professional/Developer Role/Project Type/Work/Delta X Software/Delta X Software 2024/DeltaXSoftware",
+	"DEP_FILE" : "",
+	"DEP_FILE_RULE_NAME" : "",
+	"HEADERS" : 
+	[
+		[
+			"E:/Professional/Developer Role/Project Type/Work/Delta X Software/Delta X Software 2024/DeltaXSoftware/AccountWindow.h",
+			"MU",
+			"EWIEGA46WW/moc_AccountWindow.cpp",
+			null
+		],
+		[
+			"E:/Professional/Developer Role/Project Type/Work/Delta X Software/Delta X Software 2024/DeltaXSoftware/Authority.h",
+			"MU",
+			"EWIEGA46WW/moc_Authority.cpp",
+			null
+		],
+		[
+			"E:/Professional/Developer Role/Project Type/Work/Delta X Software/Delta X Software 2024/DeltaXSoftware/ComDevice.h",
+			"MU",
+			"EWIEGA46WW/moc_ComDevice.cpp",
+			null
+		],
+		[
+			"E:/Professional/Developer Role/Project Type/Work/Delta X Software/Delta X Software 2024/DeltaXSoftware/DeltaVisualizer.h",
+			"MU",
+			"EWIEGA46WW/moc_DeltaVisualizer.cpp",
+			null
+		],
+		[
+			"E:/Professional/Developer Role/Project Type/Work/Delta X Software/Delta X Software 2024/DeltaXSoftware/DrawingExporter.h",
+			"MU",
+			"EWIEGA46WW/moc_DrawingExporter.cpp",
+			null
+		],
+		[
+			"E:/Professional/Developer Role/Project Type/Work/Delta X Software/Delta X Software 2024/DeltaXSoftware/DrawingWidget.h",
+			"MU",
+			"EWIEGA46WW/moc_DrawingWidget.cpp",
+			null
+		],
+		[
+			"E:/Professional/Developer Role/Project Type/Work/Delta X Software/Delta X Software 2024/DeltaXSoftware/FilterWindow.h",
+			"MU",
+			"EWIEGA46WW/moc_FilterWindow.cpp",
+			null
+		],
+		[
+			"E:/Professional/Developer Role/Project Type/Work/Delta X Software/Delta X Software 2024/DeltaXSoftware/GcodeHighlighter.h",
+			"MU",
+			"EWIEGA46WW/moc_GcodeHighlighter.cpp",
+			null
+		],
+		[
+			"E:/Professional/Developer Role/Project Type/Work/Delta X Software/Delta X Software 2024/DeltaXSoftware/GcodeReference.h",
+			"MU",
+			"EWIEGA46WW/moc_GcodeReference.cpp",
+			null
+		],
+		[
+			"E:/Professional/Developer Role/Project Type/Work/Delta X Software/Delta X Software 2024/DeltaXSoftware/GcodeScript.h",
+			"MU",
+			"EWIEGA46WW/moc_GcodeScript.cpp",
+			null
+		],
+		[
+			"E:/Professional/Developer Role/Project Type/Work/Delta X Software/Delta X Software 2024/DeltaXSoftware/ImageProcessing.h",
+			"MU",
+			"EWIEGA46WW/moc_ImageProcessing.cpp",
+			null
+		],
+		[
+			"E:/Professional/Developer Role/Project Type/Work/Delta X Software/Delta X Software 2024/DeltaXSoftware/ImageUnity.h",
+			"MU",
+			"EWIEGA46WW/moc_ImageUnity.cpp",
+			null
+		],
+		[
+			"E:/Professional/Developer Role/Project Type/Work/Delta X Software/Delta X Software 2024/DeltaXSoftware/ImageViewer.h",
+			"MU",
+			"EWIEGA46WW/moc_ImageViewer.cpp",
+			null
+		],
+		[
+			"E:/Professional/Developer Role/Project Type/Work/Delta X Software/Delta X Software 2024/DeltaXSoftware/Layer.h",
+			"MU",
+			"EWIEGA46WW/moc_Layer.cpp",
+			null
+		],
+		[
+			"E:/Professional/Developer Role/Project Type/Work/Delta X Software/Delta X Software 2024/DeltaXSoftware/MainWindow.h",
+			"MU",
+			"EWIEGA46WW/moc_MainWindow.cpp",
+			null
+		],
+		[
+			"E:/Professional/Developer Role/Project Type/Work/Delta X Software/Delta X Software 2024/DeltaXSoftware/Object.h",
+			"MU",
+			"EWIEGA46WW/moc_Object.cpp",
+			null
+		],
+		[
+			"E:/Professional/Developer Role/Project Type/Work/Delta X Software/Delta X Software 2024/DeltaXSoftware/ObjectInfo.h",
+			"MU",
+			"EWIEGA46WW/moc_ObjectInfo.cpp",
+			null
+		],
+		[
+			"E:/Professional/Developer Role/Project Type/Work/Delta X Software/Delta X Software 2024/DeltaXSoftware/ObjectInfoModel.h",
+			"MU",
+			"EWIEGA46WW/moc_ObjectInfoModel.cpp",
+			null
+		],
+		[
+			"E:/Professional/Developer Role/Project Type/Work/Delta X Software/Delta X Software 2024/DeltaXSoftware/ObjectVariableTable.h",
+			"MU",
+			"EWIEGA46WW/moc_ObjectVariableTable.cpp",
+			null
+		],
+		[
+			"E:/Professional/Developer Role/Project Type/Work/Delta X Software/Delta X Software 2024/DeltaXSoftware/Parameter.h",
+			"MU",
+			"EWIEGA46WW/moc_Parameter.cpp",
+			null
+		],
+		[
+			"E:/Professional/Developer Role/Project Type/Work/Delta X Software/Delta X Software 2024/DeltaXSoftware/PointTool.h",
+			"MU",
+			"EWIEGA46WW/moc_PointTool.cpp",
+			null
+		],
+		[
+			"E:/Professional/Developer Role/Project Type/Work/Delta X Software/Delta X Software 2024/DeltaXSoftware/ProjectManager.h",
+			"MU",
+			"EWIEGA46WW/moc_ProjectManager.cpp",
+			null
+		],
+		[
+			"E:/Professional/Developer Role/Project Type/Work/Delta X Software/Delta X Software 2024/DeltaXSoftware/RobotWindow.h",
+			"MU",
+			"EWIEGA46WW/moc_RobotWindow.cpp",
+			null
+		],
+		[
+			"E:/Professional/Developer Role/Project Type/Work/Delta X Software/Delta X Software 2024/DeltaXSoftware/ScurveInterpolator.h",
+			"MU",
+			"EWIEGA46WW/moc_ScurveInterpolator.cpp",
+			null
+		],
+		[
+			"E:/Professional/Developer Role/Project Type/Work/Delta X Software/Delta X Software 2024/DeltaXSoftware/SmartDialog.h",
+			"MU",
+			"EWIEGA46WW/moc_SmartDialog.cpp",
+			null
+		],
+		[
+			"E:/Professional/Developer Role/Project Type/Work/Delta X Software/Delta X Software 2024/DeltaXSoftware/SocketConnectionManager.h",
+			"MU",
+			"EWIEGA46WW/moc_SocketConnectionManager.cpp",
+			null
+		],
+		[
+			"E:/Professional/Developer Role/Project Type/Work/Delta X Software/Delta X Software 2024/DeltaXSoftware/SoftwareManager.h",
+			"MU",
+			"EWIEGA46WW/moc_SoftwareManager.cpp",
+			null
+		],
+		[
+			"E:/Professional/Developer Role/Project Type/Work/Delta X Software/Delta X Software 2024/DeltaXSoftware/TabDashboard.h",
+			"MU",
+			"EWIEGA46WW/moc_TabDashboard.cpp",
+			null
+		],
+		[
+			"E:/Professional/Developer Role/Project Type/Work/Delta X Software/Delta X Software 2024/DeltaXSoftware/TaskNode.h",
+			"MU",
+			"EWIEGA46WW/moc_TaskNode.cpp",
+			null
+		],
+		[
+			"E:/Professional/Developer Role/Project Type/Work/Delta X Software/Delta X Software 2024/DeltaXSoftware/TextLayer.h",
+			"MU",
+			"EWIEGA46WW/moc_TextLayer.cpp",
+			null
+		],
+		[
+			"E:/Professional/Developer Role/Project Type/Work/Delta X Software/Delta X Software 2024/DeltaXSoftware/TrackingManager.h",
+			"MU",
+			"EWIEGA46WW/moc_TrackingManager.cpp",
+			null
+		],
+		[
+			"E:/Professional/Developer Role/Project Type/Work/Delta X Software/Delta X Software 2024/DeltaXSoftware/UnityTool.h",
+			"MU",
+			"EWIEGA46WW/moc_UnityTool.cpp",
+			null
+		],
+		[
+			"E:/Professional/Developer Role/Project Type/Work/Delta X Software/Delta X Software 2024/DeltaXSoftware/VariableManager.h",
+			"MU",
+			"EWIEGA46WW/moc_VariableManager.cpp",
+			null
+		],
+		[
+			"E:/Professional/Developer Role/Project Type/Work/Delta X Software/Delta X Software 2024/DeltaXSoftware/VersionManager.h",
+			"MU",
+			"EWIEGA46WW/moc_VersionManager.cpp",
+			null
+		],
+		[
+			"E:/Professional/Developer Role/Project Type/Work/Delta X Software/Delta X Software 2024/DeltaXSoftware/codeeditor.h",
+			"MU",
+			"EWIEGA46WW/moc_codeeditor.cpp",
+			null
+		],
+		[
+			"E:/Professional/Developer Role/Project Type/Work/Delta X Software/Delta X Software 2024/DeltaXSoftware/device/DeviceManager.h",
+			"MU",
+			"GULY2SVRVA/moc_DeviceManager.cpp",
+			null
+		],
+		[
+			"E:/Professional/Developer Role/Project Type/Work/Delta X Software/Delta X Software 2024/DeltaXSoftware/device/camera.h",
+			"MU",
+			"GULY2SVRVA/moc_camera.cpp",
+			null
+		],
+		[
+			"E:/Professional/Developer Role/Project Type/Work/Delta X Software/Delta X Software 2024/DeltaXSoftware/device/conveyor.h",
+			"MU",
+			"GULY2SVRVA/moc_conveyor.cpp",
+			null
+		],
+		[
+			"E:/Professional/Developer Role/Project Type/Work/Delta X Software/Delta X Software 2024/DeltaXSoftware/device/device.h",
+			"MU",
+			"GULY2SVRVA/moc_device.cpp",
+			null
+		],
+		[
+			"E:/Professional/Developer Role/Project Type/Work/Delta X Software/Delta X Software 2024/DeltaXSoftware/device/encoder.h",
+			"MU",
+			"GULY2SVRVA/moc_encoder.cpp",
+			null
+		],
+		[
+			"E:/Professional/Developer Role/Project Type/Work/Delta X Software/Delta X Software 2024/DeltaXSoftware/device/robot.h",
+			"MU",
+			"GULY2SVRVA/moc_robot.cpp",
+			null
+		],
+		[
+			"E:/Professional/Developer Role/Project Type/Work/Delta X Software/Delta X Software 2024/DeltaXSoftware/device/slider.h",
+			"MU",
+			"GULY2SVRVA/moc_slider.cpp",
+			null
+		],
+		[
+			"E:/Professional/Developer Role/Project Type/Work/Delta X Software/Delta X Software 2024/DeltaXSoftware/geisttextedit.h",
+			"MU",
+			"EWIEGA46WW/moc_geisttextedit.cpp",
+			null
+		],
+		[
+			"E:/Professional/Developer Role/Project Type/Work/Delta X Software/Delta X Software 2024/DeltaXSoftware/global.h",
+			"MU",
+			"EWIEGA46WW/moc_global.cpp",
+			null
+		],
+		[
+			"E:/Professional/Developer Role/Project Type/Work/Delta X Software/Delta X Software 2024/DeltaXSoftware/highlighter.h",
+			"MU",
+			"EWIEGA46WW/moc_highlighter.cpp",
+			null
+		],
+		[
+			"E:/Professional/Developer Role/Project Type/Work/Delta X Software/Delta X Software 2024/DeltaXSoftware/sdk/DeltaXPlugin.h",
+			"MU",
+			"P22SKXHDOS/moc_DeltaXPlugin.cpp",
+			null
+		],
+		[
+			"E:/Professional/Developer Role/Project Type/Work/Delta X Software/Delta X Software 2024/DeltaXSoftware/testcode.h",
+			"MU",
+			"EWIEGA46WW/moc_testcode.cpp",
+			null
+		],
+		[
+			"E:/Professional/Developer Role/Project Type/Work/Delta X Software/Delta X Software 2024/DeltaXSoftware/testwindow.h",
+			"MU",
+			"EWIEGA46WW/moc_testwindow.cpp",
+			null
+		]
+	],
+	"HEADER_EXTENSIONS" : [ "h", "hh", "h++", "hm", "hpp", "hxx", "in", "txx" ],
+	"INCLUDE_DIR" : "E:/Professional/Developer Role/Project Type/Work/Delta X Software/Delta X Software 2024/DeltaXSoftware/build/DeltaRobotSoftware_autogen/include",
+	"INCLUDE_DIR_Debug" : "E:/Professional/Developer Role/Project Type/Work/Delta X Software/Delta X Software 2024/DeltaXSoftware/build/DeltaRobotSoftware_autogen/include_Debug",
+	"INCLUDE_DIR_MinSizeRel" : "E:/Professional/Developer Role/Project Type/Work/Delta X Software/Delta X Software 2024/DeltaXSoftware/build/DeltaRobotSoftware_autogen/include_MinSizeRel",
+	"INCLUDE_DIR_RelWithDebInfo" : "E:/Professional/Developer Role/Project Type/Work/Delta X Software/Delta X Software 2024/DeltaXSoftware/build/DeltaRobotSoftware_autogen/include_RelWithDebInfo",
+	"INCLUDE_DIR_Release" : "E:/Professional/Developer Role/Project Type/Work/Delta X Software/Delta X Software 2024/DeltaXSoftware/build/DeltaRobotSoftware_autogen/include_Release",
+	"MOC_COMPILATION_FILE" : "E:/Professional/Developer Role/Project Type/Work/Delta X Software/Delta X Software 2024/DeltaXSoftware/build/DeltaRobotSoftware_autogen/mocs_compilation.cpp",
+	"MOC_COMPILATION_FILE_Debug" : "E:/Professional/Developer Role/Project Type/Work/Delta X Software/Delta X Software 2024/DeltaXSoftware/build/DeltaRobotSoftware_autogen/mocs_compilation_Debug.cpp",
+	"MOC_COMPILATION_FILE_MinSizeRel" : "E:/Professional/Developer Role/Project Type/Work/Delta X Software/Delta X Software 2024/DeltaXSoftware/build/DeltaRobotSoftware_autogen/mocs_compilation_MinSizeRel.cpp",
+	"MOC_COMPILATION_FILE_RelWithDebInfo" : "E:/Professional/Developer Role/Project Type/Work/Delta X Software/Delta X Software 2024/DeltaXSoftware/build/DeltaRobotSoftware_autogen/mocs_compilation_RelWithDebInfo.cpp",
+	"MOC_COMPILATION_FILE_Release" : "E:/Professional/Developer Role/Project Type/Work/Delta X Software/Delta X Software 2024/DeltaXSoftware/build/DeltaRobotSoftware_autogen/mocs_compilation_Release.cpp",
+	"MOC_DEFINITIONS" : 
+	[
+		"QT_CONCURRENT_LIB",
+		"QT_CORE_LIB",
+		"QT_GUI_LIB",
+		"QT_MULTIMEDIA_LIB",
+		"QT_NETWORK_LIB",
+		"QT_NO_DEBUG",
+		"QT_OPENGL_LIB",
+		"QT_PRINTSUPPORT_LIB",
+		"QT_QMLMODELS_LIB",
+		"QT_QML_LIB",
+		"QT_QUICKWIDGETS_LIB",
+		"QT_QUICK_LIB",
+		"QT_SERIALPORT_LIB",
+		"QT_SVG_LIB",
+		"QT_WIDGETS_LIB",
+		"WIN32"
+	],
+	"MOC_DEFINITIONS_Debug" : 
+	[
+		"QT_CONCURRENT_LIB",
+		"QT_CORE_LIB",
+		"QT_GUI_LIB",
+		"QT_MULTIMEDIA_LIB",
+		"QT_NETWORK_LIB",
+		"QT_OPENGL_LIB",
+		"QT_PRINTSUPPORT_LIB",
+		"QT_QMLMODELS_LIB",
+		"QT_QML_LIB",
+		"QT_QUICKWIDGETS_LIB",
+		"QT_QUICK_LIB",
+		"QT_SERIALPORT_LIB",
+		"QT_SVG_LIB",
+		"QT_WIDGETS_LIB",
+		"WIN32"
+	],
+	"MOC_DEPEND_FILTERS" : 
+	[
+		[
+			"Q_PLUGIN_METADATA",
+			"[\n][ \t]*Q_PLUGIN_METADATA[ \t]*\\([^\\)]*FILE[ \t]*\"([^\"]+)\""
+		]
+	],
+	"MOC_INCLUDES" : 
+	[
+		"E:/Professional/Developer Role/Project Type/Work/Delta X Software/Delta X Software 2024/DeltaXSoftware",
+		"E:/Professional/Developer Role/Project Type/Work/Delta X Software/Delta X Software 2024/DeltaXSoftware/device",
+		"E:/Professional/Developer Role/Project Type/Work/Delta X Software/Delta X Software 2024/DeltaXSoftware/sdk",
+		"E:/Professional/Developer Role/Project Type/Work/Delta X Software/Delta X Software 2024/DeltaXSoftware/3rd-party/opencv/build/include",
+		"C:/Qt/5.15.2/msvc2015_64/include",
+		"C:/Qt/5.15.2/msvc2015_64/include/QtCore",
+		"C:/Qt/5.15.2/msvc2015_64/mkspecs/win32-msvc",
+		"C:/Qt/5.15.2/msvc2015_64/include/QtGui",
+		"C:/Qt/5.15.2/msvc2015_64/include/QtANGLE",
+		"C:/Qt/5.15.2/msvc2015_64/include/QtSerialPort",
+		"C:/Qt/5.15.2/msvc2015_64/include/QtOpenGL",
+		"C:/Qt/5.15.2/msvc2015_64/include/QtWidgets",
+		"C:/Qt/5.15.2/msvc2015_64/include/QtNetwork",
+		"C:/Qt/5.15.2/msvc2015_64/include/QtQuickWidgets",
+		"C:/Qt/5.15.2/msvc2015_64/include/QtQuick",
+		"C:/Qt/5.15.2/msvc2015_64/include/QtQmlModels",
+		"C:/Qt/5.15.2/msvc2015_64/include/QtQml",
+		"C:/Qt/5.15.2/msvc2015_64/include/QtPrintSupport",
+		"C:/Qt/5.15.2/msvc2015_64/include/QtMultimedia",
+		"C:/Qt/5.15.2/msvc2015_64/include/QtSvg",
+		"C:/Qt/5.15.2/msvc2015_64/include/QtConcurrent"
+	],
+	"MOC_MACRO_NAMES" : [ "Q_OBJECT", "Q_GADGET", "Q_NAMESPACE", "Q_NAMESPACE_EXPORT" ],
+	"MOC_OPTIONS" : [],
+	"MOC_PATH_PREFIX" : false,
+	"MOC_PREDEFS_CMD" : [],
+	"MOC_PREDEFS_FILE" : "",
+	"MOC_RELAXED_MODE" : false,
+	"MOC_SKIP" : [],
+	"MULTI_CONFIG" : true,
+	"PARALLEL" : 4,
+	"PARSE_CACHE_FILE" : "E:/Professional/Developer Role/Project Type/Work/Delta X Software/Delta X Software 2024/DeltaXSoftware/build/CMakeFiles/DeltaRobotSoftware_autogen.dir/ParseCache.txt",
+	"PARSE_CACHE_FILE_Debug" : "E:/Professional/Developer Role/Project Type/Work/Delta X Software/Delta X Software 2024/DeltaXSoftware/build/CMakeFiles/DeltaRobotSoftware_autogen.dir/ParseCache_Debug.txt",
+	"PARSE_CACHE_FILE_MinSizeRel" : "E:/Professional/Developer Role/Project Type/Work/Delta X Software/Delta X Software 2024/DeltaXSoftware/build/CMakeFiles/DeltaRobotSoftware_autogen.dir/ParseCache_MinSizeRel.txt",
+	"PARSE_CACHE_FILE_RelWithDebInfo" : "E:/Professional/Developer Role/Project Type/Work/Delta X Software/Delta X Software 2024/DeltaXSoftware/build/CMakeFiles/DeltaRobotSoftware_autogen.dir/ParseCache_RelWithDebInfo.txt",
+	"PARSE_CACHE_FILE_Release" : "E:/Professional/Developer Role/Project Type/Work/Delta X Software/Delta X Software 2024/DeltaXSoftware/build/CMakeFiles/DeltaRobotSoftware_autogen.dir/ParseCache_Release.txt",
+	"QT_MOC_EXECUTABLE" : "C:/Qt/5.15.2/msvc2015_64/bin/moc.exe",
+	"QT_UIC_EXECUTABLE" : "C:/Qt/5.15.2/msvc2015_64/bin/uic.exe",
+	"QT_VERSION_MAJOR" : 5,
+	"QT_VERSION_MINOR" : 15,
+	"SETTINGS_FILE" : "E:/Professional/Developer Role/Project Type/Work/Delta X Software/Delta X Software 2024/DeltaXSoftware/build/CMakeFiles/DeltaRobotSoftware_autogen.dir/AutogenUsed.txt",
+	"SETTINGS_FILE_Debug" : "E:/Professional/Developer Role/Project Type/Work/Delta X Software/Delta X Software 2024/DeltaXSoftware/build/CMakeFiles/DeltaRobotSoftware_autogen.dir/AutogenUsed_Debug.txt",
+	"SETTINGS_FILE_MinSizeRel" : "E:/Professional/Developer Role/Project Type/Work/Delta X Software/Delta X Software 2024/DeltaXSoftware/build/CMakeFiles/DeltaRobotSoftware_autogen.dir/AutogenUsed_MinSizeRel.txt",
+	"SETTINGS_FILE_RelWithDebInfo" : "E:/Professional/Developer Role/Project Type/Work/Delta X Software/Delta X Software 2024/DeltaXSoftware/build/CMakeFiles/DeltaRobotSoftware_autogen.dir/AutogenUsed_RelWithDebInfo.txt",
+	"SETTINGS_FILE_Release" : "E:/Professional/Developer Role/Project Type/Work/Delta X Software/Delta X Software 2024/DeltaXSoftware/build/CMakeFiles/DeltaRobotSoftware_autogen.dir/AutogenUsed_Release.txt",
+	"SOURCES" : 
+	[
+		[
+			"E:/Professional/Developer Role/Project Type/Work/Delta X Software/Delta X Software 2024/DeltaXSoftware/AccountWindow.cpp",
+			"MU",
+			null
+		],
+		[
+			"E:/Professional/Developer Role/Project Type/Work/Delta X Software/Delta X Software 2024/DeltaXSoftware/Authority.cpp",
+			"MU",
+			null
+		],
+		[
+			"E:/Professional/Developer Role/Project Type/Work/Delta X Software/Delta X Software 2024/DeltaXSoftware/ComDevice.cpp",
+			"MU",
+			null
+		],
+		[
+			"E:/Professional/Developer Role/Project Type/Work/Delta X Software/Delta X Software 2024/DeltaXSoftware/DeltaVisualizer.cpp",
+			"MU",
+			null
+		],
+		[
+			"E:/Professional/Developer Role/Project Type/Work/Delta X Software/Delta X Software 2024/DeltaXSoftware/DrawingExporter.cpp",
+			"MU",
+			null
+		],
+		[
+			"E:/Professional/Developer Role/Project Type/Work/Delta X Software/Delta X Software 2024/DeltaXSoftware/DrawingWidget.cpp",
+			"MU",
+			null
+		],
+		[
+			"E:/Professional/Developer Role/Project Type/Work/Delta X Software/Delta X Software 2024/DeltaXSoftware/FilterWindow.cpp",
+			"MU",
+			null
+		],
+		[
+			"E:/Professional/Developer Role/Project Type/Work/Delta X Software/Delta X Software 2024/DeltaXSoftware/GcodeHighlighter.cpp",
+			"MU",
+			null
+		],
+		[
+			"E:/Professional/Developer Role/Project Type/Work/Delta X Software/Delta X Software 2024/DeltaXSoftware/GcodeReference.cpp",
+			"MU",
+			null
+		],
+		[
+			"E:/Professional/Developer Role/Project Type/Work/Delta X Software/Delta X Software 2024/DeltaXSoftware/GcodeScript.cpp",
+			"MU",
+			null
+		],
+		[
+			"E:/Professional/Developer Role/Project Type/Work/Delta X Software/Delta X Software 2024/DeltaXSoftware/ImageProcessing.cpp",
+			"MU",
+			null
+		],
+		[
+			"E:/Professional/Developer Role/Project Type/Work/Delta X Software/Delta X Software 2024/DeltaXSoftware/ImageViewer.cpp",
+			"MU",
+			null
+		],
+		[
+			"E:/Professional/Developer Role/Project Type/Work/Delta X Software/Delta X Software 2024/DeltaXSoftware/Layer.cpp",
+			"MU",
+			null
+		],
+		[
+			"E:/Professional/Developer Role/Project Type/Work/Delta X Software/Delta X Software 2024/DeltaXSoftware/MainWindow.cpp",
+			"MU",
+			null
+		],
+		[
+			"E:/Professional/Developer Role/Project Type/Work/Delta X Software/Delta X Software 2024/DeltaXSoftware/Object.cpp",
+			"MU",
+			null
+		],
+		[
+			"E:/Professional/Developer Role/Project Type/Work/Delta X Software/Delta X Software 2024/DeltaXSoftware/ObjectInfo.cpp",
+			"MU",
+			null
+		],
+		[
+			"E:/Professional/Developer Role/Project Type/Work/Delta X Software/Delta X Software 2024/DeltaXSoftware/ObjectVariableTable.cpp",
+			"MU",
+			null
+		],
+		[
+			"E:/Professional/Developer Role/Project Type/Work/Delta X Software/Delta X Software 2024/DeltaXSoftware/Parameter.cpp",
+			"MU",
+			null
+		],
+		[
+			"E:/Professional/Developer Role/Project Type/Work/Delta X Software/Delta X Software 2024/DeltaXSoftware/PointTool.cpp",
+			"MU",
+			null
+		],
+		[
+			"E:/Professional/Developer Role/Project Type/Work/Delta X Software/Delta X Software 2024/DeltaXSoftware/ProjectManager.cpp",
+			"MU",
+			null
+		],
+		[
+			"E:/Professional/Developer Role/Project Type/Work/Delta X Software/Delta X Software 2024/DeltaXSoftware/RobotWindow.cpp",
+			"MU",
+			null
+		],
+		[
+			"E:/Professional/Developer Role/Project Type/Work/Delta X Software/Delta X Software 2024/DeltaXSoftware/SmartDialog.cpp",
+			"MU",
+			null
+		],
+		[
+			"E:/Professional/Developer Role/Project Type/Work/Delta X Software/Delta X Software 2024/DeltaXSoftware/SocketConnectionManager.cpp",
+			"MU",
+			null
+		],
+		[
+			"E:/Professional/Developer Role/Project Type/Work/Delta X Software/Delta X Software 2024/DeltaXSoftware/SoftwareManager.cpp",
+			"MU",
+			null
+		],
+		[
+			"E:/Professional/Developer Role/Project Type/Work/Delta X Software/Delta X Software 2024/DeltaXSoftware/TabDashboard.cpp",
+			"MU",
+			null
+		],
+		[
+			"E:/Professional/Developer Role/Project Type/Work/Delta X Software/Delta X Software 2024/DeltaXSoftware/TaskNode.cpp",
+			"MU",
+			null
+		],
+		[
+			"E:/Professional/Developer Role/Project Type/Work/Delta X Software/Delta X Software 2024/DeltaXSoftware/TestCode.cpp",
+			"MU",
+			null
+		],
+		[
+			"E:/Professional/Developer Role/Project Type/Work/Delta X Software/Delta X Software 2024/DeltaXSoftware/TextLayer.cpp",
+			"MU",
+			null
+		],
+		[
+			"E:/Professional/Developer Role/Project Type/Work/Delta X Software/Delta X Software 2024/DeltaXSoftware/TrackingManager.cpp",
+			"MU",
+			null
+		],
+		[
+			"E:/Professional/Developer Role/Project Type/Work/Delta X Software/Delta X Software 2024/DeltaXSoftware/UnityTool.cpp",
+			"MU",
+			null
+		],
+		[
+			"E:/Professional/Developer Role/Project Type/Work/Delta X Software/Delta X Software 2024/DeltaXSoftware/VariableManager.cpp",
+			"MU",
+			null
+		],
+		[
+			"E:/Professional/Developer Role/Project Type/Work/Delta X Software/Delta X Software 2024/DeltaXSoftware/VersionManager.cpp",
+			"MU",
+			null
+		],
+		[
+			"E:/Professional/Developer Role/Project Type/Work/Delta X Software/Delta X Software 2024/DeltaXSoftware/codeeditor.cpp",
+			"MU",
+			null
+		],
+		[
+			"E:/Professional/Developer Role/Project Type/Work/Delta X Software/Delta X Software 2024/DeltaXSoftware/device/DeviceManager.cpp",
+			"MU",
+			null
+		],
+		[
+			"E:/Professional/Developer Role/Project Type/Work/Delta X Software/Delta X Software 2024/DeltaXSoftware/device/camera.cpp",
+			"MU",
+			null
+		],
+		[
+			"E:/Professional/Developer Role/Project Type/Work/Delta X Software/Delta X Software 2024/DeltaXSoftware/device/conveyor.cpp",
+			"MU",
+			null
+		],
+		[
+			"E:/Professional/Developer Role/Project Type/Work/Delta X Software/Delta X Software 2024/DeltaXSoftware/device/device.cpp",
+			"MU",
+			null
+		],
+		[
+			"E:/Professional/Developer Role/Project Type/Work/Delta X Software/Delta X Software 2024/DeltaXSoftware/device/encoder.cpp",
+			"MU",
+			null
+		],
+		[
+			"E:/Professional/Developer Role/Project Type/Work/Delta X Software/Delta X Software 2024/DeltaXSoftware/device/robot.cpp",
+			"MU",
+			null
+		],
+		[
+			"E:/Professional/Developer Role/Project Type/Work/Delta X Software/Delta X Software 2024/DeltaXSoftware/device/slider.cpp",
+			"MU",
+			null
+		],
+		[
+			"E:/Professional/Developer Role/Project Type/Work/Delta X Software/Delta X Software 2024/DeltaXSoftware/geisttextedit.cpp",
+			"MU",
+			null
+		],
+		[
+			"E:/Professional/Developer Role/Project Type/Work/Delta X Software/Delta X Software 2024/DeltaXSoftware/global.cpp",
+			"MU",
+			null
+		],
+		[
+			"E:/Professional/Developer Role/Project Type/Work/Delta X Software/Delta X Software 2024/DeltaXSoftware/highlighter.cpp",
+			"MU",
+			null
+		],
+		[
+			"E:/Professional/Developer Role/Project Type/Work/Delta X Software/Delta X Software 2024/DeltaXSoftware/main.cpp",
+			"MU",
+			null
+		],
+		[
+			"E:/Professional/Developer Role/Project Type/Work/Delta X Software/Delta X Software 2024/DeltaXSoftware/testwindow.cpp",
+			"MU",
+			null
+		]
+	],
+	"UIC_OPTIONS" : [],
+	"UIC_SEARCH_PATHS" : [],
+	"UIC_SKIP" : [],
+	"UIC_UI_FILES" : [],
+	"VERBOSITY" : 0
+}

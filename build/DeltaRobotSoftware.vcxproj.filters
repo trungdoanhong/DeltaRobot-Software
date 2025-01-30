@@ -1,0 +1,408 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="16.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="E:\Professional\Developer Role\Project Type\Work\Delta X Software\Delta X Software 2024\DeltaXSoftware\build\DeltaRobotSoftware_autogen\mocs_compilation_Debug.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\Professional\Developer Role\Project Type\Work\Delta X Software\Delta X Software 2024\DeltaXSoftware\main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\Professional\Developer Role\Project Type\Work\Delta X Software\Delta X Software 2024\DeltaXSoftware\AccountWindow.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\Professional\Developer Role\Project Type\Work\Delta X Software\Delta X Software 2024\DeltaXSoftware\Authority.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\Professional\Developer Role\Project Type\Work\Delta X Software\Delta X Software 2024\DeltaXSoftware\ComDevice.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\Professional\Developer Role\Project Type\Work\Delta X Software\Delta X Software 2024\DeltaXSoftware\DrawingExporter.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\Professional\Developer Role\Project Type\Work\Delta X Software\Delta X Software 2024\DeltaXSoftware\DrawingWidget.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\Professional\Developer Role\Project Type\Work\Delta X Software\Delta X Software 2024\DeltaXSoftware\FilterWindow.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\Professional\Developer Role\Project Type\Work\Delta X Software\Delta X Software 2024\DeltaXSoftware\GcodeHighlighter.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\Professional\Developer Role\Project Type\Work\Delta X Software\Delta X Software 2024\DeltaXSoftware\GcodeReference.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\Professional\Developer Role\Project Type\Work\Delta X Software\Delta X Software 2024\DeltaXSoftware\GcodeScript.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\Professional\Developer Role\Project Type\Work\Delta X Software\Delta X Software 2024\DeltaXSoftware\ImageProcessing.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\Professional\Developer Role\Project Type\Work\Delta X Software\Delta X Software 2024\DeltaXSoftware\ImageViewer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\Professional\Developer Role\Project Type\Work\Delta X Software\Delta X Software 2024\DeltaXSoftware\Layer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\Professional\Developer Role\Project Type\Work\Delta X Software\Delta X Software 2024\DeltaXSoftware\MainWindow.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\Professional\Developer Role\Project Type\Work\Delta X Software\Delta X Software 2024\DeltaXSoftware\Object.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\Professional\Developer Role\Project Type\Work\Delta X Software\Delta X Software 2024\DeltaXSoftware\ObjectInfo.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\Professional\Developer Role\Project Type\Work\Delta X Software\Delta X Software 2024\DeltaXSoftware\ObjectVariableTable.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\Professional\Developer Role\Project Type\Work\Delta X Software\Delta X Software 2024\DeltaXSoftware\Parameter.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\Professional\Developer Role\Project Type\Work\Delta X Software\Delta X Software 2024\DeltaXSoftware\PointTool.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\Professional\Developer Role\Project Type\Work\Delta X Software\Delta X Software 2024\DeltaXSoftware\ProjectManager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\Professional\Developer Role\Project Type\Work\Delta X Software\Delta X Software 2024\DeltaXSoftware\RobotWindow.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\Professional\Developer Role\Project Type\Work\Delta X Software\Delta X Software 2024\DeltaXSoftware\SmartDialog.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\Professional\Developer Role\Project Type\Work\Delta X Software\Delta X Software 2024\DeltaXSoftware\SocketConnectionManager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\Professional\Developer Role\Project Type\Work\Delta X Software\Delta X Software 2024\DeltaXSoftware\SoftwareManager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\Professional\Developer Role\Project Type\Work\Delta X Software\Delta X Software 2024\DeltaXSoftware\TabDashboard.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\Professional\Developer Role\Project Type\Work\Delta X Software\Delta X Software 2024\DeltaXSoftware\TaskNode.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\Professional\Developer Role\Project Type\Work\Delta X Software\Delta X Software 2024\DeltaXSoftware\TestCode.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\Professional\Developer Role\Project Type\Work\Delta X Software\Delta X Software 2024\DeltaXSoftware\TextLayer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\Professional\Developer Role\Project Type\Work\Delta X Software\Delta X Software 2024\DeltaXSoftware\TrackingManager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\Professional\Developer Role\Project Type\Work\Delta X Software\Delta X Software 2024\DeltaXSoftware\VariableManager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\Professional\Developer Role\Project Type\Work\Delta X Software\Delta X Software 2024\DeltaXSoftware\VersionManager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\Professional\Developer Role\Project Type\Work\Delta X Software\Delta X Software 2024\DeltaXSoftware\codeeditor.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\Professional\Developer Role\Project Type\Work\Delta X Software\Delta X Software 2024\DeltaXSoftware\DeltaVisualizer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\Professional\Developer Role\Project Type\Work\Delta X Software\Delta X Software 2024\DeltaXSoftware\UnityTool.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\Professional\Developer Role\Project Type\Work\Delta X Software\Delta X Software 2024\DeltaXSoftware\device\DeviceManager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\Professional\Developer Role\Project Type\Work\Delta X Software\Delta X Software 2024\DeltaXSoftware\device\camera.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\Professional\Developer Role\Project Type\Work\Delta X Software\Delta X Software 2024\DeltaXSoftware\device\conveyor.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\Professional\Developer Role\Project Type\Work\Delta X Software\Delta X Software 2024\DeltaXSoftware\device\device.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\Professional\Developer Role\Project Type\Work\Delta X Software\Delta X Software 2024\DeltaXSoftware\device\encoder.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\Professional\Developer Role\Project Type\Work\Delta X Software\Delta X Software 2024\DeltaXSoftware\device\robot.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\Professional\Developer Role\Project Type\Work\Delta X Software\Delta X Software 2024\DeltaXSoftware\device\slider.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\Professional\Developer Role\Project Type\Work\Delta X Software\Delta X Software 2024\DeltaXSoftware\geisttextedit.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\Professional\Developer Role\Project Type\Work\Delta X Software\Delta X Software 2024\DeltaXSoftware\global.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\Professional\Developer Role\Project Type\Work\Delta X Software\Delta X Software 2024\DeltaXSoftware\highlighter.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\Professional\Developer Role\Project Type\Work\Delta X Software\Delta X Software 2024\DeltaXSoftware\testwindow.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\Professional\Developer Role\Project Type\Work\Delta X Software\Delta X Software 2024\DeltaXSoftware\build\DeltaRobotSoftware_autogen\EWIEGA46WW\qrc_resource.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\Professional\Developer Role\Project Type\Work\Delta X Software\Delta X Software 2024\DeltaXSoftware\build\DeltaRobotSoftware_autogen\mocs_compilation_Release.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\Professional\Developer Role\Project Type\Work\Delta X Software\Delta X Software 2024\DeltaXSoftware\build\DeltaRobotSoftware_autogen\mocs_compilation_MinSizeRel.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\Professional\Developer Role\Project Type\Work\Delta X Software\Delta X Software 2024\DeltaXSoftware\build\DeltaRobotSoftware_autogen\mocs_compilation_RelWithDebInfo.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="E:\Professional\Developer Role\Project Type\Work\Delta X Software\Delta X Software 2024\DeltaXSoftware\AccountWindow.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="E:\Professional\Developer Role\Project Type\Work\Delta X Software\Delta X Software 2024\DeltaXSoftware\Authority.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="E:\Professional\Developer Role\Project Type\Work\Delta X Software\Delta X Software 2024\DeltaXSoftware\ComDevice.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="E:\Professional\Developer Role\Project Type\Work\Delta X Software\Delta X Software 2024\DeltaXSoftware\DeltaVisualizer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="E:\Professional\Developer Role\Project Type\Work\Delta X Software\Delta X Software 2024\DeltaXSoftware\DrawingExporter.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="E:\Professional\Developer Role\Project Type\Work\Delta X Software\Delta X Software 2024\DeltaXSoftware\DrawingWidget.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="E:\Professional\Developer Role\Project Type\Work\Delta X Software\Delta X Software 2024\DeltaXSoftware\FilterWindow.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="E:\Professional\Developer Role\Project Type\Work\Delta X Software\Delta X Software 2024\DeltaXSoftware\GcodeHighlighter.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="E:\Professional\Developer Role\Project Type\Work\Delta X Software\Delta X Software 2024\DeltaXSoftware\GcodeReference.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="E:\Professional\Developer Role\Project Type\Work\Delta X Software\Delta X Software 2024\DeltaXSoftware\GcodeScript.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="E:\Professional\Developer Role\Project Type\Work\Delta X Software\Delta X Software 2024\DeltaXSoftware\ImageUnity.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="E:\Professional\Developer Role\Project Type\Work\Delta X Software\Delta X Software 2024\DeltaXSoftware\ImageViewer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="E:\Professional\Developer Role\Project Type\Work\Delta X Software\Delta X Software 2024\DeltaXSoftware\Layer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="E:\Professional\Developer Role\Project Type\Work\Delta X Software\Delta X Software 2024\DeltaXSoftware\MainWindow.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="E:\Professional\Developer Role\Project Type\Work\Delta X Software\Delta X Software 2024\DeltaXSoftware\Object.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="E:\Professional\Developer Role\Project Type\Work\Delta X Software\Delta X Software 2024\DeltaXSoftware\ImageProcessing.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="E:\Professional\Developer Role\Project Type\Work\Delta X Software\Delta X Software 2024\DeltaXSoftware\ObjectInfo.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="E:\Professional\Developer Role\Project Type\Work\Delta X Software\Delta X Software 2024\DeltaXSoftware\ObjectInfoModel.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="E:\Professional\Developer Role\Project Type\Work\Delta X Software\Delta X Software 2024\DeltaXSoftware\ObjectVariableTable.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="E:\Professional\Developer Role\Project Type\Work\Delta X Software\Delta X Software 2024\DeltaXSoftware\Parameter.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="E:\Professional\Developer Role\Project Type\Work\Delta X Software\Delta X Software 2024\DeltaXSoftware\PointTool.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="E:\Professional\Developer Role\Project Type\Work\Delta X Software\Delta X Software 2024\DeltaXSoftware\ProjectManager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="E:\Professional\Developer Role\Project Type\Work\Delta X Software\Delta X Software 2024\DeltaXSoftware\RobotWindow.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="E:\Professional\Developer Role\Project Type\Work\Delta X Software\Delta X Software 2024\DeltaXSoftware\ScurveInterpolator.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="E:\Professional\Developer Role\Project Type\Work\Delta X Software\Delta X Software 2024\DeltaXSoftware\SmartDialog.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="E:\Professional\Developer Role\Project Type\Work\Delta X Software\Delta X Software 2024\DeltaXSoftware\SocketConnectionManager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="E:\Professional\Developer Role\Project Type\Work\Delta X Software\Delta X Software 2024\DeltaXSoftware\SoftwareManager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="E:\Professional\Developer Role\Project Type\Work\Delta X Software\Delta X Software 2024\DeltaXSoftware\TabDashboard.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="E:\Professional\Developer Role\Project Type\Work\Delta X Software\Delta X Software 2024\DeltaXSoftware\TaskNode.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="E:\Professional\Developer Role\Project Type\Work\Delta X Software\Delta X Software 2024\DeltaXSoftware\TextLayer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="E:\Professional\Developer Role\Project Type\Work\Delta X Software\Delta X Software 2024\DeltaXSoftware\TrackingManager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="E:\Professional\Developer Role\Project Type\Work\Delta X Software\Delta X Software 2024\DeltaXSoftware\VariableManager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="E:\Professional\Developer Role\Project Type\Work\Delta X Software\Delta X Software 2024\DeltaXSoftware\VersionManager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="E:\Professional\Developer Role\Project Type\Work\Delta X Software\Delta X Software 2024\DeltaXSoftware\codeeditor.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="E:\Professional\Developer Role\Project Type\Work\Delta X Software\Delta X Software 2024\DeltaXSoftware\device\DeviceManager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="E:\Professional\Developer Role\Project Type\Work\Delta X Software\Delta X Software 2024\DeltaXSoftware\device\camera.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="E:\Professional\Developer Role\Project Type\Work\Delta X Software\Delta X Software 2024\DeltaXSoftware\device\conveyor.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="E:\Professional\Developer Role\Project Type\Work\Delta X Software\Delta X Software 2024\DeltaXSoftware\device\device.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="E:\Professional\Developer Role\Project Type\Work\Delta X Software\Delta X Software 2024\DeltaXSoftware\device\encoder.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="E:\Professional\Developer Role\Project Type\Work\Delta X Software\Delta X Software 2024\DeltaXSoftware\device\robot.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="E:\Professional\Developer Role\Project Type\Work\Delta X Software\Delta X Software 2024\DeltaXSoftware\device\slider.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="E:\Professional\Developer Role\Project Type\Work\Delta X Software\Delta X Software 2024\DeltaXSoftware\geisttextedit.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="E:\Professional\Developer Role\Project Type\Work\Delta X Software\Delta X Software 2024\DeltaXSoftware\global.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="E:\Professional\Developer Role\Project Type\Work\Delta X Software\Delta X Software 2024\DeltaXSoftware\highlighter.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="E:\Professional\Developer Role\Project Type\Work\Delta X Software\Delta X Software 2024\DeltaXSoftware\sdk\DeltaXPlugin.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="E:\Professional\Developer Role\Project Type\Work\Delta X Software\Delta X Software 2024\DeltaXSoftware\testcode.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="E:\Professional\Developer Role\Project Type\Work\Delta X Software\Delta X Software 2024\DeltaXSoftware\testwindow.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="E:\Professional\Developer Role\Project Type\Work\Delta X Software\Delta X Software 2024\DeltaXSoftware\build\DeltaRobotSoftware_autogen\include_Debug\ui_AccountWindow.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="E:\Professional\Developer Role\Project Type\Work\Delta X Software\Delta X Software 2024\DeltaXSoftware\build\DeltaRobotSoftware_autogen\include_Debug\ui_FilterWindow.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="E:\Professional\Developer Role\Project Type\Work\Delta X Software\Delta X Software 2024\DeltaXSoftware\build\DeltaRobotSoftware_autogen\include_Debug\ui_MainWindow.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="E:\Professional\Developer Role\Project Type\Work\Delta X Software\Delta X Software 2024\DeltaXSoftware\build\DeltaRobotSoftware_autogen\include_Debug\ui_RobotWindow.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="E:\Professional\Developer Role\Project Type\Work\Delta X Software\Delta X Software 2024\DeltaXSoftware\build\DeltaRobotSoftware_autogen\include_Debug\ui_GcodeReference.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="E:\Professional\Developer Role\Project Type\Work\Delta X Software\Delta X Software 2024\DeltaXSoftware\build\DeltaRobotSoftware_autogen\include_Debug\ui_testwindow.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="E:\Professional\Developer Role\Project Type\Work\Delta X Software\Delta X Software 2024\DeltaXSoftware\build\DeltaRobotSoftware_autogen\include_Release\ui_AccountWindow.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="E:\Professional\Developer Role\Project Type\Work\Delta X Software\Delta X Software 2024\DeltaXSoftware\build\DeltaRobotSoftware_autogen\include_Release\ui_FilterWindow.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="E:\Professional\Developer Role\Project Type\Work\Delta X Software\Delta X Software 2024\DeltaXSoftware\build\DeltaRobotSoftware_autogen\include_Release\ui_MainWindow.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="E:\Professional\Developer Role\Project Type\Work\Delta X Software\Delta X Software 2024\DeltaXSoftware\build\DeltaRobotSoftware_autogen\include_Release\ui_RobotWindow.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="E:\Professional\Developer Role\Project Type\Work\Delta X Software\Delta X Software 2024\DeltaXSoftware\build\DeltaRobotSoftware_autogen\include_Release\ui_GcodeReference.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="E:\Professional\Developer Role\Project Type\Work\Delta X Software\Delta X Software 2024\DeltaXSoftware\build\DeltaRobotSoftware_autogen\include_Release\ui_testwindow.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="E:\Professional\Developer Role\Project Type\Work\Delta X Software\Delta X Software 2024\DeltaXSoftware\build\DeltaRobotSoftware_autogen\include_MinSizeRel\ui_AccountWindow.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="E:\Professional\Developer Role\Project Type\Work\Delta X Software\Delta X Software 2024\DeltaXSoftware\build\DeltaRobotSoftware_autogen\include_MinSizeRel\ui_FilterWindow.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="E:\Professional\Developer Role\Project Type\Work\Delta X Software\Delta X Software 2024\DeltaXSoftware\build\DeltaRobotSoftware_autogen\include_MinSizeRel\ui_MainWindow.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="E:\Professional\Developer Role\Project Type\Work\Delta X Software\Delta X Software 2024\DeltaXSoftware\build\DeltaRobotSoftware_autogen\include_MinSizeRel\ui_RobotWindow.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="E:\Professional\Developer Role\Project Type\Work\Delta X Software\Delta X Software 2024\DeltaXSoftware\build\DeltaRobotSoftware_autogen\include_MinSizeRel\ui_GcodeReference.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="E:\Professional\Developer Role\Project Type\Work\Delta X Software\Delta X Software 2024\DeltaXSoftware\build\DeltaRobotSoftware_autogen\include_MinSizeRel\ui_testwindow.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="E:\Professional\Developer Role\Project Type\Work\Delta X Software\Delta X Software 2024\DeltaXSoftware\build\DeltaRobotSoftware_autogen\include_RelWithDebInfo\ui_AccountWindow.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="E:\Professional\Developer Role\Project Type\Work\Delta X Software\Delta X Software 2024\DeltaXSoftware\build\DeltaRobotSoftware_autogen\include_RelWithDebInfo\ui_FilterWindow.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="E:\Professional\Developer Role\Project Type\Work\Delta X Software\Delta X Software 2024\DeltaXSoftware\build\DeltaRobotSoftware_autogen\include_RelWithDebInfo\ui_MainWindow.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="E:\Professional\Developer Role\Project Type\Work\Delta X Software\Delta X Software 2024\DeltaXSoftware\build\DeltaRobotSoftware_autogen\include_RelWithDebInfo\ui_RobotWindow.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="E:\Professional\Developer Role\Project Type\Work\Delta X Software\Delta X Software 2024\DeltaXSoftware\build\DeltaRobotSoftware_autogen\include_RelWithDebInfo\ui_GcodeReference.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="E:\Professional\Developer Role\Project Type\Work\Delta X Software\Delta X Software 2024\DeltaXSoftware\build\DeltaRobotSoftware_autogen\include_RelWithDebInfo\ui_testwindow.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="E:\Professional\Developer Role\Project Type\Work\Delta X Software\Delta X Software 2024\DeltaXSoftware\build\CMakeFiles\1162821ef7e0b0f64aac65993cf3bd74\autouic_(CONFIG).stamp.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="E:\Professional\Developer Role\Project Type\Work\Delta X Software\Delta X Software 2024\DeltaXSoftware\build\CMakeFiles\72fc2485e431f3b4c0ba6f83c3e3b3ce\qrc_resource.cpp.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="E:\Professional\Developer Role\Project Type\Work\Delta X Software\Delta X Software 2024\DeltaXSoftware\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="E:\Professional\Developer Role\Project Type\Work\Delta X Software\Delta X Software 2024\DeltaXSoftware\AccountWindow.ui" />
+    <None Include="E:\Professional\Developer Role\Project Type\Work\Delta X Software\Delta X Software 2024\DeltaXSoftware\FilterWindow.ui" />
+    <None Include="E:\Professional\Developer Role\Project Type\Work\Delta X Software\Delta X Software 2024\DeltaXSoftware\MainWindow.ui" />
+    <None Include="E:\Professional\Developer Role\Project Type\Work\Delta X Software\Delta X Software 2024\DeltaXSoftware\RobotWindow.ui" />
+    <None Include="E:\Professional\Developer Role\Project Type\Work\Delta X Software\Delta X Software 2024\DeltaXSoftware\GcodeReference.ui" />
+    <None Include="E:\Professional\Developer Role\Project Type\Work\Delta X Software\Delta X Software 2024\DeltaXSoftware\testwindow.ui" />
+    <None Include="E:\Professional\Developer Role\Project Type\Work\Delta X Software\Delta X Software 2024\DeltaXSoftware\resource.qrc" />
+    <None Include="E:\Professional\Developer Role\Project Type\Work\Delta X Software\Delta X Software 2024\DeltaXSoftware\build\DeltaRobotSoftware_autogen\autouic_Debug.stamp" />
+    <None Include="E:\Professional\Developer Role\Project Type\Work\Delta X Software\Delta X Software 2024\DeltaXSoftware\build\DeltaRobotSoftware_autogen\autouic_Release.stamp" />
+    <None Include="E:\Professional\Developer Role\Project Type\Work\Delta X Software\Delta X Software 2024\DeltaXSoftware\build\DeltaRobotSoftware_autogen\autouic_MinSizeRel.stamp" />
+    <None Include="E:\Professional\Developer Role\Project Type\Work\Delta X Software\Delta X Software 2024\DeltaXSoftware\build\DeltaRobotSoftware_autogen\autouic_RelWithDebInfo.stamp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="E:\Professional\Developer Role\Project Type\Work\Delta X Software\Delta X Software 2024\DeltaXSoftware\build\DeltaRobotSoftware_resource.rc">
+      <Filter>Source Files</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{A74241F6-00CA-3BE0-B999-068C57460F49}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{8DEED11A-0F15-34C0-8CB2-CA133651C144}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{F38A2C60-66C8-30F7-8983-65749FB6123E}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

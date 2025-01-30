@@ -1,11 +1,11 @@
 x64
 release
 debug
-.qtc_clangd
 .qt_for_python
 3rd-party\QJoysticks
 *.idx
-.qtc_clangd
 plugin\IndustrialCamera\.qtc_clangd
 code test
 plugin/build-IndustrialCamera-Desktop_Qt_5_15_2_MSVC2015_64bit-Release/
+/.qtc_clangd
+/.qtc_clangd/.cache
