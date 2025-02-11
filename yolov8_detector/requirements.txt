@@ -1,0 +1,7 @@
+opencv-python>=4.8.0
+PyQt5>=5.15.0
+ultralytics>=8.0.0
+numpy>=1.24.0
+pypylon>=2.0.0
+harvesters>=1.4.0
+harvesters_gui>=1.0.0 
