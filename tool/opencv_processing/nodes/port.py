@@ -1,7 +1,7 @@
 from PyQt5.QtWidgets import QGraphicsItem
 from PyQt5.QtCore import Qt, QRectF, pyqtSignal, QObject, QPointF
 from PyQt5.QtGui import QPainter, QPen, QBrush, QColor, QPainterPath, QRadialGradient
-from ui.style import *
+from tool.opencv_processing.ui.style import *
 
 class PortSignals(QObject):
     port_clicked = pyqtSignal(object)  # Signal emitted when port is clicked
