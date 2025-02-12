@@ -1,12 +1,13 @@
 from PyQt5.QtWidgets import (QMainWindow, QWidget, QVBoxLayout, QHBoxLayout, 
                             QToolBar, QAction, QDockWidget, QLabel, QScrollArea,
-                            QPushButton, QSpinBox, QComboBox, QSizePolicy)
+                            QPushButton, QSpinBox, QComboBox, QSizePolicy, QFileDialog)
 from PyQt5.QtCore import Qt, QPoint, QTimer
 from PyQt5.QtGui import QImage, QPixmap
-from ui.node_editor import NodeEditor
-from ui.toolbar import ToolBar
-from .style import MAIN_STYLE
+from tool.opencv_processing.ui.node_editor import NodeEditor
+from tool.opencv_processing.ui.toolbar import ToolBar
+from tool.opencv_processing.ui.style import MAIN_STYLE
 import cv2
+import os
 
 class PropertiesPanel(QDockWidget):
     def __init__(self, parent=None):
@@ -362,6 +363,10 @@ class MainWindow(QMainWindow):
         super().__init__()
         self.setWindowTitle("OpenCV Processing Tool")
         self.setStyleSheet(MAIN_STYLE)
+        
+        # Create menu bar first
+        self.create_menu_bar()
+        
         self.setup_ui()
         self.setup_connections()
         
@@ -369,6 +374,48 @@ class MainWindow(QMainWindow):
         self.update_timer = QTimer()
         self.update_timer.timeout.connect(self.update_previews)
         self.update_timer.start(33)  # Update at ~30 FPS
+        
+    def create_menu_bar(self):
+        """Create menu bar with file and edit menus"""
+        menubar = self.menuBar()
+        
+        # File menu
+        file_menu = menubar.addMenu('File')
+        
+        new_action = QAction('New Project', self)
+        new_action.setShortcut('Ctrl+N')
+        new_action.triggered.connect(self.new_project)
+        file_menu.addAction(new_action)
+        
+        open_action = QAction('Open Project...', self)
+        open_action.setShortcut('Ctrl+O')
+        open_action.triggered.connect(self.open_project)
+        file_menu.addAction(open_action)
+        
+        save_action = QAction('Save Project', self)
+        save_action.setShortcut('Ctrl+S')
+        save_action.triggered.connect(self.save_project)
+        file_menu.addAction(save_action)
+        
+        save_as_action = QAction('Save Project As...', self)
+        save_as_action.setShortcut('Ctrl+Shift+S')
+        save_as_action.triggered.connect(self.save_project_as)
+        file_menu.addAction(save_as_action)
+        
+        file_menu.addSeparator()
+        
+        exit_action = QAction('Exit', self)
+        exit_action.setShortcut('Ctrl+Q')
+        exit_action.triggered.connect(self.close)
+        file_menu.addAction(exit_action)
+        
+        # Edit menu
+        edit_menu = menubar.addMenu('Edit')
+        
+        clear_action = QAction('Clear All', self)
+        clear_action.setShortcut('Ctrl+Shift+C')
+        clear_action.triggered.connect(self.clear_scene)
+        edit_menu.addAction(clear_action)
         
     def setup_ui(self):
         # Create central widget and layout
@@ -426,4 +473,60 @@ class MainWindow(QMainWindow):
                 self.properties.update_current_preview()
         except RuntimeError:
             # Handle case where Qt objects have been deleted
-            pass 
+            pass
+            
+    def new_project(self):
+        """Create new project"""
+        if self.node_editor.maybe_save():
+            self.node_editor.scene.clear()
+            self.node_editor.project_manager.current_project = None
+            self.setWindowTitle("OpenCV Processing Tool")
+            
+    def open_project(self):
+        """Open existing project"""
+        if self.node_editor.maybe_save():
+            filepath, _ = QFileDialog.getOpenFileName(
+                self,
+                "Open Project",
+                "",
+                "OpenCV Processing Tool Projects (*.cvp);;All Files (*)"
+            )
+            if filepath:
+                if self.node_editor.project_manager.load_project(self.node_editor, filepath):
+                    self.setWindowTitle(f"OpenCV Processing Tool - {os.path.basename(filepath)}")
+                
+    def save_project(self):
+        """Save current project"""
+        if self.node_editor.project_manager.current_project:
+            if self.node_editor.project_manager.save_project(self.node_editor, 
+                                                           self.node_editor.project_manager.current_project):
+                self.setWindowTitle(f"OpenCV Processing Tool - {os.path.basename(self.node_editor.project_manager.current_project)}")
+        else:
+            self.save_project_as()
+            
+    def save_project_as(self):
+        """Save project with new name"""
+        filepath, _ = QFileDialog.getSaveFileName(
+            self,
+            "Save Project As",
+            "",
+            "OpenCV Processing Tool Projects (*.cvp);;All Files (*)"
+        )
+        if filepath:
+            if not filepath.endswith('.cvp'):
+                filepath += '.cvp'
+            if self.node_editor.project_manager.save_project(self.node_editor, filepath):
+                self.setWindowTitle(f"OpenCV Processing Tool - {os.path.basename(filepath)}")
+                
+    def clear_scene(self):
+        """Clear all nodes from scene"""
+        if self.node_editor.maybe_save():
+            self.node_editor.scene.clear()
+            self.setWindowTitle("OpenCV Processing Tool")
+            
+    def closeEvent(self, event):
+        """Handle application close"""
+        if self.node_editor.maybe_save():
+            event.accept()
+        else:
+            event.ignore() 

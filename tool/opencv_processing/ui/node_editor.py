@@ -1,24 +1,22 @@
-from PyQt5.QtWidgets import QWidget, QGraphicsView, QGraphicsScene, QVBoxLayout, QMenu
-from PyQt5.QtCore import Qt, QRectF, QPointF, QLineF
-from nodes.node_factory import NodeFactory
+from PyQt5.QtWidgets import (QGraphicsView, QGraphicsScene, QVBoxLayout, QWidget,
+                            QMainWindow, QMenuBar, QMenu, QAction, QFileDialog, QMessageBox)
+from PyQt5.QtCore import Qt, QTimer, QRectF, QPointF
 from PyQt5.QtGui import QPainter, QPen, QBrush, QPainterPath
-from nodes.port import Connection
-from .style import *
+import os
+from tool.opencv_processing.project.project_manager import ProjectManager
+from tool.opencv_processing.nodes.node_factory import NodeFactory
+from tool.opencv_processing.nodes.port import Connection
+from tool.opencv_processing.ui.style import *
 
 class NodeEditor(QWidget):
     def __init__(self):
         super().__init__()
-        self.setup_ui()
-        self.node_factory = NodeFactory()
-        self.temp_connection = None
-        self.source_port = None
-        self.selected_ports = []
         
-    def setup_ui(self):
-        layout = QVBoxLayout(self)
-        layout.setContentsMargins(0, 0, 0, 0)
+        # Create layout
+        self.layout = QVBoxLayout(self)
+        self.layout.setContentsMargins(0, 0, 0, 0)
         
-        # Create graphics scene and view
+        # Create scene and view
         self.scene = QGraphicsScene()
         self.scene.setBackgroundBrush(BACKGROUND_COLOR)
         self.scene.setSceneRect(QRectF(-2000, -2000, 4000, 4000))
@@ -39,7 +37,16 @@ class NodeEditor(QWidget):
         # Draw grid
         self.draw_grid()
         
-        layout.addWidget(self.view)
+        self.layout.addWidget(self.view)
+        
+        # Initialize node factory
+        self.node_factory = NodeFactory()
+        self.temp_connection = None
+        self.source_port = None
+        self.selected_ports = []
+        
+        # Initialize project manager
+        self.project_manager = ProjectManager()
         
     def draw_grid(self):
         grid_size = 50
@@ -152,13 +159,13 @@ class NodeEditor(QWidget):
             self.source_port = None
             
         super().mousePressEvent(event)
-
+        
     def mouseReleaseEvent(self, event):
         super().mouseReleaseEvent(event)
         # If clicked on empty space, clear port selections
         if not self.scene.selectedItems():
             self.clear_port_selections()
-        
+            
     def keyPressEvent(self, event):
         if event.key() == Qt.Key_Delete:
             self.delete_selected_nodes()
@@ -183,11 +190,28 @@ class NodeEditor(QWidget):
                         self.scene.removeItem(item)
                 except Exception as e:
                     print(f"Error deleting node: {str(e)}")
-                
+                    
     def show_context_menu(self, position):
         menu = QMenu()
         delete_action = menu.addAction("Delete")
         delete_action.triggered.connect(self.delete_selected_nodes)
         
         # Show menu at cursor position
-        menu.exec_(self.view.mapToGlobal(position)) 
+        menu.exec_(self.view.mapToGlobal(position))
+        
+    def maybe_save(self):
+        """Check if current project needs to be saved"""
+        if len(self.scene.items()) > 0:
+            reply = QMessageBox.question(
+                self,
+                "Save Project",
+                "Do you want to save the current project?",
+                QMessageBox.Save | QMessageBox.Discard | QMessageBox.Cancel
+            )
+            
+            if reply == QMessageBox.Save:
+                return True
+            elif reply == QMessageBox.Cancel:
+                return False
+                
+        return True 

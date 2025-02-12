@@ -1,13 +1,36 @@
 from PyQt5.QtWidgets import (QGraphicsItem, QGraphicsProxyWidget, QWidget, 
                             QVBoxLayout, QPushButton)
-from PyQt5.QtCore import Qt, QRectF, QTimer
+from PyQt5.QtCore import Qt, QRectF, QTimer, QThread, pyqtSignal
 from PyQt5.QtGui import QPainter, QPen, QBrush, QColor, QPainterPath, QLinearGradient
 import numpy as np
 import threading
-from ui.style import *
+from tool.opencv_processing.ui.style import *
 import logging
 import cv2
 import time
+
+class ProcessingThread(QThread):
+    finished = pyqtSignal()
+    
+    def __init__(self, node):
+        super().__init__()
+        self.node = node
+        self.is_running = True
+        
+    def run(self):
+        while self.is_running:
+            try:
+                with self.node.queue_lock:
+                    if self.node.processing_queue:
+                        # Get next frame to process
+                        self.node._process_image()
+                        self.node.frame_count += 1
+                        self.node.processing_queue.pop(0)  # Remove processed frame
+            except Exception as e:
+                self.node.logger.error(f"Error in processing thread: {str(e)}")
+            # Small sleep to prevent thread from hogging CPU
+            time.sleep(0.001)
+        self.finished.emit()
 
 class BaseNode(QGraphicsItem):
     def __init__(self, title="Node", width=180, height=240):
@@ -31,7 +54,7 @@ class BaseNode(QGraphicsItem):
         self.process_timer.timeout.connect(self.process_if_needed)
         
         self.fps_timer = QTimer()
-        self.fps_timer.timeout.connect(self._update_fps)  # Use direct method connection
+        self.fps_timer.timeout.connect(self._update_fps)
         self.fps_timer.start(1000)  # Update FPS every second
         
         self._timer_deleted = False
@@ -146,21 +169,6 @@ class BaseNode(QGraphicsItem):
         except Exception as e:
             self.logger.error(f"Error updating FPS: {str(e)}")
             
-    def process_in_thread(self):
-        """Process images in a separate thread"""
-        while self.is_processing:
-            try:
-                with self.queue_lock:
-                    if self.processing_queue:
-                        # Get next frame to process
-                        self._process_image()
-                        self.frame_count += 1
-                        self.processing_queue.pop(0)  # Remove processed frame
-            except Exception as e:
-                self.logger.error(f"Error in processing thread: {str(e)}")
-            # Small sleep to prevent thread from hogging CPU
-            time.sleep(0.001)
-            
     def process_image(self):
         """Process image and update continuously"""
         try:
@@ -180,8 +188,8 @@ class BaseNode(QGraphicsItem):
             # Start processing thread if not running
             if not self.is_processing:
                 self.is_processing = True
-                self.processing_thread = threading.Thread(target=self.process_in_thread)
-                self.processing_thread.daemon = True  # Make thread daemon so it exits when main program exits
+                self.processing_thread = ProcessingThread(self)
+                self.processing_thread.finished.connect(self.on_thread_finished)
                 self.processing_thread.start()
                 
             # Start the process timer if not already running
@@ -213,9 +221,13 @@ class BaseNode(QGraphicsItem):
         except Exception as e:
             self.logger.error(f"Error in {self.title}: {str(e)}")
             
-    def _process_image(self):
-        pass
-        
+    def on_thread_finished(self):
+        """Handle thread completion"""
+        self.is_processing = False
+        if self.processing_thread:
+            self.processing_thread.deleteLater()
+            self.processing_thread = None
+            
     def get_input_data(self, port_index):
         """Get data from input port"""
         if port_index < len(self.input_ports):
@@ -248,7 +260,11 @@ class BaseNode(QGraphicsItem):
         try:
             self.is_processing = False
             if hasattr(self, 'processing_thread') and self.processing_thread:
-                self.processing_thread.join(timeout=1.0)  # Wait up to 1 second for thread to finish
+                if isinstance(self.processing_thread, ProcessingThread):
+                    self.processing_thread.is_running = False
+                    self.processing_thread.wait()
+                    self.processing_thread.deleteLater()
+                self.processing_thread = None
             
             # Clear processing queue
             with self.queue_lock:
@@ -264,7 +280,7 @@ class BaseNode(QGraphicsItem):
                 except (RuntimeError, TypeError):
                     pass
                     
-            if hasattr(self, 'fps_timer') and self.fps_timer:
+            if hasattr(self, 'fps_timer') and self.fps_timer and not self._timer_deleted:
                 try:
                     if self.fps_timer.isActive():
                         self.fps_timer.stop()
