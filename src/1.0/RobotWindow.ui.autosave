@@ -1864,7 +1864,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
                   <property name="geometry">
                    <rect>
                     <x>0</x>
-                    <y>0</y>
+                    <y>-2204</y>
                     <width>590</width>
                     <height>2900</height>
                    </rect>
@@ -5710,7 +5710,7 @@ QFrame
                   <property name="geometry">
                    <rect>
                     <x>0</x>
-                    <y>0</y>
+                    <y>-6</y>
                     <width>572</width>
                     <height>1900</height>
                    </rect>

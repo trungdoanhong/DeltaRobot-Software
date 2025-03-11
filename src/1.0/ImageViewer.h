@@ -365,7 +365,6 @@ private:
 
     void rectToLine()
     {
-
         diagonalLine.setP1(rect.topLeft());
         diagonalLine.setP2(rect.bottomRight());
     }
@@ -405,6 +404,17 @@ public:
 
             whiteLineItems[i]->setZValue(1);
             blackLineItems[i]->setZValue(1.1f);
+
+            cornerNumberItems[i] = new QGraphicsTextItem(QString::number(i));
+            cornerNumberItems[i]->setDefaultTextColor(Qt::red);
+            cornerNumberItems[i]->setFont(QFont("Arial", 14, QFont::Bold));
+            cornerNumberItems[i]->setZValue(1.2f);
+
+            QGraphicsDropShadowEffect* textEffect = new QGraphicsDropShadowEffect();
+            textEffect->setColor(Qt::white);
+            textEffect->setBlurRadius(2);
+            textEffect->setOffset(1, 1);
+            cornerNumberItems[i]->setGraphicsEffect(textEffect);
         }
 
         updateVisual();
@@ -414,10 +424,15 @@ public:
     {
         for (int i = 0; i < 4; i++)
         {
+            if (cornerNumberItems[i]->graphicsEffect()) {
+                delete cornerNumberItems[i]->graphicsEffect();
+            }
+            
             delete whiteRectItems[i];
             delete blackRectItems[i];
             delete whiteLineItems[i];
             delete blackLineItems[i];
+            delete cornerNumberItems[i];
         }
     }
 
@@ -526,6 +541,8 @@ public:
 
             scene->addItem(blackRectItems[i]);
             scene->addItem(whiteRectItems[i]);
+
+            scene->addItem(cornerNumberItems[i]);
         }
     }
 
@@ -538,6 +555,8 @@ public:
 
             whiteRectItems[i]->setVisible(value);
             blackRectItems[i]->setVisible(value);
+
+            cornerNumberItems[i]->setVisible(value);
         }
     }
 
@@ -554,9 +573,9 @@ private:
 
             whiteRectItems[i]->setRect(rects[i]);
             blackRectItems[i]->setRect(rects[i]);
+            
+            cornerNumberItems[i]->setPos(points[i].x() + size/2, points[i].y() - size*1.5);
         }
-
-
     }
 
     void pointsToLines()
@@ -597,6 +616,8 @@ private:
 
     QGraphicsRectItem* whiteRectItems[4];
     QGraphicsRectItem* blackRectItems[4];
+
+    QGraphicsTextItem* cornerNumberItems[4];
 };
 
 class CameraAreaItem : public QObject
@@ -685,7 +706,6 @@ public:
 
     void SetTopLeft(QPointF p)
     {
-
         rect.setTopLeft(p);
         rectToLine();
         updateVisual();
@@ -790,7 +810,6 @@ private:
 
     void rectToLine()
     {
-
         diagonalLine.setP1(rect.topLeft());
         diagonalLine.setP2(rect.bottomRight());
     }

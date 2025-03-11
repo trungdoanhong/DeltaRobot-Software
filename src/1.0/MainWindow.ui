@@ -32,7 +32,7 @@
    <string>Delta X Software - Version 1.2.7</string>
   </property>
   <property name="windowIcon">
-   <iconset resource="resource.qrc">
+   <iconset resource="../../resource.qrc">
     <normaloff>:/delta_x_logo_96x96.ico</normaloff>:/delta_x_logo_96x96.ico</iconset>
   </property>
   <property name="styleSheet">
@@ -217,7 +217,7 @@ QToolButton::pressed
               <string>...</string>
              </property>
              <property name="icon">
-              <iconset resource="resource.qrc">
+              <iconset resource="../../resource.qrc">
                <normaloff>:/icon/icons8_folder_64px.png</normaloff>:/icon/icons8_folder_64px.png</iconset>
              </property>
              <property name="iconSize">
@@ -249,7 +249,7 @@ QToolButton::pressed
               <string>...</string>
              </property>
              <property name="icon">
-              <iconset resource="resource.qrc">
+              <iconset resource="../../resource.qrc">
                <normaloff>:/icon/save.png</normaloff>:/icon/save.png</iconset>
              </property>
              <property name="iconSize">
@@ -297,7 +297,7 @@ QToolButton::pressed
               <string>Home</string>
              </property>
              <property name="icon">
-              <iconset resource="resource.qrc">
+              <iconset resource="../../resource.qrc">
                <normaloff>:/icon/home_64px.png</normaloff>:/icon/home_64px.png</iconset>
              </property>
              <property name="checkable">
@@ -339,7 +339,7 @@ border-right: 5px solid rgb(24, 70, 139);</string>
               <string>Project</string>
              </property>
              <property name="icon">
-              <iconset resource="resource.qrc">
+              <iconset resource="../../resource.qrc">
                <normaloff>:/icon/project_64px.png</normaloff>:/icon/project_64px.png</iconset>
              </property>
              <property name="checkable">
@@ -380,7 +380,7 @@ border-right: 5px solid rgb(24, 70, 139);</string>
               <string>Variable</string>
              </property>
              <property name="icon">
-              <iconset resource="resource.qrc">
+              <iconset resource="../../resource.qrc">
                <normaloff>:/icon/variable_64px.png</normaloff>:/icon/variable_64px.png</iconset>
              </property>
              <property name="popupMode">
@@ -415,7 +415,7 @@ border-right: 5px solid rgb(24, 70, 139);</string>
               <string>Market</string>
              </property>
              <property name="icon">
-              <iconset resource="resource.qrc">
+              <iconset resource="../../resource.qrc">
                <normaloff>:/icon/shopping_cart_promotion_64px.png</normaloff>:/icon/shopping_cart_promotion_64px.png</iconset>
              </property>
              <property name="popupMode">
@@ -450,7 +450,7 @@ border-right: 5px solid rgb(24, 70, 139);</string>
               <string>Document</string>
              </property>
              <property name="icon">
-              <iconset resource="resource.qrc">
+              <iconset resource="../../resource.qrc">
                <normaloff>:/icon/document_64px.png</normaloff>:/icon/document_64px.png</iconset>
              </property>
              <property name="popupMode">
@@ -485,7 +485,7 @@ border-right: 5px solid rgb(24, 70, 139);</string>
               <string>Community</string>
              </property>
              <property name="icon">
-              <iconset resource="resource.qrc">
+              <iconset resource="../../resource.qrc">
                <normaloff>:/icon/charity_64px.png</normaloff>:/icon/charity_64px.png</iconset>
              </property>
              <property name="popupMode">
@@ -520,7 +520,7 @@ border-right: 5px solid rgb(24, 70, 139);</string>
               <string>Admin</string>
              </property>
              <property name="icon">
-              <iconset resource="resource.qrc">
+              <iconset resource="../../resource.qrc">
                <normaloff>:/icon/account_64px.png</normaloff>:/icon/account_64px.png</iconset>
              </property>
              <property name="popupMode">
@@ -568,7 +568,7 @@ border-right: 5px solid rgb(24, 70, 139);</string>
               <string>Setting</string>
              </property>
              <property name="icon">
-              <iconset resource="resource.qrc">
+              <iconset resource="../../resource.qrc">
                <normaloff>:/icon/settings_64px.png</normaloff>:/icon/settings_64px.png</iconset>
              </property>
              <property name="popupMode">
@@ -608,7 +608,7 @@ border-right: 5px solid rgb(24, 70, 139);</string>
              <number>1</number>
             </property>
             <property name="currentIndex">
-             <number>0</number>
+             <number>8</number>
             </property>
             <widget class="QWidget" name="pVariable">
              <property name="styleSheet">
@@ -726,8 +726,8 @@ border-right: 5px solid rgb(24, 70, 139);</string>
                   <rect>
                    <x>0</x>
                    <y>0</y>
-                   <width>601</width>
-                   <height>171</height>
+                   <width>662</width>
+                   <height>197</height>
                   </rect>
                  </property>
                  <layout class="QVBoxLayout" name="verticalLayout_10">
@@ -1328,7 +1328,7 @@ QPushButton:pressed
                       <rect>
                        <x>0</x>
                        <y>0</y>
-                       <width>571</width>
+                       <width>593</width>
                        <height>700</height>
                       </rect>
                      </property>
@@ -2037,7 +2037,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
                 <string/>
                </property>
                <property name="icon">
-                <iconset resource="resource.qrc">
+                <iconset resource="../../resource.qrc">
                  <normaloff>:/icon/Collapse Arrow.png</normaloff>:/icon/Collapse Arrow.png</iconset>
                </property>
                <property name="checkable">
@@ -2172,7 +2172,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
  </widget>
  <layoutdefault spacing="6" margin="11"/>
  <resources>
-  <include location="resource.qrc"/>
+  <include location="../../resource.qrc"/>
  </resources>
  <connections/>
  <designerdata>

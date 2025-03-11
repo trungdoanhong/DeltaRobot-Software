@@ -196,12 +196,15 @@ public:
     QFrame *frame_17;
     QVBoxLayout *verticalLayout_10;
     QPushButton *pbFindChessboardTool;
+    QFrame *line_3;
     QPushButton *pbWarpTool;
     QPushButton *pbCropTool;
+    QFrame *line_2;
     QPushButton *pbCalibPointTool;
     QPushButton *pbMappingPointTool;
-    QPushButton *pbFilterTool;
     QPushButton *pbGetSizeTool;
+    QFrame *line;
+    QPushButton *pbFilterTool;
     QLabel *lbDisplayRatio;
     QPushButton *pbZoomInCameraView;
     QPushButton *pbZoomOutCameraView;
@@ -2125,7 +2128,7 @@ public:
         saTermite->setWidgetResizable(true);
         wgTermite = new QWidget();
         wgTermite->setObjectName(QString::fromUtf8("wgTermite"));
-        wgTermite->setGeometry(QRect(0, 0, 478, 139));
+        wgTermite->setGeometry(QRect(0, 0, 408, 135));
         wgTermite->setStyleSheet(QString::fromUtf8("QWidget#wgTermite\n"
 "{\n"
 "	\n"
@@ -2216,7 +2219,7 @@ public:
         saObjectDetecting->setWidgetResizable(true);
         wObjectDetecting = new QWidget();
         wObjectDetecting->setObjectName(QString::fromUtf8("wObjectDetecting"));
-        wObjectDetecting->setGeometry(QRect(0, 0, 631, 2900));
+        wObjectDetecting->setGeometry(QRect(0, 0, 590, 2900));
         wObjectDetecting->setMinimumSize(QSize(100, 2900));
         wObjectDetecting->setStyleSheet(QString::fromUtf8("QWidget#wObjectDetecting\n"
 "{	\n"
@@ -2781,6 +2784,13 @@ public:
 
         verticalLayout_10->addWidget(pbFindChessboardTool);
 
+        line_3 = new QFrame(frame_17);
+        line_3->setObjectName(QString::fromUtf8("line_3"));
+        line_3->setFrameShape(QFrame::HLine);
+        line_3->setFrameShadow(QFrame::Sunken);
+
+        verticalLayout_10->addWidget(line_3);
+
         pbWarpTool = new QPushButton(frame_17);
         pbWarpTool->setObjectName(QString::fromUtf8("pbWarpTool"));
         sizePolicy4.setHeightForWidth(pbWarpTool->sizePolicy().hasHeightForWidth());
@@ -2814,6 +2824,13 @@ public:
         pbCropTool->setFlat(true);
 
         verticalLayout_10->addWidget(pbCropTool);
+
+        line_2 = new QFrame(frame_17);
+        line_2->setObjectName(QString::fromUtf8("line_2"));
+        line_2->setFrameShape(QFrame::HLine);
+        line_2->setFrameShadow(QFrame::Sunken);
+
+        verticalLayout_10->addWidget(line_2);
 
         pbCalibPointTool = new QPushButton(frame_17);
         pbCalibPointTool->setObjectName(QString::fromUtf8("pbCalibPointTool"));
@@ -2849,19 +2866,6 @@ public:
 
         verticalLayout_10->addWidget(pbMappingPointTool);
 
-        pbFilterTool = new QPushButton(frame_17);
-        pbFilterTool->setObjectName(QString::fromUtf8("pbFilterTool"));
-        sizePolicy4.setHeightForWidth(pbFilterTool->sizePolicy().hasHeightForWidth());
-        pbFilterTool->setSizePolicy(sizePolicy4);
-        pbFilterTool->setMinimumSize(QSize(0, 20));
-        QIcon icon23;
-        icon23.addFile(QString::fromUtf8(":/icon/Slider 2_16px.png"), QSize(), QIcon::Normal, QIcon::Off);
-        pbFilterTool->setIcon(icon23);
-        pbFilterTool->setIconSize(QSize(24, 24));
-        pbFilterTool->setFlat(true);
-
-        verticalLayout_10->addWidget(pbFilterTool);
-
         pbGetSizeTool = new QPushButton(frame_17);
         pbGetSizeTool->setObjectName(QString::fromUtf8("pbGetSizeTool"));
         sizePolicy4.setHeightForWidth(pbGetSizeTool->sizePolicy().hasHeightForWidth());
@@ -2870,14 +2874,34 @@ public:
         pbGetSizeTool->setStyleSheet(QString::fromUtf8("QPushButton:checked {\n"
 "  border: 2px solid rgb(54, 178, 242);\n"
 "}"));
-        QIcon icon24;
-        icon24.addFile(QString::fromUtf8(":/icon/icons8_page_size_64px.png"), QSize(), QIcon::Normal, QIcon::Off);
-        pbGetSizeTool->setIcon(icon24);
+        QIcon icon23;
+        icon23.addFile(QString::fromUtf8(":/icon/icons8_page_size_64px.png"), QSize(), QIcon::Normal, QIcon::Off);
+        pbGetSizeTool->setIcon(icon23);
         pbGetSizeTool->setIconSize(QSize(24, 24));
         pbGetSizeTool->setCheckable(true);
         pbGetSizeTool->setFlat(true);
 
         verticalLayout_10->addWidget(pbGetSizeTool);
+
+        line = new QFrame(frame_17);
+        line->setObjectName(QString::fromUtf8("line"));
+        line->setFrameShape(QFrame::HLine);
+        line->setFrameShadow(QFrame::Sunken);
+
+        verticalLayout_10->addWidget(line);
+
+        pbFilterTool = new QPushButton(frame_17);
+        pbFilterTool->setObjectName(QString::fromUtf8("pbFilterTool"));
+        sizePolicy4.setHeightForWidth(pbFilterTool->sizePolicy().hasHeightForWidth());
+        pbFilterTool->setSizePolicy(sizePolicy4);
+        pbFilterTool->setMinimumSize(QSize(0, 20));
+        QIcon icon24;
+        icon24.addFile(QString::fromUtf8(":/icon/Slider 2_16px.png"), QSize(), QIcon::Normal, QIcon::Off);
+        pbFilterTool->setIcon(icon24);
+        pbFilterTool->setIconSize(QSize(24, 24));
+        pbFilterTool->setFlat(true);
+
+        verticalLayout_10->addWidget(pbFilterTool);
 
         lbDisplayRatio = new QLabel(frame_17);
         lbDisplayRatio->setObjectName(QString::fromUtf8("lbDisplayRatio"));
@@ -2971,7 +2995,7 @@ public:
         lbWarpGuide->setMinimumSize(QSize(400, 91));
         lbWarpGuide->setMaximumSize(QSize(400, 91));
         lbWarpGuide->setStyleSheet(QString::fromUtf8(""));
-        lbWarpGuide->setPixmap(QPixmap(QString::fromUtf8("icon/image-warp.png")));
+        lbWarpGuide->setPixmap(QPixmap(QString::fromUtf8("../../icon/image-warp.png")));
         lbWarpGuide->setScaledContents(true);
 
         horizontalLayout_14->addWidget(lbWarpGuide);
@@ -3008,7 +3032,7 @@ public:
         lbCalibGuide->setMinimumSize(QSize(350, 91));
         lbCalibGuide->setMaximumSize(QSize(350, 91));
         lbCalibGuide->setStyleSheet(QString::fromUtf8(""));
-        lbCalibGuide->setPixmap(QPixmap(QString::fromUtf8("icon/image-calib.png")));
+        lbCalibGuide->setPixmap(QPixmap(QString::fromUtf8("../../icon/image-calib.png")));
         lbCalibGuide->setScaledContents(true);
 
         verticalLayout_52->addWidget(lbCalibGuide);
@@ -3992,7 +4016,7 @@ public:
         saPointTool->setWidgetResizable(true);
         wPointTool = new QWidget();
         wPointTool->setObjectName(QString::fromUtf8("wPointTool"));
-        wPointTool->setGeometry(QRect(0, 0, 619, 1900));
+        wPointTool->setGeometry(QRect(0, 0, 572, 1900));
         wPointTool->setMinimumSize(QSize(0, 1900));
         wPointTool->setStyleSheet(QString::fromUtf8("QWidget#wPointTool\n"
 "{	\n"
@@ -5104,7 +5128,7 @@ public:
         scrollArea_6->setWidgetResizable(true);
         scrollAreaWidgetContents_6 = new QWidget();
         scrollAreaWidgetContents_6->setObjectName(QString::fromUtf8("scrollAreaWidgetContents_6"));
-        scrollAreaWidgetContents_6->setGeometry(QRect(0, 0, 619, 1600));
+        scrollAreaWidgetContents_6->setGeometry(QRect(0, 0, 572, 1600));
         scrollAreaWidgetContents_6->setMinimumSize(QSize(450, 1600));
         scrollAreaWidgetContents_6->setMaximumSize(QSize(16777215, 16777215));
         scrollAreaWidgetContents_6->setStyleSheet(QString::fromUtf8("QWidget[background='container']\n"
@@ -5994,7 +6018,7 @@ public:
         scrollArea_2->setWidgetResizable(true);
         wgJoggingScrollWidget = new QWidget();
         wgJoggingScrollWidget->setObjectName(QString::fromUtf8("wgJoggingScrollWidget"));
-        wgJoggingScrollWidget->setGeometry(QRect(0, 0, 519, 1500));
+        wgJoggingScrollWidget->setGeometry(QRect(0, 0, 554, 1500));
         wgJoggingScrollWidget->setMinimumSize(QSize(0, 1500));
         wgJoggingScrollWidget->setMaximumSize(QSize(16777215, 16777215));
         wgJoggingScrollWidget->setStyleSheet(QString::fromUtf8("QWidget#wgJoggingScrollWidget\n"
@@ -9639,7 +9663,7 @@ public:
         QObject::connect(gbTrackingManager, SIGNAL(toggled(bool)), fTrackingManager, SLOT(setVisible(bool)));
 
         pbRunServer->setDefault(false);
-        twModule->setCurrentIndex(0);
+        twModule->setCurrentIndex(1);
         twGcodeEditor->setCurrentIndex(0);
         pbImageMapping->setDefault(false);
         cbImageSource->setCurrentIndex(0);
@@ -9911,13 +9935,13 @@ public:
 #endif // QT_CONFIG(tooltip)
         pbMappingPointTool->setText(QCoreApplication::translate("RobotWindow", "Test Calibration Point", nullptr));
 #if QT_CONFIG(tooltip)
-        pbFilterTool->setToolTip(QCoreApplication::translate("RobotWindow", "Blob Filter", nullptr));
-#endif // QT_CONFIG(tooltip)
-        pbFilterTool->setText(QCoreApplication::translate("RobotWindow", "Color Filter Tool", nullptr));
-#if QT_CONFIG(tooltip)
         pbGetSizeTool->setToolTip(QCoreApplication::translate("RobotWindow", "Blob Filter", nullptr));
 #endif // QT_CONFIG(tooltip)
         pbGetSizeTool->setText(QCoreApplication::translate("RobotWindow", "Object Size Tool", nullptr));
+#if QT_CONFIG(tooltip)
+        pbFilterTool->setToolTip(QCoreApplication::translate("RobotWindow", "Blob Filter", nullptr));
+#endif // QT_CONFIG(tooltip)
+        pbFilterTool->setText(QCoreApplication::translate("RobotWindow", "Color Filter Tool", nullptr));
         lbDisplayRatio->setText(QCoreApplication::translate("RobotWindow", "Ratio: 100%", nullptr));
         pbZoomInCameraView->setText(QCoreApplication::translate("RobotWindow", "Zoom In", nullptr));
         pbZoomOutCameraView->setText(QCoreApplication::translate("RobotWindow", "Zoom Out", nullptr));
